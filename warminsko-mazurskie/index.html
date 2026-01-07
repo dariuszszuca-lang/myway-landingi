@@ -58,9 +58,10 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 12px;
             transition: all 0.3s ease;
             cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .btn-primary {
@@ -117,15 +118,17 @@
 
         .hero-badge {
             display: inline-block;
-            background: var(--yellow);
+            background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow-dark) 100%);
             color: var(--dark);
-            padding: 10px 24px;
+            padding: 12px 28px;
             font-family: 'Raleway', sans-serif;
             font-weight: 600;
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 24px;
+            border-radius: 30px;
+            box-shadow: 0 4px 20px rgba(245, 198, 28, 0.4);
         }
 
         .hero h1 {
@@ -216,46 +219,49 @@
 
         .feature-card {
             background: var(--white);
-            padding: 40px 30px;
+            padding: 48px 36px;
             text-align: center;
-            border: 1px solid #ddd;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
             transition: all 0.3s ease;
+            border: none;
         }
 
         .feature-card:hover {
-            border-color: var(--yellow);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.12);
         }
 
         .feature-card .icon {
-            width: 80px;
-            height: 80px;
-            background: var(--yellow);
-            margin: 0 auto 25px;
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow-dark) 100%);
+            margin: 0 auto 28px;
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: 20px;
         }
 
         .feature-card .icon svg {
-            width: 36px;
-            height: 36px;
+            width: 40px;
+            height: 40px;
             stroke: var(--dark);
             stroke-width: 2;
             fill: none;
         }
 
         .feature-card h3 {
-            font-size: 18px;
-            margin-bottom: 15px;
+            font-size: 20px;
+            margin-bottom: 16px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .feature-card p {
-            font-size: 14px;
+            font-size: 15px;
             color: var(--gray);
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         /* GALLERY */
@@ -309,33 +315,37 @@
 
         .distance-card {
             background: var(--white);
-            padding: 30px 20px;
+            padding: 32px 24px;
             text-align: center;
-            border: 1px solid #ddd;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
             transition: all 0.3s ease;
         }
 
         .distance-card:hover {
-            border-color: var(--yellow);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.12);
         }
 
         .distance-card .city {
             font-family: 'Raleway', sans-serif;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            color: var(--gray);
         }
 
         .distance-card .km {
-            font-size: 32px;
-            font-weight: 700;
+            font-size: 36px;
+            font-weight: 800;
             font-family: 'Raleway', sans-serif;
-            color: var(--yellow-dark);
-            margin-bottom: 5px;
+            background: linear-gradient(135deg, var(--yellow-dark) 0%, var(--yellow) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 6px;
         }
 
         .distance-card .time {
@@ -357,17 +367,18 @@
         }
 
         .distance-benefit .icon {
-            width: 50px;
-            height: 50px;
-            background: var(--yellow);
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow-dark) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: 14px;
         }
 
         .distance-benefit .icon svg {
-            width: 24px;
-            height: 24px;
+            width: 26px;
+            height: 26px;
             stroke: var(--dark);
             stroke-width: 2;
             fill: none;
@@ -375,7 +386,7 @@
 
         .distance-benefit span {
             font-weight: 600;
-            font-size: 14px;
+            font-size: 15px;
         }
 
         /* ABOUT */
@@ -388,7 +399,8 @@
 
         .about-image img {
             width: 100%;
-            border-radius: 4px;
+            border-radius: 20px;
+            box-shadow: 0 16px 48px rgba(0,0,0,0.15);
         }
 
         .about-text h2 {
@@ -418,13 +430,15 @@
         }
 
         .about-list li .check {
-            width: 24px;
-            height: 24px;
-            background: var(--yellow);
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, var(--yellow) 0%, var(--yellow-dark) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(245, 198, 28, 0.3);
         }
 
         .about-list li .check svg {
@@ -460,10 +474,10 @@
         .social-link {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 16px 28px;
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
+            gap: 12px;
+            padding: 18px 32px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
             color: var(--white);
             text-decoration: none;
             font-family: 'Raleway', sans-serif;
@@ -472,6 +486,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s ease;
+            border-radius: 14px;
         }
 
         .social-link:hover {
@@ -490,28 +505,34 @@
         .faq-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
+            gap: 24px;
             max-width: 1000px;
             margin: 0 auto;
         }
 
         .faq-item {
-            padding: 30px;
+            padding: 32px;
             background: var(--white);
-            border: 1px solid #ddd;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.1);
         }
 
         .faq-item h4 {
-            font-size: 16px;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 17px;
+            margin-bottom: 14px;
+            color: var(--dark);
         }
 
         .faq-item p {
-            font-size: 14px;
+            font-size: 15px;
             color: var(--gray);
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         /* CTA SECTION */
@@ -600,10 +621,10 @@
         }
 
         .footer-social a {
-            width: 44px;
-            height: 44px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 4px;
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -633,14 +654,15 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: var(--dark);
-            padding: 16px 24px;
+            background: linear-gradient(135deg, var(--dark) 0%, #2a2a2a 100%);
+            padding: 18px 24px;
             z-index: 100;
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 30px;
             border-top: 3px solid var(--yellow);
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
         }
 
         .bottom-bar-text {
