@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/warminsko-mazurskie/index.html"
+    },
+    {
+      "source": "/warminsko-mazurskie",
+      "destination": "/warminsko-mazurskie/index.html"
+    }
+  ]
+}
