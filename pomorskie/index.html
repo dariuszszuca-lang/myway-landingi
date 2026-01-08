@@ -129,22 +129,15 @@
 
         .hero-badge {
             display: inline-block;
-            color: var(--accent);
-            padding: 0;
+            background: var(--accent);
+            color: var(--navy);
+            padding: 14px 28px;
             font-family: 'Outfit', sans-serif;
-            font-weight: 500;
-            font-size: 16px;
+            font-weight: 600;
+            font-size: 14px;
             text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-bottom: 30px;
-            position: relative;
-        }
-
-        .hero-badge::before,
-        .hero-badge::after {
-            content: '—';
-            margin: 0 16px;
-            opacity: 0.5;
+            letter-spacing: 4px;
+            margin-bottom: 40px;
         }
 
         .hero h1 {
@@ -205,7 +198,7 @@
 
         .hero-hours {
             font-size: 13px;
-            opacity: 0.5;
+            color: var(--white);
             margin-top: 12px;
             text-transform: uppercase;
             letter-spacing: 3px;
@@ -531,21 +524,31 @@
         .about-list {
             list-style: none;
             margin-top: 40px;
+            display: grid;
+            gap: 12px;
         }
 
         .about-list li {
             display: flex;
             align-items: center;
             gap: 16px;
-            margin-bottom: 16px;
+            padding: 16px 20px;
             font-weight: 400;
-            color: var(--gray);
+            color: var(--navy);
+            background: var(--white);
+            box-shadow: 0 2px 12px rgba(10,22,40,0.06);
+            transition: all 0.3s ease;
+        }
+
+        .about-list li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 16px rgba(10,22,40,0.1);
         }
 
         .about-list li .check {
-            width: 24px;
-            height: 24px;
-            border: 1px solid var(--accent);
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -553,10 +556,10 @@
         }
 
         .about-list li .check svg {
-            width: 12px;
-            height: 12px;
-            stroke: var(--accent);
-            stroke-width: 2;
+            width: 14px;
+            height: 14px;
+            stroke: var(--white);
+            stroke-width: 3;
             fill: none;
         }
 
@@ -1044,11 +1047,6 @@
                 flex-direction: column;
                 align-items: center;
             }
-
-            .hero-badge::before,
-            .hero-badge::after {
-                display: none;
-            }
         }
     </style>
 </head>
@@ -1214,7 +1212,7 @@
                     <ul class="about-list">
                         <li>
                             <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                            Mała grupa — maksymalnie 12 osób
+                            Kameralna atmosfera i indywidualne podejście
                         </li>
                         <li>
                             <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
@@ -1222,7 +1220,7 @@
                         </li>
                         <li>
                             <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                            Leśna lokalizacja — nikt Cię tu nie znajdzie
+                            Leśna lokalizacja — spokój i dyskrecja
                         </li>
                         <li>
                             <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
@@ -1230,7 +1228,7 @@
                         </li>
                         <li>
                             <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                            Pobyt od miesiąca do trzech — Ty decydujesz
+                            Elastyczny czas pobytu — dopasowany do Ciebie
                         </li>
                     </ul>
 
