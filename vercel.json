@@ -7,6 +7,10 @@
     {
       "source": "/warminsko-mazurskie",
       "destination": "/warminsko-mazurskie/index.html"
+    },
+    {
+      "source": "/pomorskie",
+      "destination": "/pomorskie/index.html"
     }
   ]
 }
