@@ -2,6 +2,26 @@
   "rewrites": [
     {
       "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "pomorskie.mywaystart.pl"
+        }
+      ],
+      "destination": "/pomorskie/index.html"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "warminsko-mazurskie.mywaystart.pl"
+        }
+      ],
+      "destination": "/warminsko-mazurskie/index.html"
+    },
+    {
+      "source": "/",
       "destination": "/warminsko-mazurskie/index.html"
     },
     {
