@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyWay Kąpino | Ośrodek dla mieszkańców zachodniopomorskiego</title>
+    <meta name="description" content="Kameralny ośrodek w otoczeniu lasów dla osób szukających zmiany. Dobry dojazd ze Szczecina, Koszalina, Kołobrzegu. Pobyt regeneracyjny, rozwój osobisty, komfortowe warunki.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0d9488;
+            --primary-light: #14b8a6;
+            --primary-dark: #0f766e;
+            --primary-bg: #f0fdfa;
+            --accent: #f59e0b;
+            --accent-light: #fbbf24;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --gray-light: #f1f5f9;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--white);
+            color: var(--dark);
+            line-height: 1.7;
+            padding-bottom: 80px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 32px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(13, 148, 136, 0.4);
+        }
+
+        .btn-outline {
+            background: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .btn-large {
+            padding: 18px 36px;
+            font-size: 15px;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 24px;
+            background: linear-gradient(rgba(240,253,250,0.85), rgba(204,251,241,0.8)),
+                        url('https://images.unsplash.com/photo-1507041957456-9c397ce39c97?w=1920&q=80') center/cover no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--white);
+            color: var(--primary);
+            padding: 12px 28px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--dark);
+            letter-spacing: -1px;
+        }
+
+        .hero .subtitle {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            color: var(--primary-dark);
+        }
+
+        .hero .tagline {
+            font-size: 16px;
+            color: var(--gray);
+            max-width: 550px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-phone {
+            margin-top: 50px;
+            font-size: 32px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        .hero-phone a {
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+
+        .hero-hours {
+            font-size: 14px;
+            color: var(--gray);
+            margin-top: 8px;
+        }
+
+        /* SECTION STYLING */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            margin-bottom: 16px;
+            color: var(--dark);
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-white {
+            background: var(--white);
+        }
+
+        .section-light {
+            background: var(--gray-light);
+        }
+
+        .section-teal {
+            background: var(--primary-bg);
+        }
+
+        /* FEATURES */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 40px 32px;
+            text-align: center;
+            border-radius: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(13, 148, 136, 0.15);
+        }
+
+        .feature-card .icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-bg) 0%, #ccfbf1 100%);
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+        }
+
+        .feature-card .icon svg {
+            width: 36px;
+            height: 36px;
+            stroke: var(--primary);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            margin-bottom: 14px;
+            color: var(--dark);
+        }
+
+        .feature-card p {
+            font-size: 15px;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* GALLERY */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            aspect-ratio: 16/10;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* DISTANCE SECTION */
+        .distance-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            margin-bottom: 50px;
+        }
+
+        .distance-card {
+            background: var(--white);
+            padding: 28px 20px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .distance-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(13, 148, 136, 0.15);
+            border-color: var(--primary-light);
+        }
+
+        .distance-card .city {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--gray);
+        }
+
+        .distance-card .km {
+            font-size: 32px;
+            font-weight: 800;
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .distance-card .time {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        .distance-benefits {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .distance-benefit {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: var(--white);
+            padding: 16px 24px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .distance-benefit .icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .distance-benefit .icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--white);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .distance-benefit span {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--dark);
+        }
+
+        /* ABOUT */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+
+        .about-text h2 {
+            font-size: 36px;
+            margin-bottom: 24px;
+            color: var(--dark);
+        }
+
+        .about-text p {
+            color: var(--gray);
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .about-list {
+            list-style: none;
+            margin-top: 28px;
+        }
+
+        .about-list li {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 14px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .about-list li .check {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border-radius: 50%;
+        }
+
+        .about-list li .check svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--white);
+            stroke-width: 3;
+            fill: none;
+        }
+
+        /* SOCIAL MEDIA */
+        .social-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .social-section h2 {
+            color: var(--white);
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            border-radius: 50px;
+        }
+
+        .social-link:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .social-link svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials-section {
+            background: var(--gray-light);
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .testimonials-header .subtitle {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .testimonials-header h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .rating-summary {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .rating-stars {
+            color: var(--accent);
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .rating-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .rating-number span {
+            font-size: 18px;
+            color: var(--gray);
+            font-weight: 400;
+        }
+
+        .rating-count {
+            font-size: 14px;
+            color: var(--gray);
+            margin-top: 5px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .testimonial-card .stars {
+            color: var(--accent);
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-card .quote-icon {
+            position: absolute;
+            top: 28px;
+            right: 28px;
+            font-size: 48px;
+            color: var(--primary);
+            opacity: 0.15;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-card .text {
+            font-size: 15px;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-card .author {
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--dark);
+        }
+
+        .google-link {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .google-link a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .google-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* FAQ */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            padding: 28px;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .faq-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(13, 148, 136, 0.1);
+        }
+
+        .faq-item h4 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+
+        .faq-item p {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+            text-align: center;
+            padding: 100px 24px;
+        }
+
+        .cta-section h2 {
+            font-size: 40px;
+            margin-bottom: 16px;
+            color: var(--dark);
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            color: var(--gray);
+            margin-bottom: 40px;
+        }
+
+        .cta-phone {
+            font-size: 48px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .cta-phone a {
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+
+        .cta-hours {
+            font-size: 16px;
+            color: var(--gray);
+            margin-bottom: 40px;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 60px 0 40px;
+            background: var(--white);
+            text-align: center;
+            border-top: 1px solid var(--gray-light);
+        }
+
+        .footer-logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .footer-logo span {
+            color: var(--primary);
+        }
+
+        .footer-address {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .footer-contact {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .footer-contact a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .footer-social a {
+            width: 48px;
+            height: 48px;
+            background: var(--gray-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .footer-social svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .copyright {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        /* STICKY BOTTOM BAR */
+        .bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            padding: 16px 24px;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            border-top: 1px solid var(--gray-light);
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+        }
+
+        .bottom-bar-text {
+            font-size: 14px;
+            color: var(--dark);
+        }
+
+        .bottom-bar-text strong {
+            color: var(--primary);
+        }
+
+        .bottom-bar .btn {
+            padding: 12px 24px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .distance-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .section-header h2, .about-text h2 {
+                font-size: 28px;
+            }
+
+            .distance-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .distance-benefits {
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+            }
+
+            .bottom-bar {
+                flex-direction: column;
+                gap: 12px;
+                padding: 14px 20px;
+            }
+
+            .cta-phone {
+                font-size: 32px;
+            }
+
+            .cta-section h2 {
+                font-size: 28px;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .distance-grid {
+                grid-template-columns: 1fr;
+            }
+
+            body {
+                padding-bottom: 110px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <span class="hero-badge">Dla mieszkańców woj. zachodniopomorskiego</span>
+            <h1>Czas Na Zmianę</h1>
+            <p class="subtitle">Kameralny ośrodek w otoczeniu natury dla osób gotowych na nowy rozdział</p>
+            <p class="tagline">Miejsce wyciszenia i regeneracji na Kaszubach. Odetnij się od codzienności i skup na tym, co naprawdę ważne.</p>
+
+            <div class="hero-buttons">
+                <a href="tel:+48731395295" class="btn btn-primary btn-large">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    Zadzwoń teraz
+                </a>
+                <a href="https://osrodek-myway.pl" target="_blank" class="btn btn-white btn-large">Dowiedz się więcej</a>
+            </div>
+
+            <div class="hero-phone">
+                <a href="tel:+48731395295">+48 731 395 295</a>
+            </div>
+            <div class="hero-hours">Czynne całodobowo</div>
+        </div>
+    </section>
+
+    <!-- CO OFERUJEMY -->
+    <section class="section-white">
+        <div class="container">
+            <div class="section-header">
+                <h2>Co oferujemy?</h2>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    </div>
+                    <h3>Lokalizacja w sercu natury</h3>
+                    <p>Ośrodek otoczony lasem. Cisza, spokój i przestrzeń na wyciszenie. Idealne warunki do regeneracji z dala od zgiełku miasta.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </div>
+                    <h3>Komfort i pełna opieka</h3>
+                    <p>Wygodne pokoje, domowe wyżywienie, codzienna troska o Twoje potrzeby. Wszystko, byś mógł skupić się wyłącznie na sobie.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                    </div>
+                    <h3>Program rozwoju osobistego</h3>
+                    <p>Warsztaty budowania świadomości, sesje grupowe, aktywności relaksacyjne. Wsparcie doświadczonej kadry na każdym etapie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NASZ OŚRODEK - GALERIA -->
+    <section class="section-teal">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nasz ośrodek</h2>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://myway-osrodek.pl/wp-content/uploads/2025/11/Zrzut-ekranu-2025-11-3-o-12.31.57-scaled.webp" alt="Ośrodek MyWay - budynek główny">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://myway-osrodek.pl/wp-content/uploads/2025/11/Zrzut-ekranu-2025-11-3-o-12.32.41-1024x434.png" alt="Ośrodek MyWay - ogród">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://myway-osrodek.pl/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-12-at-20.04.27-2.jpeg" alt="Ośrodek MyWay - wnętrze">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://myway-osrodek.pl/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-12-at-20.04.28-1.jpeg" alt="Ośrodek MyWay - pokój">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://myway-osrodek.pl/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-12-at-20.04.27-1.jpeg" alt="Ośrodek MyWay - wnętrze">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://myway-osrodek.pl/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-12-at-20.04.28.jpeg" alt="Ośrodek MyWay - przestrzeń wspólna">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O NAS -->
+    <section class="section-white">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://myway-osrodek.pl/wp-content/uploads/2025/11/Zrzut-ekranu-2025-11-3-o-12.31.57-scaled.webp" alt="Ośrodek MyWay - budynek">
+                </div>
+                <div class="about-text">
+                    <h2>O nas</h2>
+                    <p>MyWay to kameralny ośrodek na Kaszubach, w otoczeniu lasów i natury. Stworzyliśmy przestrzeń, gdzie możesz się zatrzymać, odetchnąć i skupić na sobie.</p>
+                    <p>Zapewniamy kompleksową opiekę - od komfortowego zakwaterowania, przez program rozwojowy, po wsparcie również po zakończeniu pobytu.</p>
+
+                    <ul class="about-list">
+                        <li>
+                            <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            Kameralna atmosfera
+                        </li>
+                        <li>
+                            <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            Doświadczony zespół
+                        </li>
+                        <li>
+                            <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            Lokalizacja w lesie
+                        </li>
+                        <li>
+                            <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            Kompleksowe wsparcie
+                        </li>
+                        <li>
+                            <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            Elastyczne pakiety
+                        </li>
+                    </ul>
+
+                    <div style="margin-top: 32px;">
+                        <a href="https://osrodek-myway.pl" target="_blank" class="btn btn-primary">
+                            Dowiedz się więcej o ośrodku
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOJAZD -->
+    <section class="section-light" id="dojazd">
+        <div class="container">
+            <div class="section-header">
+                <h2>Dojazd z zachodniopomorskiego</h2>
+                <p>Ośrodek znajduje się w spokojnej miejscowości Kąpino na Kaszubach</p>
+            </div>
+
+            <div class="distance-grid">
+                <div class="distance-card">
+                    <div class="city">Szczecin</div>
+                    <div class="km">~350 km</div>
+                    <div class="time">ok. 3,5h</div>
+                </div>
+                <div class="distance-card">
+                    <div class="city">Koszalin</div>
+                    <div class="km">~200 km</div>
+                    <div class="time">ok. 2h</div>
+                </div>
+                <div class="distance-card">
+                    <div class="city">Kołobrzeg</div>
+                    <div class="km">~230 km</div>
+                    <div class="time">ok. 2,5h</div>
+                </div>
+                <div class="distance-card">
+                    <div class="city">Świnoujście</div>
+                    <div class="km">~380 km</div>
+                    <div class="time">ok. 4h</div>
+                </div>
+                <div class="distance-card">
+                    <div class="city">Stargard</div>
+                    <div class="km">~330 km</div>
+                    <div class="time">ok. 3h</div>
+                </div>
+            </div>
+
+            <div class="distance-benefits">
+                <div class="distance-benefit">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg>
+                    </div>
+                    <span>Bezpłatny odbiór z dworca (do ustalenia)</span>
+                </div>
+                <div class="distance-benefit">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </div>
+                    <span>Lokalizacja poza województwem = większa dyskrecja</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL MEDIA -->
+    <section class="social-section">
+        <div class="container">
+            <h2>Znajdziesz nas również na</h2>
+            <div class="social-links">
+                <a href="https://www.facebook.com/osrodekleczeniauzalezniencom" target="_blank" class="social-link">
+                    <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    Facebook
+                </a>
+                <a href="https://www.youtube.com/@krystiannagaba" target="_blank" class="social-link">
+                    <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                    YouTube
+                </a>
+                <a href="https://www.instagram.com/krystiannagaba/" target="_blank" class="social-link">
+                    <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    Instagram
+                </a>
+                <a href="https://www.tiktok.com/@krystian.nagaba" target="_blank" class="social-link">
+                    <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"></path></svg>
+                    TikTok
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPINIE -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="testimonials-header">
+                <p class="subtitle">Opinie naszych uczestników</p>
+                <h2>Co mówią o nas?</h2>
+            </div>
+
+            <div class="rating-summary">
+                <div class="rating-stars">★★★★★</div>
+                <div class="rating-number">4.7 <span>/ 5</span></div>
+                <div class="rating-count">Na podstawie 230 opinii w Google</div>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <span class="quote-icon">„</span>
+                    <p class="text">„Cztery tygodnie, które realnie ustawiły mi życie na nowo. Pierwszy raz od dawna poczułem, że mogę zacząć czysty rozdział. Atmosfera była bardzo domowa."</p>
+                    <div class="author">— Tomek K.</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <span class="quote-icon">„</span>
+                    <p class="text">„Minęły trzy tygodnie od zakończenia miesięcznego pobytu i wiem, że to była jedna z najlepszych decyzji w moim życiu. Trzymam się nowego kierunku."</p>
+                    <div class="author">— Maciej W.</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <span class="quote-icon">„</span>
+                    <p class="text">„Świetne prowadzenie i kontakt także po wyjeździe — spotkania online i regularne zjazdy. Dużo konkretu, profesjonalne podejście i bardzo dobra atmosfera."</p>
+                    <div class="author">— Jan S.</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <span class="quote-icon">„</span>
+                    <p class="text">„Dostali mnie w najtrudniejszym momencie. Trafiłem na ludzi z pasją."</p>
+                    <div class="author">— Mati S.</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <span class="quote-icon">„</span>
+                    <p class="text">„To miejsce pomogło mi wrócić do normalności i nauczyć się żyć spokojniej i sensowniej."</p>
+                    <div class="author">— Mateusz S.</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <span class="quote-icon">„</span>
+                    <p class="text">„Wyciszenie, zrozumienie, rozmowa, nauka nowych rzeczy i realna szansa na lepsze życie po wyjściu. Dziękuję!"</p>
+                    <div class="author">— Dorota S.</div>
+                </div>
+            </div>
+
+            <div class="google-link">
+                <a href="https://www.google.com/maps/place/My+Way+-+Ośrodek+Leczenia+Uzależnień/@54.6273455,18.2585185,17z/data=!4m8!3m7!1s0x46fda17ea9a6ceed:0xd18689e7fe5655cf!8m2!3d54.6273424!4d18.2610934!9m1!1b1!16s%2Fg%2F11rfq31gkl" target="_blank">
+                    Zobacz wszystkie opinie w Google
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-white">
+        <div class="container">
+            <div class="section-header">
+                <h2>Najczęściej zadawane pytania</h2>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>Jak długo trwa pobyt?</h4>
+                    <p>Od 4 do 12 tygodni - w zależności od Twoich potrzeb i indywidualnego planu. Długość pobytu ustalamy wspólnie.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Czy jest wsparcie po pobycie?</h4>
+                    <p>Tak. Oferujemy zajęcia online, zjazdy i konsultacje indywidualne. Nie zostawiamy Cię samego po zakończeniu pobytu.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Jak wygląda harmonogram dnia?</h4>
+                    <p>Każdy dzień jest zaplanowany - od porannych zajęć aktywizujących, przez sesje grupowe, po czas na regenerację i relaks.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Czy ośrodek jest czynny cały rok?</h4>
+                    <p>Tak, przyjmujemy gości przez cały rok, 7 dni w tygodniu.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Jak zarezerwować miejsce?</h4>
+                    <p>Zadzwoń: 731 395 295. Porozmawiamy o Twojej sytuacji i odpowiemy na wszystkie pytania. Bez zobowiązań.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Zadzwoń teraz</h2>
+            <p>Pierwszy krok to rozmowa. Bez zobowiązań.<br>Odpowiemy na Twoje pytania i pomożemy podjąć decyzję.</p>
+
+            <div class="cta-phone">
+                <a href="tel:+48731395295">+48 731 395 295</a>
+            </div>
+            <div class="cta-hours">Czynne całodobowo</div>
+
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="tel:+48731395295" class="btn btn-primary btn-large">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    Zadzwoń teraz
+                </a>
+                <a href="https://osrodek-myway.pl" target="_blank" class="btn btn-outline btn-large">
+                    Dowiedz się więcej
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">My<span>Way</span> Kąpino</div>
+            <div class="footer-address">
+                ul. Wichrowe Wzgórza 21, 84-200 Kąpino
+            </div>
+            <div class="footer-contact">
+                <a href="tel:+48731395295">+48 731 395 295</a> &nbsp;|&nbsp;
+                <a href="https://osrodek-myway.pl" target="_blank">osrodek-myway.pl</a>
+            </div>
+
+            <div class="footer-social">
+                <a href="https://www.facebook.com/osrodekleczeniauzalezniencom" target="_blank" title="Facebook">
+                    <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                </a>
+                <a href="https://www.youtube.com/@krystiannagaba" target="_blank" title="YouTube">
+                    <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                </a>
+                <a href="https://www.instagram.com/krystiannagaba/" target="_blank" title="Instagram">
+                    <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <a href="https://www.tiktok.com/@krystian.nagaba" target="_blank" title="TikTok">
+                    <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"></path></svg>
+                </a>
+            </div>
+
+            <p class="copyright">&copy; 2026 MyWay Kąpino. Wszystkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+
+    <!-- STICKY BOTTOM BAR -->
+    <div class="bottom-bar">
+        <span class="bottom-bar-text">Ośrodek <strong>MyWay</strong> - dla mieszkańców zachodniopomorskiego</span>
+        <a href="tel:+48731395295" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            Zadzwoń: 731 395 295
+        </a>
+    </div>
+
+</body>
+</html>
