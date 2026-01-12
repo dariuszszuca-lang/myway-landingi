@@ -22,6 +22,16 @@
     },
     {
       "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "zachodniopomorskie.mywaystart.pl"
+        }
+      ],
+      "destination": "/zachodniopomorskie/index.html"
+    },
+    {
+      "source": "/",
       "destination": "/warminsko-mazurskie/index.html"
     },
     {
@@ -31,6 +41,10 @@
     {
       "source": "/pomorskie",
       "destination": "/pomorskie/index.html"
+    },
+    {
+      "source": "/zachodniopomorskie",
+      "destination": "/zachodniopomorskie/index.html"
     }
   ]
 }
