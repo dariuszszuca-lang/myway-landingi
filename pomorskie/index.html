@@ -1237,7 +1237,7 @@
                         </li>
                         <li>
                             <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
-                            Terapeuci z wieloletnim doświadczeniem
+                            Wieloletnie doświadczenie
                         </li>
                         <li>
                             <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
@@ -1448,6 +1448,123 @@
             Zadzwoń: 731 395 295
         </a>
     </div>
+
+    <!-- COOKIE BANNER -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+            <p>Ta strona używa plików cookies, aby zapewnić najlepsze doświadczenia. Kontynuując przeglądanie, zgadzasz się na ich użycie.</p>
+            <div class="cookie-buttons">
+                <button onclick="acceptCookies()" class="cookie-btn accept">Akceptuję</button>
+                <a href="https://osrodek-myway.pl/polityka-prywatnosci" target="_blank" class="cookie-btn more">Więcej</a>
+            </div>
+        </div>
+    </div>
+    <div id="cookieIcon" class="cookie-icon" onclick="showCookieBanner()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+    </div>
+
+    <style>
+        .cookie-banner {
+            position: fixed;
+            bottom: 100px;
+            left: 20px;
+            max-width: 360px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            padding: 20px;
+            z-index: 9999;
+            display: none;
+            border: 1px solid #e5e5e5;
+        }
+        .cookie-banner.show {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .cookie-content p {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .cookie-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .cookie-btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            text-align: center;
+        }
+        .cookie-btn.accept {
+            background: #0d9488;
+            color: #fff;
+        }
+        .cookie-btn.accept:hover {
+            background: #0f766e;
+        }
+        .cookie-btn.more {
+            background: #f1f5f9;
+            color: #555;
+        }
+        .cookie-btn.more:hover {
+            background: #e2e8f0;
+        }
+        .cookie-icon {
+            position: fixed;
+            bottom: 100px;
+            left: 20px;
+            width: 48px;
+            height: 48px;
+            background: #0d9488;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 9998;
+            box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);
+            color: #fff;
+            transition: transform 0.2s;
+        }
+        .cookie-icon:hover {
+            transform: scale(1.1);
+        }
+        .cookie-icon.show {
+            display: flex;
+        }
+    </style>
+
+    <script>
+        function checkCookieConsent() {
+            if (localStorage.getItem('cookieConsent') === 'accepted') {
+                document.getElementById('cookieIcon').classList.add('show');
+            } else {
+                document.getElementById('cookieBanner').classList.add('show');
+            }
+        }
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieBanner').classList.remove('show');
+            document.getElementById('cookieIcon').classList.add('show');
+        }
+        function showCookieBanner() {
+            document.getElementById('cookieIcon').classList.remove('show');
+            document.getElementById('cookieBanner').classList.add('show');
+        }
+        document.addEventListener('DOMContentLoaded', checkCookieConsent);
+    </script>
 
 </body>
 </html>
