@@ -32,6 +32,16 @@
     },
     {
       "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "kujawsko-pomorskie.mywaystart.pl"
+        }
+      ],
+      "destination": "/kujawsko-pomorskie/index.html"
+    },
+    {
+      "source": "/",
       "destination": "/warminsko-mazurskie/index.html"
     },
     {
@@ -45,6 +55,10 @@
     {
       "source": "/zachodniopomorskie",
       "destination": "/zachodniopomorskie/index.html"
+    },
+    {
+      "source": "/kujawsko-pomorskie",
+      "destination": "/kujawsko-pomorskie/index.html"
     }
   ]
 }
