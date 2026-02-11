@@ -21,6 +21,46 @@
       "destination": "/warminsko-mazurskie/index.html"
     },
     {
+      "source": "/cennik",
+      "has": [
+        {
+          "type": "host",
+          "value": "warminsko-mazurskie.myway-osrodek.pl"
+        }
+      ],
+      "destination": "/warminsko-mazurskie/cennik.html"
+    },
+    {
+      "source": "/lokalizacja",
+      "has": [
+        {
+          "type": "host",
+          "value": "warminsko-mazurskie.myway-osrodek.pl"
+        }
+      ],
+      "destination": "/warminsko-mazurskie/lokalizacja.html"
+    },
+    {
+      "source": "/o-nas",
+      "has": [
+        {
+          "type": "host",
+          "value": "warminsko-mazurskie.myway-osrodek.pl"
+        }
+      ],
+      "destination": "/warminsko-mazurskie/o-nas.html"
+    },
+    {
+      "source": "/opinie",
+      "has": [
+        {
+          "type": "host",
+          "value": "warminsko-mazurskie.myway-osrodek.pl"
+        }
+      ],
+      "destination": "/warminsko-mazurskie/opinie.html"
+    },
+    {
       "source": "/",
       "has": [
         {
@@ -43,6 +83,22 @@
     {
       "source": "/",
       "destination": "/warminsko-mazurskie/index.html"
+    },
+    {
+      "source": "/cennik",
+      "destination": "/warminsko-mazurskie/cennik.html"
+    },
+    {
+      "source": "/lokalizacja",
+      "destination": "/warminsko-mazurskie/lokalizacja.html"
+    },
+    {
+      "source": "/o-nas",
+      "destination": "/warminsko-mazurskie/o-nas.html"
+    },
+    {
+      "source": "/opinie",
+      "destination": "/warminsko-mazurskie/opinie.html"
     },
     {
       "source": "/warminsko-mazurskie",
