@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GS71KVGGC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6GS71KVGGC');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cennik Pobytu | MyWay Kąpino - Ośrodek dla Pomorza</title>
+    <meta name="description" content="Przejrzyste zasady i cennik pobytu w ośrodku MyWay Kąpino. Bez ukrytych kosztów. Sprawdź, co zawiera pobyt i jak zarezerwować miejsce.">
+    <link rel="canonical" href="https://pomorskie.myway-osrodek.pl/cennik">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Terapia uzależnień - Ośrodek MyWay Kąpino",
+        "description": "Prywatny ośrodek terapii uzależnień na Kaszubach. Kameralna atmosfera, indywidualne podejście, profesjonalny zespół.",
+        "provider": {
+            "@type": "Organization",
+            "name": "MyWay Kąpino",
+            "telephone": "+48731395295",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "ul. Wichrowe Wzgórza 21",
+                "addressLocality": "Kąpino",
+                "postalCode": "84-200",
+                "addressCountry": "PL"
+            }
+        },
+        "areaServed": {
+            "@type": "State",
+            "name": "województwo pomorskie"
+        }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --accent: #0d9488;
+            --accent-light: #5eead4;
+            --accent-dark: #0f766e;
+            --navy: #0a1628;
+            --navy-light: #1e3a5f;
+            --navy-medium: #152238;
+            --gray: #64748b;
+            --gray-light: #94a3b8;
+            --white: #ffffff;
+            --off-white: #f8fafc;
+            --light-bg: #f1f5f9;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--off-white);
+            color: var(--navy);
+            line-height: 1.7;
+            padding-bottom: 90px;
+            padding-top: 70px;
+            font-weight: 300;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+            padding: 18px 36px; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 13px;
+            text-transform: uppercase; letter-spacing: 3px; text-decoration: none; border-radius: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; position: relative; overflow: hidden;
+        }
+        .btn-primary { background: var(--accent); color: var(--white); border: none; }
+        .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 20px 40px rgba(13,148,136,0.3); }
+        .btn-outline { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.3); }
+        .btn-outline:hover { background: var(--accent); color: var(--navy); border-color: var(--accent); }
+        .btn-large { padding: 22px 48px; font-size: 14px; }
+
+        /* NAV */
+        .main-nav {
+            position: fixed; top: 0; left: 0; right: 0;
+            background: rgba(10, 22, 40, 0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            z-index: 200; border-bottom: 1px solid rgba(13, 148, 136, 0.2); height: 70px;
+        }
+        .nav-container { display: flex; align-items: center; justify-content: space-between; height: 70px; }
+        .nav-logo { font-family: 'DM Serif Display', serif; font-size: 26px; font-weight: 400; color: #fff; text-decoration: none; letter-spacing: 1px; }
+        .nav-logo span { color: var(--accent); }
+        .nav-links { display: flex; align-items: center; gap: 4px; }
+        .nav-links a {
+            color: #94a3b8; text-decoration: none; font-family: 'Outfit', sans-serif; font-size: 12px;
+            font-weight: 500; text-transform: uppercase; letter-spacing: 2px; padding: 8px 14px; transition: all 0.3s ease;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+        .nav-phone { padding: 10px 20px !important; font-size: 12px !important; letter-spacing: 2px !important; }
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+        .nav-toggle span { display: block; width: 24px; height: 2px; background: #fff; }
+        @media (max-width: 900px) {
+            .nav-toggle { display: flex; }
+            .nav-links { display: none; position: absolute; top: 70px; left: 0; right: 0; background: rgba(10, 22, 40, 0.98); flex-direction: column; padding: 20px; border-bottom: 1px solid rgba(13, 148, 136, 0.3); }
+            .nav-links.open { display: flex; }
+            .nav-links a { padding: 12px 20px; width: 100%; }
+            .nav-phone { display: none; }
+        }
+
+        /* PAGE HERO */
+        .page-hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            padding: 100px 24px 80px; text-align: center; position: relative;
+        }
+        .page-hero::after {
+            content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+        .page-hero .overline {
+            font-size: 12px; text-transform: uppercase; letter-spacing: 4px; color: var(--accent); margin-bottom: 20px; display: block;
+        }
+        .page-hero h1 { font-size: 56px; color: var(--white); margin-bottom: 20px; }
+        .page-hero p { font-size: 18px; color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto; line-height: 1.8; }
+
+        /* SECTIONS */
+        section { padding: 100px 0; }
+        .section-header { text-align: center; margin-bottom: 70px; }
+        .section-header .overline { font-size: 12px; text-transform: uppercase; letter-spacing: 4px; color: var(--accent); margin-bottom: 20px; display: block; }
+        .section-header h2 { font-size: 48px; margin-bottom: 20px; }
+        .section-header p { font-size: 16px; color: var(--gray); max-width: 600px; margin: 0 auto; line-height: 1.8; }
+
+        /* PRICING CARDS */
+        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .pricing-card {
+            background: var(--white); padding: 50px 40px; text-align: center; position: relative;
+            box-shadow: 0 5px 30px rgba(10,22,40,0.08); transition: all 0.4s ease;
+        }
+        .pricing-card:hover { transform: translateY(-8px); box-shadow: 0 15px 50px rgba(10,22,40,0.15); }
+        .pricing-card.featured {
+            background: var(--navy); color: var(--white); transform: scale(1.05);
+        }
+        .pricing-card.featured:hover { transform: scale(1.05) translateY(-8px); }
+        .pricing-card.featured::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+        .pricing-card .badge {
+            display: inline-block; background: var(--accent); color: var(--white); padding: 6px 16px;
+            font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px;
+        }
+        .pricing-card h3 { font-size: 24px; margin-bottom: 12px; }
+        .pricing-card .duration { font-size: 14px; color: var(--gray); margin-bottom: 30px; }
+        .pricing-card.featured .duration { color: rgba(255,255,255,0.6); }
+        .pricing-card .price { font-family: 'DM Serif Display', serif; font-size: 48px; color: var(--accent); margin-bottom: 8px; }
+        .pricing-card .price-note { font-size: 13px; color: var(--gray); margin-bottom: 30px; }
+        .pricing-card.featured .price-note { color: rgba(255,255,255,0.5); }
+        .pricing-card .features-list { list-style: none; text-align: left; margin-bottom: 30px; }
+        .pricing-card .features-list li {
+            padding: 10px 0; font-size: 14px; color: var(--gray); border-bottom: 1px solid var(--light-bg);
+            display: flex; align-items: center; gap: 12px;
+        }
+        .pricing-card.featured .features-list li { color: rgba(255,255,255,0.7); border-bottom-color: rgba(255,255,255,0.1); }
+        .pricing-card .features-list li .check-icon { color: var(--accent); font-weight: 700; font-size: 16px; flex-shrink: 0; }
+
+        /* INCLUDED GRID */
+        .included-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .included-item {
+            background: var(--white); padding: 40px 30px; text-align: center;
+            box-shadow: 0 3px 20px rgba(10,22,40,0.06); transition: all 0.3s ease;
+        }
+        .included-item:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(10,22,40,0.1); }
+        .included-item .icon {
+            width: 64px; height: 64px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;
+            background: rgba(13,148,136,0.1);
+        }
+        .included-item .icon svg { width: 28px; height: 28px; stroke: var(--accent); stroke-width: 1.5; fill: none; }
+        .included-item h4 { font-size: 18px; margin-bottom: 10px; }
+        .included-item p { font-size: 14px; color: var(--gray); line-height: 1.7; }
+
+        /* STEPS */
+        .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+        .step-card { text-align: center; padding: 40px 24px; }
+        .step-number {
+            width: 64px; height: 64px; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center;
+            background: var(--accent); font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--white);
+        }
+        .step-card h4 { font-size: 18px; margin-bottom: 12px; }
+        .step-card p { font-size: 14px; color: var(--gray); line-height: 1.7; }
+
+        /* FAQ */
+        .faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto; }
+        .faq-item {
+            padding: 40px; background: var(--white); box-shadow: 0 5px 25px rgba(10,22,40,0.08); transition: all 0.4s ease;
+        }
+        .faq-item:hover { transform: translateY(-3px); box-shadow: 0 10px 35px rgba(10,22,40,0.12); }
+        .faq-item h4 { font-size: 18px; margin-bottom: 16px; color: var(--navy); }
+        .faq-item p { font-size: 15px; color: var(--gray); line-height: 1.8; }
+
+        /* CTA */
+        .cta-section {
+            background: var(--navy); text-align: center; padding: 150px 24px; position: relative; color: var(--white);
+        }
+        .cta-section::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+        .cta-section .overline { font-size: 12px; text-transform: uppercase; letter-spacing: 4px; color: var(--accent); margin-bottom: 20px; display: block; }
+        .cta-section h2 { font-size: 56px; margin-bottom: 20px; color: var(--white); }
+        .cta-section p { font-size: 18px; opacity: 0.7; margin-bottom: 50px; line-height: 1.8; }
+        .cta-phone { font-size: 56px; font-family: 'DM Serif Display', serif; font-weight: 400; margin-bottom: 16px; letter-spacing: 2px; }
+        .cta-phone a { color: var(--accent); text-decoration: none; }
+        .cta-hours { font-size: 13px; opacity: 0.5; margin-bottom: 50px; text-transform: uppercase; letter-spacing: 3px; }
+        .cta-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+
+        /* FOOTER */
+        footer { padding: 80px 0 50px; background: var(--navy-medium); text-align: center; color: var(--white); }
+        .footer-logo { font-family: 'DM Serif Display', serif; font-size: 32px; font-weight: 400; margin-bottom: 24px; letter-spacing: 4px; color: var(--white); }
+        .footer-logo span { color: var(--accent); }
+        .footer-address { font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 24px; line-height: 1.8; letter-spacing: 1px; }
+        .footer-contact { font-size: 16px; margin-bottom: 40px; }
+        .footer-contact a { color: var(--accent); text-decoration: none; transition: opacity 0.3s ease; }
+        .footer-contact a:hover { opacity: 0.7; }
+        .footer-social { display: flex; justify-content: center; gap: 16px; margin-bottom: 40px; }
+        .footer-social a {
+            width: 50px; height: 50px; border: 1px solid rgba(255,255,255,0.2); display: flex;
+            align-items: center; justify-content: center; color: rgba(255,255,255,0.7); transition: all 0.4s ease;
+        }
+        .footer-social a:hover { background: var(--accent); border-color: var(--accent); color: var(--navy); }
+        .footer-social svg { width: 18px; height: 18px; fill: currentColor; }
+        .copyright { font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 2px; text-transform: uppercase; }
+
+        /* BOTTOM BAR */
+        .bottom-bar {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-medium) 100%);
+            padding: 20px 24px; z-index: 100; display: flex; justify-content: center; align-items: center; gap: 40px;
+            border-top: 1px solid rgba(13, 148, 136, 0.3);
+        }
+        .bottom-bar-text { font-size: 14px; color: var(--white); letter-spacing: 1px; }
+        .bottom-bar-text strong { color: var(--accent); }
+        .bottom-bar .btn { padding: 14px 32px; }
+
+        /* COOKIES */
+        .cookie-banner {
+            position: fixed; bottom: 100px; left: 20px; max-width: 360px; background: #fff;
+            border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); padding: 20px; z-index: 9999;
+            display: none; border: 1px solid #e5e5e5;
+        }
+        .cookie-banner.show { display: block; animation: slideIn 0.3s ease; }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .cookie-content p { font-size: 13px; color: #555; margin-bottom: 16px; line-height: 1.6; }
+        .cookie-buttons { display: flex; gap: 10px; }
+        .cookie-btn { padding: 10px 20px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; text-decoration: none; text-align: center; }
+        .cookie-btn.accept { background: var(--accent); color: #fff; }
+        .cookie-btn.accept:hover { background: var(--accent-dark); }
+        .cookie-btn.more { background: #f1f5f9; color: #555; }
+        .cookie-btn.more:hover { background: #e2e8f0; }
+        .cookie-icon {
+            position: fixed; bottom: 100px; left: 20px; width: 48px; height: 48px; background: var(--accent);
+            border-radius: 50%; display: none; align-items: center; justify-content: center; cursor: pointer;
+            z-index: 9998; box-shadow: 0 4px 15px rgba(13,148,136,0.3); color: #fff; transition: transform 0.2s;
+        }
+        .cookie-icon:hover { transform: scale(1.1); }
+        .cookie-icon.show { display: flex; }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .pricing-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+            .pricing-card.featured { transform: none; }
+            .pricing-card.featured:hover { transform: translateY(-8px); }
+            .included-grid { grid-template-columns: repeat(2, 1fr); }
+            .steps-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .page-hero h1 { font-size: 36px; }
+            .section-header h2 { font-size: 36px; }
+            .faq-grid { grid-template-columns: 1fr; }
+            .included-grid { grid-template-columns: 1fr; }
+            .steps-grid { grid-template-columns: 1fr; }
+            .cta-phone { font-size: 36px; }
+            .cta-section h2 { font-size: 36px; }
+            .bottom-bar { flex-direction: column; gap: 16px; padding: 16px 20px; }
+        }
+        @media (max-width: 480px) {
+            .page-hero h1 { font-size: 28px; }
+            body { padding-bottom: 130px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <a href="/" class="nav-logo">My<span>Way</span></a>
+            <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="/">Strona główna</a>
+                <a href="/cennik" class="active">Cennik</a>
+                <a href="/lokalizacja">Lokalizacja</a>
+                <a href="/o-nas">O nas</a>
+                <a href="/opinie">Opinie</a>
+            </div>
+            <a href="tel:+48731395295" class="nav-phone btn btn-primary">731 395 295</a>
+        </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="overline">Cennik</span>
+            <h1>Cennik Pobytu</h1>
+            <p>Przejrzyste zasady, bez ukrytych kosztów. Wszystko, czego potrzebujesz, jest w cenie.</p>
+        </div>
+    </section>
+
+    <!-- PRICING CARDS -->
+    <section style="background: var(--off-white);">
+        <div class="container">
+            <div class="section-header">
+                <span class="overline">Pobyt</span>
+                <h2>Wybierz długość pobytu</h2>
+                <p>Każdy wariant obejmuje pełen pakiet terapeutyczny, wyżywienie i zakwaterowanie</p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Pobyt podstawowy</h3>
+                    <div class="duration">4 tygodnie</div>
+                    <div class="price">7 600 zł</div>
+                    <div class="price-note">1 900 zł / tydzień</div>
+                    <ul class="features-list">
+                        <li><span class="check-icon">&#10003;</span> Terapia indywidualna i grupowa</li>
+                        <li><span class="check-icon">&#10003;</span> Zakwaterowanie i pełne wyżywienie</li>
+                        <li><span class="check-icon">&#10003;</span> Opieka terapeutyczna 24/7</li>
+                        <li><span class="check-icon">&#10003;</span> Plan po zakończeniu pobytu</li>
+                    </ul>
+                    <a href="tel:+48731395295" class="btn btn-primary" style="width:100%;">Zarezerwuj</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <span class="badge">Najpopularniejszy</span>
+                    <h3>Pobyt rozszerzony</h3>
+                    <div class="duration">6 tygodni</div>
+                    <div class="price">10 800 zł</div>
+                    <div class="price-note">1 800 zł / tydzień</div>
+                    <ul class="features-list">
+                        <li><span class="check-icon">&#10003;</span> Wszystko z pobytu podstawowego</li>
+                        <li><span class="check-icon">&#10003;</span> Pogłębiona praca terapeutyczna</li>
+                        <li><span class="check-icon">&#10003;</span> Warsztaty rozwojowe</li>
+                        <li><span class="check-icon">&#10003;</span> Wsparcie po wyjeździe (zjazdy)</li>
+                    </ul>
+                    <a href="tel:+48731395295" class="btn btn-primary" style="width:100%;">Zarezerwuj</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Pobyt pełny</h3>
+                    <div class="duration">8-12 tygodni</div>
+                    <div class="price">Indywidualnie</div>
+                    <div class="price-note">Najniższa cena za tydzień</div>
+                    <ul class="features-list">
+                        <li><span class="check-icon">&#10003;</span> Pełen program terapeutyczny</li>
+                        <li><span class="check-icon">&#10003;</span> Praca nad nawrotami</li>
+                        <li><span class="check-icon">&#10003;</span> Reintegracja społeczna</li>
+                        <li><span class="check-icon">&#10003;</span> Opieka poszpitalna online</li>
+                    </ul>
+                    <a href="tel:+48731395295" class="btn btn-primary" style="width:100%;">Zadzwoń po cenę</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CO JEST W CENIE -->
+    <section style="background: var(--light-bg);">
+        <div class="container">
+            <div class="section-header">
+                <span class="overline">W cenie</span>
+                <h2>Co jest w cenie pobytu?</h2>
+                <p>O nic nie musisz się martwić. Wszystko masz zapewnione od pierwszego dnia.</p>
+            </div>
+
+            <div class="included-grid">
+                <div class="included-item">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    </div>
+                    <h4>Zakwaterowanie</h4>
+                    <p>Komfortowe pokoje w kameralnym ośrodku na Kaszubach, w otoczeniu lasu</p>
+                </div>
+                <div class="included-item">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                    </div>
+                    <h4>Pełne wyżywienie</h4>
+                    <p>Trzy posiłki dziennie, zdrowa dieta, przekąski i napoje bez ograniczeń</p>
+                </div>
+                <div class="included-item">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </div>
+                    <h4>Terapia indywidualna</h4>
+                    <p>Regularne sesje z terapeutą, plan dostosowany do Twojej sytuacji</p>
+                </div>
+                <div class="included-item">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <h4>Terapia grupowa</h4>
+                    <p>Spotkania w małej grupie, wymiana doświadczeń i wzajemne wsparcie</p>
+                </div>
+                <div class="included-item">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <h4>Opieka 24/7</h4>
+                    <p>Zespół terapeutyczny dostępny przez całą dobę, pomoc w każdej chwili</p>
+                </div>
+                <div class="included-item">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </div>
+                    <h4>Plan po terapii</h4>
+                    <p>Indywidualny plan zdrowienia, zjazdy i spotkania online po wyjeździe</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JAK ZAREZERWOWAĆ -->
+    <section style="background: var(--off-white);">
+        <div class="container">
+            <div class="section-header">
+                <span class="overline">Rezerwacja</span>
+                <h2>Jak zarezerwować miejsce?</h2>
+                <p>Cztery proste kroki. Zaczynasz od jednego telefonu.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h4>Zadzwoń do nas</h4>
+                    <p>Porozmawiamy o Twojej sytuacji. Bez zobowiązań, bez oceniania. Po prostu chcemy pomóc.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h4>Ustalamy szczegóły</h4>
+                    <p>Dobieramy długość pobytu i omawiamy plan terapii. Odpowiadamy na wszystkie pytania.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h4>Rezerwacja miejsca</h4>
+                    <p>Potwierdzamy termin i rezerwujemy pokój. Podpowiadamy, co zabrać ze sobą.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h4>Przyjazd do ośrodka</h4>
+                    <p>Odbieramy z dworca lub pomagamy dojechać. Od pierwszego dnia jesteś pod opieką.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section style="background: var(--light-bg);">
+        <div class="container">
+            <div class="section-header">
+                <span class="overline">Pytania</span>
+                <h2>Najczęściej zadawane pytania</h2>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>Czy mogę płacić w ratach?</h4>
+                    <p>Tak, oferujemy elastyczne formy płatności. Zadzwoń, a ustalimy rozwiązanie dopasowane do Twoich możliwości.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Czy cena obejmuje leki?</h4>
+                    <p>Podstawowa opieka zdrowotna jest w cenie. W przypadku specjalistycznych leków ustalamy to indywidualnie.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Co jeśli chcę przedłużyć pobyt?</h4>
+                    <p>To możliwe i często rekomendowane. Koszt kolejnych tygodni ustalamy z korzystną stawką.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Czy rodzina może odwiedzać?</h4>
+                    <p>Tak, w ustalonych dniach. Prowadzimy też spotkania rodzinne z terapeutą, które pomagają całej rodzinie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <span class="overline">Zrób pierwszy krok</span>
+            <h2>Porozmawiajmy o Twoim pobycie</h2>
+            <p>Jeden telefon — podamy konkretne koszty<br>i odpowiemy na wszystkie pytania.</p>
+
+            <div class="cta-phone">
+                <a href="tel:+48731395295">731 395 295</a>
+            </div>
+            <div class="cta-hours">Odbieramy o każdej porze</div>
+
+            <div class="cta-buttons">
+                <a href="tel:+48731395295" class="btn btn-primary btn-large">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    Zadzwoń
+                </a>
+                <a href="https://osrodek-myway.pl" target="_blank" class="btn btn-outline btn-large">
+                    Zobacz więcej
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">My<span>Way</span> Kąpino</div>
+            <div class="footer-address">ul. Wichrowe Wzgórza 21, 84-200 Kąpino</div>
+            <div class="footer-contact">
+                <a href="tel:+48731395295">+48 731 395 295</a> &nbsp;|&nbsp;
+                <a href="https://osrodek-myway.pl" target="_blank">osrodek-myway.pl</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/osrodekleczeniauzalezniencom" target="_blank" title="Facebook">
+                    <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                </a>
+                <a href="https://www.youtube.com/@krystiannagaba" target="_blank" title="YouTube">
+                    <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                </a>
+                <a href="https://www.instagram.com/krystiannagaba/" target="_blank" title="Instagram">
+                    <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <a href="https://www.tiktok.com/@krystian.nagaba" target="_blank" title="TikTok">
+                    <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"></path></svg>
+                </a>
+            </div>
+            <p class="copyright">&copy; 2026 MyWay Kąpino. Wszystkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+
+    <!-- STICKY BOTTOM BAR -->
+    <div class="bottom-bar">
+        <span class="bottom-bar-text">Ośrodek <strong>MyWay</strong> - dla mieszkańców Pomorza</span>
+        <a href="tel:+48731395295" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            Zadzwoń: 731 395 295
+        </a>
+    </div>
+
+    <!-- COOKIE BANNER -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+            <p>Ta strona używa plików cookies, aby zapewnić najlepsze doświadczenia. Kontynuując przeglądanie, zgadzasz się na ich użycie.</p>
+            <div class="cookie-buttons">
+                <button onclick="acceptCookies()" class="cookie-btn accept">Akceptuję</button>
+                <a href="https://osrodek-myway.pl/polityka-prywatnosci" target="_blank" class="cookie-btn more">Więcej</a>
+            </div>
+        </div>
+    </div>
+    <div id="cookieIcon" class="cookie-icon" onclick="showCookieBanner()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('open');
+        }
+        function checkCookieConsent() {
+            if (localStorage.getItem('cookieConsent') === 'accepted') {
+                document.getElementById('cookieIcon').classList.add('show');
+            } else {
+                document.getElementById('cookieBanner').classList.add('show');
+            }
+        }
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieBanner').classList.remove('show');
+            document.getElementById('cookieIcon').classList.add('show');
+        }
+        function showCookieBanner() {
+            document.getElementById('cookieIcon').classList.remove('show');
+            document.getElementById('cookieBanner').classList.add('show');
+        }
+        document.addEventListener('DOMContentLoaded', checkCookieConsent);
+    </script>
+
+</body>
+</html>

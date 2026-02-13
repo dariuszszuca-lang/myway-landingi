@@ -41,6 +41,7 @@
             background: var(--white);
             color: var(--dark);
             line-height: 1.7;
+            padding-top: 70px;
             padding-bottom: 80px;
         }
 
@@ -820,6 +821,81 @@
             padding: 12px 24px;
         }
 
+        /* NAV */
+        .main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 200;
+            border-bottom: 1px solid rgba(79, 70, 229, 0.2);
+            height: 70px;
+        }
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+        .nav-logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .nav-logo span { color: var(--primary); }
+        .nav-links { display: flex; align-items: center; gap: 4px; }
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 8px 14px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+            background: rgba(79, 70, 229, 0.1);
+        }
+        .nav-phone { padding: 10px 20px !important; font-size: 13px !important; }
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .nav-toggle span { display: block; width: 24px; height: 2px; background: #fff; transition: all 0.3s ease; }
+        @media (max-width: 900px) {
+            .nav-toggle { display: flex; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(30, 41, 59, 0.98);
+                flex-direction: column;
+                padding: 20px;
+                border-bottom: 2px solid var(--primary);
+            }
+            .nav-links.open { display: flex; }
+            .nav-links a { padding: 12px 20px; width: 100%; }
+            .nav-phone { display: none; }
+        }
+
         /* RESPONSIVE */
         @media (max-width: 1024px) {
             .distance-grid {
@@ -912,6 +988,24 @@
     </style>
 </head>
 <body>
+
+    <!-- NAV -->
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <a href="/" class="nav-logo">My<span>Way</span></a>
+            <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="/" class="active">Strona główna</a>
+                <a href="/cennik">Cennik</a>
+                <a href="/lokalizacja">Lokalizacja</a>
+                <a href="/o-nas">O nas</a>
+                <a href="/opinie">Opinie</a>
+            </div>
+            <a href="tel:+48731395295" class="nav-phone btn btn-primary">731 395 295</a>
+        </div>
+    </nav>
 
     <!-- HERO -->
     <section class="hero">
@@ -1392,6 +1486,9 @@
     </style>
 
     <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('open');
+        }
         function checkCookieConsent() {
             if (localStorage.getItem('cookieConsent') === 'accepted') {
                 document.getElementById('cookieIcon').classList.add('show');

@@ -71,6 +71,46 @@
       "destination": "/zachodniopomorskie/index.html"
     },
     {
+      "source": "/cennik",
+      "has": [
+        {
+          "type": "host",
+          "value": "zachodniopomorskie.myway-osrodek.pl"
+        }
+      ],
+      "destination": "/zachodniopomorskie/cennik.html"
+    },
+    {
+      "source": "/lokalizacja",
+      "has": [
+        {
+          "type": "host",
+          "value": "zachodniopomorskie.myway-osrodek.pl"
+        }
+      ],
+      "destination": "/zachodniopomorskie/lokalizacja.html"
+    },
+    {
+      "source": "/o-nas",
+      "has": [
+        {
+          "type": "host",
+          "value": "zachodniopomorskie.myway-osrodek.pl"
+        }
+      ],
+      "destination": "/zachodniopomorskie/o-nas.html"
+    },
+    {
+      "source": "/opinie",
+      "has": [
+        {
+          "type": "host",
+          "value": "zachodniopomorskie.myway-osrodek.pl"
+        }
+      ],
+      "destination": "/zachodniopomorskie/opinie.html"
+    },
+    {
       "source": "/",
       "has": [
         {
@@ -79,6 +119,86 @@
         }
       ],
       "destination": "/kujawsko-pomorskie/index.html"
+    },
+    {
+      "source": "/cennik",
+      "has": [
+        {
+          "type": "host",
+          "value": "kujawsko-pomorskie.myway-osrodek.pl"
+        }
+      ],
+      "destination": "/kujawsko-pomorskie/cennik.html"
+    },
+    {
+      "source": "/lokalizacja",
+      "has": [
+        {
+          "type": "host",
+          "value": "kujawsko-pomorskie.myway-osrodek.pl"
+        }
+      ],
+      "destination": "/kujawsko-pomorskie/lokalizacja.html"
+    },
+    {
+      "source": "/o-nas",
+      "has": [
+        {
+          "type": "host",
+          "value": "kujawsko-pomorskie.myway-osrodek.pl"
+        }
+      ],
+      "destination": "/kujawsko-pomorskie/o-nas.html"
+    },
+    {
+      "source": "/opinie",
+      "has": [
+        {
+          "type": "host",
+          "value": "kujawsko-pomorskie.myway-osrodek.pl"
+        }
+      ],
+      "destination": "/kujawsko-pomorskie/opinie.html"
+    },
+    {
+      "source": "/cennik",
+      "has": [
+        {
+          "type": "host",
+          "value": "pomorskie.myway-osrodek.pl"
+        }
+      ],
+      "destination": "/pomorskie/cennik.html"
+    },
+    {
+      "source": "/lokalizacja",
+      "has": [
+        {
+          "type": "host",
+          "value": "pomorskie.myway-osrodek.pl"
+        }
+      ],
+      "destination": "/pomorskie/lokalizacja.html"
+    },
+    {
+      "source": "/o-nas",
+      "has": [
+        {
+          "type": "host",
+          "value": "pomorskie.myway-osrodek.pl"
+        }
+      ],
+      "destination": "/pomorskie/o-nas.html"
+    },
+    {
+      "source": "/opinie",
+      "has": [
+        {
+          "type": "host",
+          "value": "pomorskie.myway-osrodek.pl"
+        }
+      ],
+      "destination": "/pomorskie/opinie.html"
     },
     {
       "source": "/",

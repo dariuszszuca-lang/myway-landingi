@@ -41,6 +41,7 @@
             background: var(--white);
             color: var(--dark);
             line-height: 1.7;
+            padding-top: 70px;
             padding-bottom: 80px;
         }
 
@@ -109,6 +110,119 @@
         .btn-large {
             padding: 18px 36px;
             font-size: 15px;
+        }
+
+        /* NAVIGATION */
+        .main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .nav-logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .nav-logo span {
+            color: var(--primary-light);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+            background: rgba(255,255,255,0.1);
+        }
+
+        .nav-links a.active {
+            color: var(--white);
+            background: var(--primary);
+        }
+
+        .nav-phone {
+            padding: 10px 20px !important;
+            font-size: 13px !important;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .nav-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(30, 41, 59, 0.98);
+                flex-direction: column;
+                padding: 16px;
+                gap: 4px;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 12px 16px;
+                border-radius: 12px;
+            }
+
+            .nav-phone {
+                display: none;
+            }
         }
 
         /* HERO */
@@ -889,6 +1003,24 @@
 </head>
 <body>
 
+    <!-- NAVIGATION -->
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <a href="/" class="nav-logo">My<span>Way</span></a>
+            <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="/" class="active">Strona główna</a>
+                <a href="/cennik">Cennik</a>
+                <a href="/lokalizacja">Lokalizacja</a>
+                <a href="/o-nas">O nas</a>
+                <a href="/opinie">Opinie</a>
+            </div>
+            <a href="tel:+48731395295" class="nav-phone btn btn-primary">731 395 295</a>
+        </div>
+    </nav>
+
     <!-- HERO -->
     <section class="hero">
         <div class="container">
@@ -1385,6 +1517,10 @@
             document.getElementById('cookieBanner').classList.add('show');
         }
         document.addEventListener('DOMContentLoaded', checkCookieConsent);
+
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('open');
+        }
     </script>
 
 </body>

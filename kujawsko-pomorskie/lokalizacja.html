@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GS71KVGGC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6GS71KVGGC');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokalizacja | MyWay Kąpino — dojazd z kujawsko-pomorskiego</title>
+    <meta name="description" content="Ośrodek MyWay Kąpino na Kaszubach. Dojazd z Bydgoszczy 2,5h, z Torunia 2h. Bezpłatny odbiór z dworca. Spokojne miejsce w otoczeniu kaszubskich lasów.">
+    <link rel="canonical" href="https://kujawsko-pomorskie.myway-osrodek.pl/lokalizacja">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #4f46e5;
+            --primary-light: #6366f1;
+            --primary-dark: #4338ca;
+            --primary-bg: #eef2ff;
+            --accent: #f59e0b;
+            --accent-light: #fbbf24;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --gray-light: #f1f5f9;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--white);
+            color: var(--dark);
+            line-height: 1.7;
+            padding-top: 70px;
+            padding-bottom: 80px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+            padding: 16px 32px; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 14px;
+            text-decoration: none; border-radius: 50px; transition: all 0.3s ease; cursor: pointer; border: none;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white); box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4); }
+        .btn-outline { background: var(--white); color: var(--primary); border: 2px solid var(--primary); }
+        .btn-outline:hover { background: var(--primary); color: var(--white); }
+        .btn-large { padding: 18px 36px; font-size: 15px; }
+
+        /* NAV */
+        .main-nav {
+            position: fixed; top: 0; left: 0; right: 0;
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            z-index: 200; border-bottom: 1px solid rgba(79, 70, 229, 0.2); height: 70px;
+        }
+        .nav-container { display: flex; align-items: center; justify-content: space-between; height: 70px; }
+        .nav-logo {
+            font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 700;
+            color: #fff; text-decoration: none; text-transform: uppercase; letter-spacing: 2px;
+        }
+        .nav-logo span { color: var(--primary); }
+        .nav-links { display: flex; align-items: center; gap: 4px; }
+        .nav-links a {
+            color: #ccc; text-decoration: none; font-family: 'Poppins', sans-serif;
+            font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px;
+            padding: 8px 14px; border-radius: 8px; transition: all 0.3s ease;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); background: rgba(79, 70, 229, 0.1); }
+        .nav-phone { padding: 10px 20px !important; font-size: 13px !important; }
+        .nav-toggle {
+            display: none; background: none; border: none; cursor: pointer;
+            padding: 8px; flex-direction: column; gap: 5px;
+        }
+        .nav-toggle span { display: block; width: 24px; height: 2px; background: #fff; transition: all 0.3s ease; }
+        @media (max-width: 900px) {
+            .nav-toggle { display: flex; }
+            .nav-links {
+                display: none; position: absolute; top: 70px; left: 0; right: 0;
+                background: rgba(30, 41, 59, 0.98); flex-direction: column; padding: 20px;
+                border-bottom: 2px solid var(--primary);
+            }
+            .nav-links.open { display: flex; }
+            .nav-links a { padding: 12px 20px; width: 100%; }
+            .nav-phone { display: none; }
+        }
+
+        /* PAGE HERO */
+        .page-hero {
+            padding: 80px 24px; text-align: center;
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
+            position: relative; overflow: hidden;
+        }
+        .page-hero::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=1920&q=80') center/cover no-repeat;
+            opacity: 0.15;
+        }
+        .page-hero > .container { position: relative; z-index: 1; }
+        .page-hero h1 { font-size: 44px; font-weight: 800; color: var(--white); margin-bottom: 16px; letter-spacing: -1px; }
+        .page-hero p { font-size: 18px; color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto; }
+
+        /* SECTIONS */
+        section { padding: 80px 0; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 36px; margin-bottom: 16px; color: var(--dark); }
+        .section-header p { font-size: 16px; color: var(--gray); max-width: 600px; margin: 0 auto; }
+        .section-white { background: var(--white); }
+        .section-light { background: var(--gray-light); }
+        .section-indigo { background: var(--primary-bg); }
+
+        /* MAP */
+        .map-section { padding: 60px 0; }
+        .map-container {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;
+        }
+        .address-card {
+            background: var(--white); padding: 40px; border-radius: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05);
+        }
+        .address-card h3 { font-size: 22px; margin-bottom: 20px; color: var(--dark); }
+        .address-info { margin-bottom: 24px; }
+        .address-info p { font-size: 15px; color: var(--gray); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+        .address-info .icon-sm {
+            width: 36px; height: 36px;
+            background: linear-gradient(135deg, var(--primary-bg) 0%, #c7d2fe 100%);
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 10px; flex-shrink: 0;
+        }
+        .address-info .icon-sm svg { width: 18px; height: 18px; stroke: var(--primary); stroke-width: 2; fill: none; }
+        .map-frame {
+            border-radius: 24px; overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .map-frame iframe { width: 100%; height: 400px; border: 0; }
+
+        /* DISTANCE */
+        .distance-grid {
+            display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-bottom: 50px;
+        }
+        .distance-card {
+            background: var(--white); padding: 28px 20px; text-align: center;
+            border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease; border: 1px solid rgba(0,0,0,0.05);
+        }
+        .distance-card:hover {
+            transform: translateY(-5px); box-shadow: 0 15px 35px rgba(79, 70, 229, 0.15);
+            border-color: var(--primary-light);
+        }
+        .distance-card .city { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; margin-bottom: 10px; color: var(--gray); }
+        .distance-card .km { font-size: 32px; font-weight: 800; font-family: 'Poppins', sans-serif; color: var(--primary); margin-bottom: 4px; }
+        .distance-card .time { font-size: 13px; color: var(--gray); }
+
+        .distance-benefits { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+        .distance-benefit {
+            display: flex; align-items: center; gap: 14px;
+            background: var(--white); padding: 16px 24px; border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .distance-benefit .icon {
+            width: 48px; height: 48px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            display: flex; align-items: center; justify-content: center; border-radius: 50%;
+        }
+        .distance-benefit .icon svg { width: 22px; height: 22px; stroke: var(--white); stroke-width: 2; fill: none; }
+        .distance-benefit span { font-weight: 600; font-size: 14px; color: var(--dark); }
+
+        /* HOW TO GET */
+        .transport-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+        }
+        .transport-card {
+            background: var(--white); padding: 36px 28px; border-radius: 24px; text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .transport-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15); }
+        .transport-card .icon {
+            width: 80px; height: 80px;
+            background: linear-gradient(135deg, var(--primary-bg) 0%, #c7d2fe 100%);
+            margin: 0 auto 24px; display: flex; align-items: center; justify-content: center;
+            border-radius: 20px;
+        }
+        .transport-card .icon svg { width: 36px; height: 36px; stroke: var(--primary); stroke-width: 2; fill: none; }
+        .transport-card h3 { font-size: 18px; margin-bottom: 14px; color: var(--dark); }
+        .transport-card p { font-size: 15px; color: var(--gray); line-height: 1.7; }
+
+        /* OKOLICA */
+        .okolica-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; align-items: center;
+        }
+        .okolica-text h2 { font-size: 36px; margin-bottom: 20px; color: var(--dark); }
+        .okolica-text p { font-size: 15px; color: var(--gray); line-height: 1.8; margin-bottom: 16px; }
+        .okolica-list { list-style: none; margin-top: 20px; }
+        .okolica-list li {
+            display: flex; align-items: center; gap: 14px;
+            margin-bottom: 14px; font-weight: 500; color: var(--dark);
+        }
+        .okolica-list li .check {
+            width: 28px; height: 28px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; border-radius: 50%;
+        }
+        .okolica-list li .check svg { width: 14px; height: 14px; stroke: var(--white); stroke-width: 3; fill: none; }
+        .okolica-image img { width: 100%; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.12); }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+            text-align: center; padding: 100px 24px;
+        }
+        .cta-section h2 { font-size: 40px; margin-bottom: 16px; color: var(--dark); }
+        .cta-section p { font-size: 18px; color: var(--gray); margin-bottom: 40px; }
+        .cta-phone { font-size: 48px; font-family: 'Poppins', sans-serif; font-weight: 700; margin-bottom: 10px; }
+        .cta-phone a { color: var(--primary-dark); text-decoration: none; }
+        .cta-hours { font-size: 16px; color: var(--gray); margin-bottom: 40px; }
+
+        /* FOOTER */
+        footer { padding: 60px 0 40px; background: var(--dark); text-align: center; }
+        .footer-logo { font-family: 'Poppins', sans-serif; font-size: 28px; font-weight: 700; margin-bottom: 20px; color: var(--white); }
+        .footer-logo span { color: var(--primary); }
+        .footer-address { font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 20px; line-height: 1.8; }
+        .footer-contact { font-size: 16px; margin-bottom: 30px; }
+        .footer-contact a { color: var(--primary-light); text-decoration: none; font-weight: 600; }
+        .footer-social { display: flex; justify-content: center; gap: 12px; margin-bottom: 30px; }
+        .footer-social a {
+            width: 48px; height: 48px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--white); transition: all 0.3s ease;
+        }
+        .footer-social a.facebook { background: #1877f2; }
+        .footer-social a.youtube { background: #ff0000; }
+        .footer-social a.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .footer-social a.tiktok { background: #000000; border: 1px solid rgba(255,255,255,0.2); }
+        .footer-social a:hover { transform: scale(1.1); opacity: 0.9; }
+        .footer-social svg { width: 22px; height: 22px; fill: currentColor; }
+        .copyright { font-size: 13px; color: rgba(255,255,255,0.4); }
+
+        /* BOTTOM BAR */
+        .bottom-bar {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            background: var(--white); padding: 16px 24px; z-index: 100;
+            display: flex; justify-content: center; align-items: center; gap: 24px;
+            border-top: 3px solid var(--primary); box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+        }
+        .bottom-bar-text { font-size: 14px; color: var(--dark); }
+        .bottom-bar-text strong { color: var(--primary); }
+        .bottom-bar .btn { padding: 12px 24px; }
+
+        /* COOKIE */
+        .cookie-banner {
+            position: fixed; bottom: 100px; left: 20px; max-width: 360px;
+            background: #fff; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            padding: 20px; z-index: 9999; display: none; border: 1px solid #e5e5e5;
+        }
+        .cookie-banner.show { display: block; animation: slideIn 0.3s ease; }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .cookie-content p { font-size: 13px; color: #555; margin-bottom: 16px; line-height: 1.6; }
+        .cookie-buttons { display: flex; gap: 10px; }
+        .cookie-btn { padding: 10px 20px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; text-decoration: none; text-align: center; }
+        .cookie-btn.accept { background: var(--primary); color: #fff; }
+        .cookie-btn.accept:hover { background: var(--primary-dark); }
+        .cookie-btn.more { background: #f1f5f9; color: #555; }
+        .cookie-btn.more:hover { background: #e2e8f0; }
+        .cookie-icon {
+            position: fixed; bottom: 100px; left: 20px; width: 48px; height: 48px;
+            background: var(--primary); border-radius: 50%; display: none; align-items: center; justify-content: center;
+            cursor: pointer; z-index: 9998; box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+            color: #fff; transition: transform 0.2s;
+        }
+        .cookie-icon:hover { transform: scale(1.1); }
+        .cookie-icon.show { display: flex; }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .distance-grid { grid-template-columns: repeat(3, 1fr); }
+            .map-container { grid-template-columns: 1fr; }
+            .okolica-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .page-hero h1 { font-size: 32px; }
+            .section-header h2, .okolica-text h2 { font-size: 28px; }
+            .distance-grid { grid-template-columns: repeat(2, 1fr); }
+            .transport-grid { grid-template-columns: 1fr; }
+            .distance-benefits { flex-direction: column; align-items: center; gap: 16px; }
+            .bottom-bar { flex-direction: column; gap: 12px; padding: 14px 20px; }
+            .cta-phone { font-size: 32px; }
+            .cta-section h2 { font-size: 28px; }
+        }
+        @media (max-width: 480px) {
+            .page-hero h1 { font-size: 26px; }
+            .distance-grid { grid-template-columns: 1fr; }
+            body { padding-bottom: 110px; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Place",
+        "name": "MyWay Kąpino - Prywatny Ośrodek Terapii Uzależnień",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ul. Wichrowe Wzgórza 21",
+            "addressLocality": "Kąpino",
+            "postalCode": "84-200",
+            "addressCountry": "PL"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "54.6273424",
+            "longitude": "18.2610934"
+        },
+        "telephone": "+48731395295",
+        "url": "https://osrodek-myway.pl"
+    }
+    </script>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <a href="/" class="nav-logo">My<span>Way</span></a>
+            <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="/">Strona główna</a>
+                <a href="/cennik">Cennik</a>
+                <a href="/lokalizacja" class="active">Lokalizacja</a>
+                <a href="/o-nas">O nas</a>
+                <a href="/opinie">Opinie</a>
+            </div>
+            <a href="tel:+48731395295" class="nav-phone btn btn-primary">731 395 295</a>
+        </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Lokalizacja</h1>
+            <p>Kąpino — spokojne miejsce w otoczeniu kaszubskich lasów</p>
+        </div>
+    </section>
+
+    <!-- ADRES + MAPA -->
+    <section class="section-white map-section">
+        <div class="container">
+            <div class="map-container">
+                <div class="address-card">
+                    <h3>Nasz adres</h3>
+                    <div class="address-info">
+                        <p>
+                            <span class="icon-sm"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                            ul. Wichrowe Wzgórza 21, 84-200 Kąpino
+                        </p>
+                        <p>
+                            <span class="icon-sm"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+                            +48 731 395 295
+                        </p>
+                        <p>
+                            <span class="icon-sm"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+                            Czynne całodobowo, 7 dni w tygodniu
+                        </p>
+                    </div>
+                    <p style="font-size: 14px; color: var(--gray); line-height: 1.7; margin-bottom: 24px;">
+                        Ośrodek MyWay znajduje się w malowniczej miejscowości Kąpino na Kaszubach, otoczony lasem i naturą. To idealne miejsce do regeneracji i pracy nad sobą, z dala od codziennego zgiełku.
+                    </p>
+                    <a href="https://www.google.com/maps/place/My+Way+-+Ośrodek+Leczenia+Uzależnień/@54.6273455,18.2585185,17z/" target="_blank" class="btn btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Otwórz w Google Maps
+                    </a>
+                </div>
+                <div class="map-frame">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2314.5!2d18.2585185!3d54.6273455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fda17ea9a6ceed%3A0xd18689e7fe5655cf!2sMy%20Way%20-%20O%C5%9Brodek%20Leczenia%20Uzale%C5%BCnie%C5%84!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOJAZD Z KUJAWSKO-POMORSKIEGO -->
+    <section class="section-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Dobry dojazd z kujawsko-pomorskiego</h2>
+                <p>Ośrodek jest dobrze skomunikowany z największymi miastami województwa</p>
+            </div>
+
+            <div class="distance-grid">
+                <div class="distance-card">
+                    <div class="city">Bydgoszcz</div>
+                    <div class="km">~220 km</div>
+                    <div class="time">ok. 2,5h</div>
+                </div>
+                <div class="distance-card">
+                    <div class="city">Toruń</div>
+                    <div class="km">~200 km</div>
+                    <div class="time">ok. 2h</div>
+                </div>
+                <div class="distance-card">
+                    <div class="city">Włocławek</div>
+                    <div class="km">~250 km</div>
+                    <div class="time">ok. 2,5h</div>
+                </div>
+                <div class="distance-card">
+                    <div class="city">Grudziądz</div>
+                    <div class="km">~170 km</div>
+                    <div class="time">ok. 2h</div>
+                </div>
+                <div class="distance-card">
+                    <div class="city">Inowrocław</div>
+                    <div class="km">~220 km</div>
+                    <div class="time">ok. 2,5h</div>
+                </div>
+            </div>
+
+            <div class="distance-benefits">
+                <div class="distance-benefit">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg>
+                    </div>
+                    <span>Bezpłatny odbiór z dworca</span>
+                </div>
+                <div class="distance-benefit">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </div>
+                    <span>Lokalizacja poza województwem = większa dyskrecja</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JAK DOJECHAC -->
+    <section class="section-white">
+        <div class="container">
+            <div class="section-header">
+                <h2>Jak dojechać?</h2>
+                <p>Kilka wygodnych opcji dojazdu z kujawsko-pomorskiego</p>
+            </div>
+
+            <div class="transport-grid">
+                <div class="transport-card">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2" ry="2"></rect><polygon points="16 8 20 3 20 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="13.5" cy="18.5" r="2.5"></circle></svg>
+                    </div>
+                    <h3>Samochodem</h3>
+                    <p>Trasa S7 w kierunku Gdańska, następnie S6 do Wejherowa. Z Wejherowa do Kąpina to tylko kilkanaście minut. Dojazd wygodny i szybki.</p>
+                </div>
+                <div class="transport-card">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+                    </div>
+                    <h3>Pociągiem</h3>
+                    <p>Pociąg do Wejherowa (bezpośrednie połączenia z Bydgoszczy i Torunia). Z Wejherowa zapewniamy bezpłatny odbiór.</p>
+                </div>
+                <div class="transport-card">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24"><path d="M8 6v6"></path><path d="M15 6v6"></path><path d="M2 12h19.6"></path><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"></path><circle cx="7" cy="18" r="2"></circle><circle cx="15" cy="18" r="2"></circle></svg>
+                    </div>
+                    <h3>Autobusem</h3>
+                    <p>Autobusy dalekobieżne do Gdyni lub Wejherowa. Stamtąd zapewniamy transport do ośrodka.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OKOLICA -->
+    <section class="section-indigo">
+        <div class="container">
+            <div class="okolica-grid">
+                <div class="okolica-text">
+                    <h2>Okolica sprzyjająca regeneracji</h2>
+                    <p>Kąpino to spokojna miejscowość na Kaszubach, otoczona lasami i blisko morza. Idealne miejsce do pracy nad sobą, z dala od codziennego zgiełku.</p>
+                    <p>Dla mieszkańców województwa kujawsko-pomorskiego lokalizacja poza regionem to dodatkowy atut - zapewnia pełną dyskrecję i nowe otoczenie sprzyjające zmianom.</p>
+
+                    <ul class="okolica-list">
+                        <li>
+                            <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            Otoczenie kaszubskich lasów
+                        </li>
+                        <li>
+                            <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            Blisko morza (15 min)
+                        </li>
+                        <li>
+                            <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            Cisza i spokój
+                        </li>
+                        <li>
+                            <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            Idealne warunki do spacerów
+                        </li>
+                        <li>
+                            <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            Pełna dyskrecja
+                        </li>
+                    </ul>
+                </div>
+                <div class="okolica-image">
+                    <img src="/kujawsko-pomorskie/images/budynek.jpeg" alt="Ośrodek MyWay Kąpino - otoczenie">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Zadzwoń i zapytaj o dojazd</h2>
+            <p>Pomożemy zaplanować transport z kujawsko-pomorskiego do ośrodka.</p>
+
+            <div class="cta-phone">
+                <a href="tel:+48731395295">+48 731 395 295</a>
+            </div>
+            <div class="cta-hours">Czynne całodobowo</div>
+
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="tel:+48731395295" class="btn btn-primary btn-large">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    Zadzwoń teraz
+                </a>
+                <a href="https://osrodek-myway.pl" target="_blank" class="btn btn-outline btn-large">Dowiedz się więcej</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">My<span>Way</span> Kąpino</div>
+            <div class="footer-address">ul. Wichrowe Wzgórza 21, 84-200 Kąpino</div>
+            <div class="footer-contact">
+                <a href="tel:+48731395295">+48 731 395 295</a> &nbsp;|&nbsp;
+                <a href="https://osrodek-myway.pl" target="_blank">osrodek-myway.pl</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/osrodekleczeniauzalezniencom" target="_blank" title="Facebook" class="facebook">
+                    <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                </a>
+                <a href="https://www.youtube.com/@krystiannagaba" target="_blank" title="YouTube" class="youtube">
+                    <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                </a>
+                <a href="https://www.instagram.com/krystiannagaba/" target="_blank" title="Instagram" class="instagram">
+                    <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <a href="https://www.tiktok.com/@krystian.nagaba" target="_blank" title="TikTok" class="tiktok">
+                    <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"></path></svg>
+                </a>
+            </div>
+            <p class="copyright">&copy; 2026 MyWay Kąpino. Wszystkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+
+    <!-- BOTTOM BAR -->
+    <div class="bottom-bar">
+        <span class="bottom-bar-text">Ośrodek <strong>MyWay</strong> - dla mieszkańców kujawsko-pomorskiego</span>
+        <a href="tel:+48731395295" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            Zadzwoń: 731 395 295
+        </a>
+    </div>
+
+    <!-- COOKIE -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+            <p>Ta strona używa plików cookies, aby zapewnić najlepsze doświadczenia. Kontynuując przeglądanie, zgadzasz się na ich użycie.</p>
+            <div class="cookie-buttons">
+                <button onclick="acceptCookies()" class="cookie-btn accept">Akceptuję</button>
+                <a href="https://osrodek-myway.pl/polityka-prywatnosci" target="_blank" class="cookie-btn more">Więcej</a>
+            </div>
+        </div>
+    </div>
+    <div id="cookieIcon" class="cookie-icon" onclick="showCookieBanner()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+    </div>
+
+    <script>
+        function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+        function checkCookieConsent() {
+            if (localStorage.getItem('cookieConsent') === 'accepted') { document.getElementById('cookieIcon').classList.add('show'); }
+            else { document.getElementById('cookieBanner').classList.add('show'); }
+        }
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieBanner').classList.remove('show');
+            document.getElementById('cookieIcon').classList.add('show');
+        }
+        function showCookieBanner() {
+            document.getElementById('cookieIcon').classList.remove('show');
+            document.getElementById('cookieBanner').classList.add('show');
+        }
+        document.addEventListener('DOMContentLoaded', checkCookieConsent);
+    </script>
+
+</body>
+</html>
