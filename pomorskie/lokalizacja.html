@@ -14,9 +14,42 @@
     <title>Lokalizacja | MyWay Kąpino - Ośrodek dla Pomorza</title>
     <meta name="description" content="Ośrodek MyWay w Kąpinie na Kaszubach. Blisko Gdańska, Gdyni i Słupska. Spokojna lokalizacja w otoczeniu lasu, łatwy dojazd z całego Pomorza.">
     <link rel="canonical" href="https://pomorskie.myway-osrodek.pl/lokalizacja">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Lokalizacja i dojazd | MyWay Kąpino">
+    <meta property="og:description" content="Ośrodek MyWay w Kąpinie na Kaszubach. Blisko Gdańska, Gdyni i Słupska. Spokojna lokalizacja w otoczeniu lasu, łatwy dojazd z całego Pomorza.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pomorskie.myway-osrodek.pl/lokalizacja">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="MyWay Kąpino">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Schema.org Place -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Place",
+        "name": "MyWay Kąpino",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ul. Wichrowe Wzgórza 21",
+            "addressLocality": "Kąpino",
+            "postalCode": "84-200",
+            "addressRegion": "pomorskie",
+            "addressCountry": "PL"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 54.6273424,
+            "longitude": 18.2610934
+        },
+        "telephone": "+48731395295",
+        "url": "https://osrodek-myway.pl",
+        "openingHours": "Mo-Su 00:00-23:59"
+    }
+    </script>
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -309,7 +342,7 @@
             <div class="address-grid">
                 <div class="address-info">
                     <span class="overline">Adres</span>
-                    <h2>Jak nas znaleźć</h2>
+                    <h2>Adres i mapa</h2>
                     <div class="address-detail">
                         <div class="icon">
                             <svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -325,7 +358,7 @@
                         </div>
                         <div>
                             <h4>Telefon</h4>
-                            <p><a href="tel:+48731395295" style="color: var(--accent); text-decoration: none;">+48 731 395 295</a><br>Odbieramy całą dobę</p>
+                            <p><a href="tel:+48731395295" style="color: var(--accent); text-decoration: none;">+48 731 395 295</a></p>
                         </div>
                     </div>
                     <div class="address-detail">
@@ -333,8 +366,8 @@
                             <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                         </div>
                         <div>
-                            <h4>Przyjmujemy</h4>
-                            <p>7 dni w tygodniu, cały rok<br>Przyjazd w dowolnym dniu</p>
+                            <h4>Czynne</h4>
+                            <p>Całodobowo 24/7</p>
                         </div>
                     </div>
                 </div>
@@ -350,8 +383,8 @@
         <div class="container">
             <div class="section-header">
                 <span class="overline">Dojazd</span>
-                <h2>Blisko z całego Pomorza</h2>
-                <p>Kąpino leży w sercu Kaszub — dogodny dojazd z każdego większego miasta w regionie</p>
+                <h2>Dobry dojazd z Pomorza</h2>
+                <p>Ośrodek znajduje się w spokojnej miejscowości Kąpino na Kaszubach</p>
             </div>
 
             <div class="distance-grid">
@@ -395,10 +428,17 @@
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="icon">
+                        <svg viewBox="0 0 24 24"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg>
+                    </div>
+                    <h4>Bezpłatny odbiór z dworca</h4>
+                    <p>Bezpłatny odbiór z dworca (do ustalenia)</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">
                         <svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                     </div>
                     <h4>Dyskretna lokalizacja</h4>
-                    <p>Ośrodek ukryty w kaszubskim lesie. Z dala od miasta, ale z łatwym dojazdem z Trójmiasta.</p>
+                    <p>Lokalizacja poza województwem = większa dyskrecja</p>
                 </div>
                 <div class="benefit-card">
                     <div class="icon">
@@ -406,13 +446,6 @@
                     </div>
                     <h4>Spokój i cisza</h4>
                     <p>Otoczenie natury sprzyja wyciszeniu i refleksji. Idealne warunki do pracy nad sobą.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="icon">
-                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                    </div>
-                    <h4>Blisko rodziny</h4>
-                    <p>Odwiedziny są łatwe — z Gdańska dojedziesz w pół godziny, z Gdyni jeszcze szybciej.</p>
                 </div>
             </div>
         </div>
@@ -423,10 +456,10 @@
         <div class="container">
             <div class="image-grid">
                 <div class="image-item">
-                    <img src="/warminsko-mazurskie/images/budynek.jpeg" alt="Ośrodek MyWay - budynek">
+                    <img src="/pomorskie/images/budynek.jpeg" alt="Ośrodek MyWay - budynek">
                 </div>
                 <div class="image-item">
-                    <img src="/warminsko-mazurskie/images/sala.jpeg" alt="Ośrodek MyWay - sala spotkań">
+                    <img src="/pomorskie/images/sala.jpeg" alt="Ośrodek MyWay - sala spotkań">
                 </div>
             </div>
         </div>
@@ -444,21 +477,17 @@
                 <div>
                     <div class="direction-item">
                         <h4>Samochodem</h4>
-                        <p>Z Gdańska: trasa S6 w kierunku Wejherowa, zjazd na Kąpino. Z Gdyni: obwodnicą na Rumię, dalej na Kąpino. Dojazd prosty, parking przy ośrodku.</p>
+                        <p>Jedź S7 w kierunku Gdańska, następnie S6 do Wejherowa. Z Wejherowa 15 minut do Kąpina. Parking na miejscu.</p>
                     </div>
                     <div class="direction-item">
-                        <h4>Pociągiem / SKM</h4>
-                        <p>Najbliższa stacja SKM to Wejherowo (ok. 5 km). Z Gdańska i Gdyni bezpośrednie połączenia co kilkanaście minut. Odbieramy ze stacji.</p>
+                        <h4>Pociągiem</h4>
+                        <p>Do stacji Wejherowo (PKP). Z dworca organizujemy odbiór — ustal szczegóły telefonicznie.</p>
                     </div>
                 </div>
                 <div>
                     <div class="direction-item">
                         <h4>Autobusem</h4>
-                        <p>Autobusy regionalne kursują do Wejherowa z większości miast Pomorza. Stamtąd odbiór lub krótki dojazd taksówką.</p>
-                    </div>
-                    <div class="direction-item">
-                        <h4>Odbiór z dworca</h4>
-                        <p>Nie musisz się martwić o dojazd. Wystarczy zadzwonić — odbierzemy Cię z dworca PKP/SKM w Wejherowie lub umówimy się w innym punkcie.</p>
+                        <p>Do Wejherowa kursują autobusy z Gdańska, Gdyni i miast pomorskiego. Z Wejherowa transport zapewniamy.</p>
                     </div>
                 </div>
             </div>
@@ -470,8 +499,8 @@
         <div class="container">
             <div class="section-header">
                 <span class="overline">Okolica</span>
-                <h2>Co w okolicy?</h2>
-                <p>Kaszuby to jedno z najpiękniejszych miejsc w Polsce. Okolica sprzyja odpoczynkowi i zdrowiu.</p>
+                <h2>Okolica</h2>
+                <p>Ośrodek znajduje się w cichej, zielonej okolicy Kąpina na Kaszubach. Las dosłownie za oknem, spokój i cisza. Do morza 20 minut. Do Gdańska 40 minut.</p>
             </div>
 
             <div class="okolica-grid">
@@ -481,7 +510,7 @@
                     </div>
                     <div>
                         <h4>Kaszubskie lasy</h4>
-                        <p>Ośrodek otoczony lasem. Idealne miejsce na spacery, wyciszenie i kontakt z naturą.</p>
+                        <p>Idealne połączenie natury i dostępności. Możesz skupić się na sobie w otoczeniu przyrody.</p>
                     </div>
                 </div>
                 <div class="okolica-card">
@@ -490,7 +519,7 @@
                     </div>
                     <div>
                         <h4>Blisko morza</h4>
-                        <p>Do Bałtyku ok. 15 minut jazdy. Morski klimat wspiera proces zdrowienia i regeneracji.</p>
+                        <p>Do Bałtyku ok. 20 minut jazdy. Morski klimat wspiera regenerację i odpoczynek.</p>
                     </div>
                 </div>
                 <div class="okolica-card">
@@ -508,7 +537,7 @@
                     </div>
                     <div>
                         <h4>Trójmiasto obok</h4>
-                        <p>Gdańsk, Sopot i Gdynia w zasięgu krótkiej jazdy — bliski kontakt z rodziną i cywilizacją.</p>
+                        <p>Do Gdańska 40 minut. Łatwy dostęp do większych miast, jednocześnie z dala od zgiełku.</p>
                     </div>
                 </div>
             </div>
@@ -519,23 +548,23 @@
     <section class="cta-section">
         <div class="container">
             <span class="overline">Odwiedź nas</span>
-            <h2>Zadzwoń i umów się</h2>
-            <p>Podpowiemy jak dojechać i odbierzemy z dworca.<br>Bez zobowiązań — po prostu porozmawiajmy.</p>
+            <h2>Jak do nas trafić?</h2>
+            <p>Zadzwoń, pomożemy zaplanować dojazd.</p>
 
             <div class="cta-phone">
-                <a href="tel:+48731395295">731 395 295</a>
+                <a href="tel:+48731395295">+48 731 395 295</a>
             </div>
-            <div class="cta-hours">Odbieramy o każdej porze</div>
+            <div class="cta-hours">Czynne całodobowo 24/7</div>
 
             <div class="cta-buttons">
                 <a href="tel:+48731395295" class="btn btn-primary btn-large">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                     </svg>
-                    Zadzwoń
+                    Zadzwoń teraz
                 </a>
-                <a href="https://www.google.com/maps/place/My+Way+-+Ośrodek+Leczenia+Uzależnień/@54.6273455,18.2585185,17z" target="_blank" class="btn btn-outline btn-large">
-                    Otwórz w Mapach
+                <a href="https://osrodek-myway.pl" target="_blank" class="btn btn-outline btn-large">
+                    Dowiedz się więcej
                 </a>
             </div>
         </div>
