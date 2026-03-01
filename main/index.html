@@ -39,8 +39,10 @@
         /* NAV */
         .main-nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 200; border-bottom: 1px solid rgba(14,165,233,0.1); height: 70px; box-shadow: 0 1px 20px rgba(0,0,0,0.05); }
         .nav-container { display: flex; align-items: center; justify-content: space-between; height: 70px; }
-        .nav-logo { font-family: 'DM Serif Display', serif; font-size: 26px; font-weight: 400; color: var(--dark); text-decoration: none; letter-spacing: 1px; }
-        .nav-logo span { color: var(--blue); }
+        .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .nav-logo img { height: 40px; width: 40px; object-fit: contain; }
+        .nav-logo-text { font-family: 'DM Serif Display', serif; font-size: 26px; font-weight: 400; color: var(--dark); letter-spacing: 1px; }
+        .nav-logo-text span { color: var(--blue); }
         .nav-links { display: flex; align-items: center; gap: 4px; }
         .nav-links a { color: var(--text-light); text-decoration: none; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; padding: 8px 14px; transition: all 0.3s ease; }
         .nav-links a:hover, .nav-links a.active { color: var(--blue); }
@@ -56,8 +58,8 @@
         }
 
         /* HERO */
-        .hero { position: relative; min-height: 90vh; display: flex; align-items: center; background: linear-gradient(135deg, #0c4a6e 0%, #0e7490 40%, #059669 100%); overflow: hidden; }
-        .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 80%, rgba(16,185,129,0.3) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(14,165,233,0.3) 0%, transparent 50%); }
+        .hero { position: relative; min-height: 90vh; display: flex; align-items: center; background: url('/main/images/aerial.jpg') center center / cover no-repeat; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(12,74,110,0.75) 0%, rgba(14,116,144,0.65) 40%, rgba(5,150,105,0.6) 100%); }
         .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 120px; background: linear-gradient(to top, var(--white), transparent); }
         .hero-content { position: relative; z-index: 2; text-align: center; width: 100%; padding: 80px 24px; }
         .hero-overline { font-size: 13px; text-transform: uppercase; letter-spacing: 5px; color: var(--green-light); margin-bottom: 24px; display: block; font-weight: 500; }
@@ -162,7 +164,10 @@
 
     <nav class="main-nav">
         <div class="container nav-container">
-            <a href="/" class="nav-logo">My<span>Way</span></a>
+            <a href="/" class="nav-logo">
+                <img src="/main/images/myway-logo.png" alt="MyWay Logo" width="40" height="40">
+                <span class="nav-logo-text">My<span>Way</span></span>
+            </a>
             <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
             <div class="nav-links" id="navLinks">
                 <a href="/" class="active">Strona główna</a>
