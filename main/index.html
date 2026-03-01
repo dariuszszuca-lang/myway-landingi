@@ -24,7 +24,7 @@
             --text: #334155; --text-light: #64748b;
             --white: #ffffff; --off-white: #f8fafc; --sky-50: #f0f9ff; --emerald-50: #ecfdf5; --slate-100: #f1f5f9;
         }
-        body { font-family: 'Outfit', sans-serif; background: var(--white); color: var(--text); line-height: 1.7; padding-bottom: 90px; padding-top: 70px; font-weight: 300; }
+        body { font-family: 'Outfit', sans-serif; background: var(--white); color: var(--text); line-height: 1.7; padding-bottom: 90px; padding-top: 0; font-weight: 300; }
         h1,h2,h3,h4,h5,h6 { font-family: 'DM Serif Display', serif; font-weight: 400; line-height: 1.2; color: var(--dark); }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
         .btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 18px 36px; font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 13px; text-transform: uppercase; letter-spacing: 3px; text-decoration: none; border-radius: 50px; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); cursor: pointer; position: relative; overflow: hidden; }
@@ -37,24 +37,49 @@
         .btn-large { padding: 22px 48px; font-size: 14px; }
 
         /* NAV */
-        .main-nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 200; border-bottom: 1px solid rgba(14,165,233,0.1); height: 70px; box-shadow: 0 1px 20px rgba(0,0,0,0.05); }
-        .nav-container { display: flex; align-items: center; justify-content: space-between; height: 70px; }
-        .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-        .nav-logo img { height: 40px; width: 40px; object-fit: contain; }
-        .nav-logo-text { font-family: 'DM Serif Display', serif; font-size: 26px; font-weight: 400; color: var(--dark); letter-spacing: 1px; }
-        .nav-logo-text span { color: var(--blue); }
-        .nav-links { display: flex; align-items: center; gap: 4px; }
-        .nav-links a { color: var(--text-light); text-decoration: none; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; padding: 8px 14px; transition: all 0.3s ease; }
-        .nav-links a:hover, .nav-links a.active { color: var(--blue); }
-        .nav-phone { padding: 10px 20px !important; font-size: 12px !important; letter-spacing: 2px !important; border-radius: 50px !important; }
-        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
-        .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--dark); }
+        .main-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 80px; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); }
+        .main-nav.nav-top { background: transparent; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .main-nav.nav-scrolled { background: rgba(255,255,255,0.97); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid rgba(14,165,233,0.08); box-shadow: 0 4px 30px rgba(0,0,0,0.06); }
+        .nav-container { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+        .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; transition: transform 0.3s ease; }
+        .nav-logo:hover { transform: scale(1.03); }
+        .nav-logo img { height: 44px; width: 44px; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1)); }
+        .nav-logo-text { font-family: 'DM Serif Display', serif; font-size: 28px; font-weight: 400; letter-spacing: 1px; transition: color 0.4s ease; }
+        .nav-top .nav-logo-text { color: var(--white); }
+        .nav-top .nav-logo-text span { color: var(--green-light); }
+        .nav-scrolled .nav-logo-text { color: var(--dark); }
+        .nav-scrolled .nav-logo-text span { color: var(--blue); }
+        .nav-links { display: flex; align-items: center; gap: 2px; }
+        .nav-links a { text-decoration: none; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; padding: 10px 18px; border-radius: 8px; transition: all 0.3s ease; position: relative; }
+        .nav-top .nav-links a { color: rgba(255,255,255,0.85); }
+        .nav-top .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.12); }
+        .nav-top .nav-links a.active { color: var(--white); background: rgba(255,255,255,0.15); }
+        .nav-scrolled .nav-links a { color: var(--text-light); }
+        .nav-scrolled .nav-links a:hover { color: var(--blue); background: var(--sky-50); }
+        .nav-scrolled .nav-links a.active { color: var(--blue); background: var(--sky-50); }
+        .nav-cta { display: flex; align-items: center; gap: 16px; }
+        .nav-phone-link { display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: 0.5px; padding: 12px 24px; border-radius: 50px; transition: all 0.4s ease; }
+        .nav-phone-link svg { width: 16px; height: 16px; stroke-width: 2; }
+        .nav-top .nav-phone-link { color: var(--white); background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); }
+        .nav-top .nav-phone-link:hover { background: var(--white); color: var(--blue-dark); border-color: var(--white); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+        .nav-scrolled .nav-phone-link { color: var(--white); background: var(--blue); border: 1px solid var(--blue); }
+        .nav-scrolled .nav-phone-link:hover { background: var(--blue-dark); border-color: var(--blue-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(14,165,233,0.3); }
+        .nav-hours { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 500; text-align: center; margin-top: 2px; }
+        .nav-top .nav-hours { color: rgba(255,255,255,0.5); }
+        .nav-scrolled .nav-hours { color: var(--text-light); }
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 10px; flex-direction: column; gap: 6px; border-radius: 8px; transition: background 0.3s ease; }
+        .nav-toggle:hover { background: rgba(14,165,233,0.1); }
+        .nav-toggle span { display: block; width: 22px; height: 2px; border-radius: 2px; transition: all 0.3s ease; }
+        .nav-top .nav-toggle span { background: var(--white); }
+        .nav-scrolled .nav-toggle span { background: var(--dark); }
         @media (max-width:900px) {
             .nav-toggle { display: flex; }
-            .nav-links { display: none; position: absolute; top: 70px; left: 0; right: 0; background: rgba(255,255,255,0.98); flex-direction: column; padding: 20px; border-bottom: 1px solid rgba(14,165,233,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+            .nav-links { display: none; position: absolute; top: 80px; left: 12px; right: 12px; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); flex-direction: column; padding: 16px; border-radius: 16px; border: 1px solid rgba(14,165,233,0.1); box-shadow: 0 20px 50px rgba(0,0,0,0.12); }
             .nav-links.open { display: flex; }
-            .nav-links a { padding: 12px 20px; width: 100%; }
-            .nav-phone { display: none; }
+            .nav-links a { padding: 14px 20px; width: 100%; color: var(--text) !important; border-radius: 10px; font-size: 13px; }
+            .nav-links a:hover, .nav-links a.active { background: var(--sky-50) !important; color: var(--blue) !important; }
+            .nav-cta { gap: 0; }
+            .nav-hours { display: none; }
         }
 
         /* HERO */
@@ -162,13 +187,12 @@
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZT5JHWJ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <nav class="main-nav">
+    <nav class="main-nav nav-top" id="mainNav">
         <div class="container nav-container">
             <a href="/" class="nav-logo">
-                <img src="/main/images/myway-logo.png" alt="MyWay Logo" width="40" height="40">
+                <img src="/main/images/myway-logo.png" alt="MyWay Logo" width="44" height="44">
                 <span class="nav-logo-text">My<span>Way</span></span>
             </a>
-            <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
             <div class="nav-links" id="navLinks">
                 <a href="/" class="active">Strona główna</a>
                 <a href="/cennik">Cennik</a>
@@ -176,7 +200,14 @@
                 <a href="/o-nas">O nas</a>
                 <a href="/opinie">Opinie</a>
             </div>
-            <a href="tel:+48731395295" class="nav-phone btn btn-primary">731 395 295</a>
+            <div class="nav-cta">
+                <a href="tel:+48731395295" class="nav-phone-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    731 395 295
+                </a>
+                <div class="nav-hours">24/7</div>
+            </div>
+            <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
         </div>
     </nav>
 
@@ -336,6 +367,8 @@
 
     <script>
         function toggleMenu(){document.getElementById('navLinks').classList.toggle('open')}
+        function handleNavScroll(){var nav=document.getElementById('mainNav');if(window.scrollY>60){nav.classList.remove('nav-top');nav.classList.add('nav-scrolled')}else{nav.classList.remove('nav-scrolled');nav.classList.add('nav-top')}}
+        window.addEventListener('scroll',handleNavScroll);handleNavScroll();
         function checkCookieConsent(){if(localStorage.getItem('cookieConsent')==='accepted'){document.getElementById('cookieIcon').classList.add('show')}else{document.getElementById('cookieBanner').classList.add('show')}}
         function acceptCookies(){localStorage.setItem('cookieConsent','accepted');document.getElementById('cookieBanner').classList.remove('show');document.getElementById('cookieIcon').classList.add('show')}
         function showCookieBanner(){document.getElementById('cookieIcon').classList.remove('show');document.getElementById('cookieBanner').classList.add('show')}
