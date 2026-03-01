@@ -202,23 +202,23 @@
     },
     {
       "source": "/",
-      "destination": "/warminsko-mazurskie/index.html"
+      "destination": "/main/index.html"
     },
     {
       "source": "/cennik",
-      "destination": "/warminsko-mazurskie/cennik.html"
+      "destination": "/main/cennik.html"
     },
     {
       "source": "/lokalizacja",
-      "destination": "/warminsko-mazurskie/lokalizacja.html"
+      "destination": "/main/lokalizacja.html"
     },
     {
       "source": "/o-nas",
-      "destination": "/warminsko-mazurskie/o-nas.html"
+      "destination": "/main/o-nas.html"
     },
     {
       "source": "/opinie",
-      "destination": "/warminsko-mazurskie/opinie.html"
+      "destination": "/main/opinie.html"
     },
     {
       "source": "/warminsko-mazurskie",
