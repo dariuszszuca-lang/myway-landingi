@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyWay Kąpino | Kameralny Ośrodek w Otoczeniu Lasu</title>
+    <meta name="description" content="Kameralny ośrodek na Kaszubach. Profesjonalna pomoc, komfortowe warunki, dyskretna lokalizacja w otoczeniu lasu. Zadzwoń: 731 395 295.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZT5JHWJ');</script>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --teal:#2a7d7d;--teal-light:#3a9e9e;--teal-soft:#e8f4f4;--teal-dark:#1e5f5f;
+            --sage:#5b8a72;--sage-soft:#edf5f0;
+            --warm:#c9a96e;--warm-light:#dfc499;
+            --text-dark:#2d3a3a;--text:#4a5858;--text-muted:#7a8a8a;--text-light:#a0adad;
+            --white:#ffffff;--snow:#f8fafa;--cloud:#f0f5f4;
+            --border:#dce5e3;
+        }
+        html{scroll-behavior:smooth}
+        body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);line-height:1.8;font-weight:400;overflow-x:hidden;font-size:16px}
+        h1,h2,h3,h4{font-family:'DM Serif Display',serif;font-weight:400;line-height:1.25;color:var(--text-dark)}
+        .container{max-width:1140px;margin:0 auto;padding:0 28px}
+
+        /* ═══ SIDE NAV DOTS ═══ */
+        .side-nav{position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:300;display:flex;flex-direction:column;align-items:flex-end;gap:18px}
+        .side-nav a{display:flex;align-items:center;gap:10px;text-decoration:none}
+        .side-nav a .label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);opacity:0;transform:translateX(6px);transition:all .3s;white-space:nowrap}
+        .side-nav a:hover .label,.side-nav a.active .label{opacity:1;transform:translateX(0)}
+        .side-nav a .dot{width:10px;height:10px;border-radius:50%;border:2px solid var(--border);transition:all .3s;flex-shrink:0}
+        .side-nav a:hover .dot{border-color:var(--teal);transform:scale(1.3)}
+        .side-nav a.active .dot{border-color:var(--teal);background:var(--teal);transform:scale(1.3);box-shadow:0 0 10px rgba(42,125,125,.3)}
+        @media(max-width:900px){.side-nav{display:none}}
+
+        /* ═══ TOP BAR ═══ */
+        .top-bar{position:fixed;top:0;left:0;right:0;z-index:250;height:68px;transition:all .4s}
+        .top-bar.at-top{background:transparent}
+        .top-bar.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(20px);box-shadow:0 1px 20px rgba(0,0,0,.06)}
+        .top-bar-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+        .top-bar-logo img{height:40px;width:auto;transition:filter .3s}
+        .top-bar.at-top .top-bar-logo img{filter:brightness(0) invert(1)}
+        .top-bar.scrolled .top-bar-logo img{filter:none}
+        .top-bar-links{display:flex;align-items:center;gap:2px}
+        .top-bar-links a{text-decoration:none;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:1.5px;padding:8px 14px;border-radius:8px;transition:all .3s}
+        .top-bar.at-top .top-bar-links a{color:rgba(255,255,255,.75)}
+        .top-bar.at-top .top-bar-links a:hover{color:#fff;background:rgba(255,255,255,.12)}
+        .top-bar.scrolled .top-bar-links a{color:var(--text-muted)}
+        .top-bar.scrolled .top-bar-links a:hover{color:var(--teal);background:var(--teal-soft)}
+        @media(max-width:960px){.top-bar-links{display:none}}
+        .top-bar-right{display:flex;align-items:center;gap:16px}
+        .top-bar-phone{display:flex;align-items:center;gap:8px;text-decoration:none;font-size:14px;font-weight:500;padding:10px 22px;border-radius:50px;transition:all .4s}
+        .top-bar.at-top .top-bar-phone{color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+        .top-bar.at-top .top-bar-phone:hover{background:rgba(255,255,255,.15);border-color:#fff}
+        .top-bar.scrolled .top-bar-phone{color:#fff;background:var(--teal);border:1.5px solid var(--teal)}
+        .top-bar.scrolled .top-bar-phone:hover{background:var(--teal-light)}
+        .top-bar-phone svg{width:15px;height:15px;stroke-width:2}
+        .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
+        .hamburger span{display:block;width:22px;height:1.5px;border-radius:2px;transition:all .3s}
+        .top-bar.at-top .hamburger span{background:#fff}
+        .top-bar.scrolled .hamburger span{background:var(--text-dark)}
+        .mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;bottom:0;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);z-index:240;padding:32px 28px;flex-direction:column}
+        .mobile-menu.open{display:flex}
+        .mobile-menu a{color:var(--text-dark);text-decoration:none;font-size:17px;padding:16px 0;border-bottom:1px solid var(--border);transition:color .3s}
+        .mobile-menu a:hover{color:var(--teal)}
+        @media(max-width:960px){.hamburger{display:flex}}
+
+        /* ═══ BUTTONS ═══ */
+        .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 36px;font-family:'DM Sans',sans-serif;font-weight:500;font-size:13px;text-transform:uppercase;letter-spacing:2.5px;text-decoration:none;border-radius:50px;transition:all .35s;cursor:pointer;border:none}
+        .btn-primary{background:var(--teal);color:#fff;box-shadow:0 4px 20px rgba(42,125,125,.25)}
+        .btn-primary:hover{background:var(--teal-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(42,125,125,.3)}
+        .btn-outline-light{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+        .btn-outline-light:hover{background:rgba(255,255,255,.12);border-color:#fff}
+        .btn-outline{background:transparent;color:var(--teal);border:1.5px solid var(--teal)}
+        .btn-outline:hover{background:var(--teal);color:#fff}
+        .btn-large{padding:18px 44px;font-size:14px}
+
+        /* ═══ HERO ═══ */
+        .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:url('images/aerial.jpg') center/cover no-repeat}
+        .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(170deg,rgba(42,125,125,.65),rgba(45,58,58,.55),rgba(42,125,125,.45))}
+        .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(to top,var(--snow),transparent)}
+        .hero-content{position:relative;z-index:2;max-width:750px;margin:0 auto;text-align:center;padding:120px 28px 100px}
+        .hero-badge{display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:4px;color:rgba(255,255,255,.9);border:1px solid rgba(255,255,255,.35);padding:8px 22px;border-radius:50px;margin-bottom:28px}
+        .hero h1{font-size:clamp(38px,5.5vw,66px);color:#fff;margin-bottom:24px}
+        .hero h1 em{font-style:italic;color:var(--warm-light)}
+        .hero p{font-size:19px;color:rgba(255,255,255,.85);max-width:540px;margin:0 auto 44px;line-height:1.9;font-weight:300}
+        .hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+        /* ═══ STATS — inline statement ═══ */
+        .stats-statement{padding:80px 0;background:var(--snow);text-align:center}
+        .stats-statement p{font-size:clamp(18px,2.2vw,24px);color:var(--text);line-height:2.2;max-width:800px;margin:0 auto;font-weight:300}
+        .stats-statement .num{font-family:'DM Serif Display',serif;font-size:clamp(48px,6vw,80px);color:var(--teal);display:inline;line-height:1;vertical-align:baseline}
+
+        /* ═══ FEATURES — card grid ═══ */
+        .features-sticky{position:relative;background:var(--white);padding:100px 0}
+        .features-header{text-align:center;margin-bottom:64px}
+        .features-header .overline{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:4px;color:var(--teal);margin-bottom:16px;display:block}
+        .features-header h2{font-size:clamp(36px,4.5vw,56px);color:var(--text-dark)}
+        .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+        .feature-card{background:var(--snow);border-radius:20px;padding:44px 32px;transition:transform .3s,box-shadow .3s}
+        .feature-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(42,125,125,.08)}
+        .feature-card .card-icon{width:64px;height:64px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;margin-bottom:24px}
+        .feature-card .card-icon svg{width:28px;height:28px;stroke:#fff;stroke-width:1.5;fill:none}
+        .feature-card .overline{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:3px;color:var(--teal);margin-bottom:10px;display:block}
+        .feature-card h3{font-size:22px;margin-bottom:12px;color:var(--text-dark);font-family:'DM Serif Display',serif;font-weight:400}
+        .feature-card p{font-size:15px;color:var(--text-muted);line-height:1.9}
+
+        /* ═══ ABOUT — editorial overlap ═══ */
+        .about-editorial{padding:140px 0;background:var(--snow);overflow:hidden}
+        .about-editorial-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;grid-template-rows:auto auto;gap:0}
+        .about-headline{grid-column:1/3;grid-row:1;padding-right:40px;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:40px}
+        .about-headline .overline{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:4px;color:var(--teal);margin-bottom:16px;display:block}
+        .about-headline h2{font-size:clamp(40px,5vw,64px);color:var(--text-dark);line-height:1.15}
+        .about-photo{grid-column:2/5;grid-row:1/3;border-radius:24px;overflow:hidden;box-shadow:0 24px 64px rgba(42,125,125,.1)}
+        .about-photo img{width:100%;height:100%;object-fit:cover;min-height:500px;display:block}
+        .about-body{grid-column:1/3;grid-row:2;background:var(--white);padding:48px 40px;border-radius:20px;margin-top:-60px;margin-right:-40px;z-index:3;box-shadow:0 12px 40px rgba(0,0,0,.04)}
+        .about-body p{font-size:16px;color:var(--text-muted);line-height:2;margin-bottom:16px}
+        .about-body .btn{margin-top:8px}
+
+        /* ═══ PRICING — expandable panels ═══ */
+        .pricing-section{padding:120px 0;background:var(--white)}
+        .pricing-section .section-header{text-align:center;margin-bottom:64px}
+        .pricing-section .section-header .overline{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:4px;color:var(--teal);margin-bottom:16px;display:block}
+        .pricing-section .section-header h2{font-size:clamp(32px,3.5vw,46px);margin-bottom:16px}
+        .pricing-section .section-header p{font-size:16px;color:var(--text-muted);max-width:520px;margin:0 auto}
+        .pricing-panels{max-width:800px;margin:0 auto}
+        .pricing-panel{border-bottom:1px solid var(--border);overflow:hidden;transition:all .4s}
+        .pricing-panel-header{display:flex;align-items:center;justify-content:space-between;padding:32px 0;cursor:pointer;transition:all .3s}
+        .pricing-panel-header:hover{color:var(--teal)}
+        .pricing-panel-header h3{font-size:clamp(24px,3vw,32px);color:var(--text-dark);transition:color .3s}
+        .pricing-panel-header:hover h3{color:var(--teal)}
+        .pricing-panel-header .price-tag{font-family:'DM Serif Display',serif;font-size:28px;color:var(--teal);white-space:nowrap}
+        .pricing-panel-header .toggle{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all .3s;flex-shrink:0;margin-left:24px}
+        .pricing-panel-header .toggle svg{width:14px;height:14px;stroke:var(--text-muted);stroke-width:2;fill:none;transition:transform .3s}
+        .pricing-panel.open .toggle{background:var(--teal);border-color:var(--teal)}
+        .pricing-panel.open .toggle svg{stroke:#fff;transform:rotate(180deg)}
+        .pricing-panel-body{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.4,0,.2,1)}
+        .pricing-panel.open .pricing-panel-body{max-height:400px}
+        .pricing-panel-content{padding:0 0 40px;display:grid;grid-template-columns:1fr 1fr;gap:40px}
+        .pricing-panel-content .details p{font-size:14px;color:var(--text-muted);line-height:1.9;margin-bottom:12px}
+        .pricing-panel-content .details .badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;padding:6px 14px;border-radius:50px;margin-bottom:12px}
+        .pricing-panel-content .features-list{list-style:none}
+        .pricing-panel-content .features-list li{padding:8px 0;font-size:14px;color:var(--text);display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--cloud)}
+        .pricing-panel-content .features-list li::before{content:'✓';color:var(--teal);font-weight:700}
+        .pricing-panel-content .btn{margin-top:16px}
+
+        /* ═══ INCLUDED — bento grid ═══ */
+        .included-section{padding:110px 0;background:var(--snow)}
+        .included-section .section-header{text-align:center;margin-bottom:64px}
+        .included-section .section-header .overline{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:4px;color:var(--teal);margin-bottom:16px;display:block}
+        .included-section .section-header h2{font-size:clamp(32px,3.5vw,46px);margin-bottom:16px}
+        .included-section .section-header p{font-size:16px;color:var(--text-muted);max-width:520px;margin:0 auto}
+        .bento{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:auto auto;gap:16px}
+        .bento-item{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:36px 28px;transition:all .35s;position:relative;overflow:hidden}
+        .bento-item:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(42,125,125,.06);border-color:var(--teal)}
+        .bento-item.wide{grid-column:span 2}
+        .bento-item .icon{width:48px;height:48px;border-radius:14px;background:var(--teal-soft);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+        .bento-item .icon svg{width:22px;height:22px;stroke:var(--teal);stroke-width:1.5;fill:none}
+        .bento-item h4{font-size:18px;margin-bottom:8px}
+        .bento-item p{font-size:14px;color:var(--text-muted);line-height:1.8}
+
+        /* ═══ TEAM — name list with hover photo ═══ */
+        .team-section{padding:120px 0;background:var(--white)}
+        .team-section .section-header{text-align:center;margin-bottom:80px}
+        .team-section .section-header .overline{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:4px;color:var(--teal);margin-bottom:16px;display:block}
+        .team-section .section-header h2{font-size:clamp(32px,3.5vw,46px);margin-bottom:16px}
+        .team-section .section-header p{font-size:16px;color:var(--text-muted);max-width:520px;margin:0 auto}
+        .team-list{max-width:900px;margin:0 auto}
+        .team-member{border-bottom:1px solid var(--border);padding:40px 0;display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:center;transition:all .3s}
+        .team-member:first-child{border-top:1px solid var(--border)}
+        .team-member:hover{padding-left:12px}
+        .team-member-info h3{font-size:clamp(28px,3.5vw,40px);color:var(--text-dark);margin-bottom:4px;transition:color .3s}
+        .team-member:hover .team-member-info h3{color:var(--teal)}
+        .team-member-info .subtitle{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:3px;color:var(--teal);display:block}
+        .team-member-desc p{font-size:15px;color:var(--text-muted);line-height:2}
+
+        /* ═══ REVIEWS — big quote slider ═══ */
+        .reviews-section{padding:120px 0;background:linear-gradient(135deg,var(--teal),var(--sage));position:relative;overflow:hidden}
+        .reviews-section::before{content:'\201C';position:absolute;top:10%;left:8%;font-size:clamp(200px,30vw,500px);font-family:'DM Serif Display',serif;color:rgba(255,255,255,.06);line-height:1;pointer-events:none}
+        .reviews-header{text-align:center;margin-bottom:20px}
+        .reviews-header .overline{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:4px;color:rgba(255,255,255,.6);margin-bottom:12px;display:block}
+        .reviews-header .rating{font-family:'DM Serif Display',serif;font-size:64px;color:#fff;margin-bottom:4px}
+        .reviews-header .rating span{font-size:24px;color:rgba(255,255,255,.4)}
+        .reviews-header .stars{color:var(--warm-light);font-size:24px;letter-spacing:4px;margin-bottom:6px}
+        .reviews-header .sub{font-size:13px;color:rgba(255,255,255,.45)}
+        .quote-slider{max-width:700px;margin:0 auto;text-align:center;padding:40px 28px;min-height:280px;display:flex;flex-direction:column;justify-content:center;position:relative}
+        .quote-slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px 28px;opacity:0;transition:all .6s ease}
+        .quote-slide.active{opacity:1}
+        .quote-slide .text{font-family:'DM Serif Display',serif;font-size:clamp(22px,3vw,32px);color:#fff;line-height:1.6;font-style:italic;margin-bottom:24px;font-weight:400}
+        .quote-slide .author{font-size:14px;color:rgba(255,255,255,.6);font-weight:500;letter-spacing:1px;text-transform:uppercase}
+        .quote-nav{display:flex;justify-content:center;gap:10px;margin-top:20px;position:relative;z-index:2}
+        .quote-nav button{width:10px;height:10px;border-radius:50%;border:2px solid rgba(255,255,255,.3);background:transparent;cursor:pointer;transition:all .3s;padding:0}
+        .quote-nav button.active{background:#fff;border-color:#fff}
+        .quote-nav button:hover{border-color:#fff}
+        .google-cta{text-align:center;margin-top:32px;position:relative;z-index:2}
+        .google-cta a{color:rgba(255,255,255,.7);text-decoration:none;font-weight:500;font-size:12px;letter-spacing:2px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;transition:color .3s}
+        .google-cta a:hover{color:#fff}
+
+        /* ═══ LOCATION — full photo + floating card ═══ */
+        .location-section{position:relative;background:var(--snow)}
+        .location-photo{width:100%;height:70vh;overflow:hidden}
+        .location-photo img{width:100%;height:100%;object-fit:cover;display:block}
+        .location-overlay{position:relative;max-width:1140px;margin:-120px auto 0;padding:0 28px;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+        .location-card{background:var(--white);border-radius:20px;padding:40px 36px;box-shadow:0 16px 48px rgba(0,0,0,.08)}
+        .location-card h3{font-size:28px;margin-bottom:24px}
+        .address-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px}
+        .address-item .icon{width:44px;height:44px;border-radius:12px;background:var(--teal-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .address-item .icon svg{width:20px;height:20px;stroke:var(--teal);stroke-width:1.5;fill:none}
+        .address-item h4{font-size:15px;margin-bottom:2px}
+        .address-item p{font-size:14px;color:var(--text-muted)}
+        .address-item a{color:var(--teal);text-decoration:none}
+        .location-map{border-radius:20px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.08);min-height:300px}
+        .location-map iframe{width:100%;height:100%;min-height:300px;border:0}
+        .distance-strip{max-width:1140px;margin:32px auto 0;padding:0 28px 80px;display:flex;gap:12px}
+        .distance-card{flex:1;padding:24px 12px;text-align:center;border-radius:14px;background:var(--white);border:1px solid var(--border);transition:all .3s}
+        .distance-card:hover{border-color:var(--teal);transform:translateY(-2px)}
+        .distance-card .city{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--text-muted);margin-bottom:8px}
+        .distance-card .km{font-family:'DM Serif Display',serif;font-size:28px;color:var(--teal);margin-bottom:2px}
+        .distance-card .time{font-size:12px;color:var(--text-muted)}
+
+        /* ═══ GALLERY — horizontal film strip ═══ */
+        .gallery-section{padding:100px 0 100px;background:var(--white);overflow:hidden}
+        .gallery-section .section-header{text-align:center;margin-bottom:48px}
+        .gallery-section .section-header .overline{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:4px;color:var(--teal);margin-bottom:16px;display:block}
+        .gallery-section .section-header h2{font-size:clamp(32px,3.5vw,46px)}
+        .gallery-strip{display:flex;gap:16px;animation:galleryScroll 20s linear infinite;width:max-content}
+        .gallery-strip:hover{animation-play-state:paused}
+        .gallery-strip img{height:320px;width:auto;border-radius:16px;object-fit:cover;flex-shrink:0}
+        @keyframes galleryScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+        /* ═══ FAQ — side by side ═══ */
+        .faq-section{padding:110px 0;background:var(--snow)}
+        .faq-layout{display:grid;grid-template-columns:.4fr .6fr;gap:64px;align-items:start}
+        .faq-left .overline{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:4px;color:var(--teal);margin-bottom:16px;display:block}
+        .faq-left h2{font-size:40px;margin-bottom:16px}
+        .faq-left p{font-size:16px;color:var(--text-muted);line-height:1.9}
+        .faq-list{display:flex;flex-direction:column;gap:12px}
+        .faq-item{padding:24px 28px;background:var(--white);border-radius:14px;border:1px solid var(--border);transition:all .3s;cursor:pointer}
+        .faq-item:hover{border-color:var(--teal)}
+        .faq-item h4{font-size:16px;display:flex;align-items:center;justify-content:space-between}
+        .faq-item h4::after{content:'+';font-family:'DM Sans';font-weight:300;font-size:22px;color:var(--teal);transition:transform .3s}
+        .faq-item.open h4{margin-bottom:10px}
+        .faq-item.open h4::after{transform:rotate(45deg)}
+        .faq-item .answer{font-size:15px;color:var(--text-muted);line-height:1.9;max-height:0;overflow:hidden;transition:max-height .4s}
+        .faq-item.open .answer{max-height:200px}
+
+        /* ═══ CTA ═══ */
+        .cta-final{background:linear-gradient(135deg,var(--teal),var(--sage));text-align:center;padding:120px 28px;position:relative;overflow:hidden}
+        .cta-final::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(255,255,255,.08),transparent 70%)}
+        .cta-final .overline{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:4px;color:rgba(255,255,255,.7);margin-bottom:20px;display:block;position:relative;z-index:1}
+        .cta-final h2{font-size:clamp(32px,4.5vw,50px);color:#fff;margin-bottom:20px;position:relative;z-index:1}
+        .cta-final p{font-size:17px;color:rgba(255,255,255,.75);margin-bottom:40px;line-height:1.9;position:relative;z-index:1}
+        .cta-final .phone{font-family:'DM Serif Display',serif;font-size:clamp(32px,4.5vw,54px);margin-bottom:10px;position:relative;z-index:1}
+        .cta-final .phone a{color:#fff;text-decoration:none}
+        .cta-final .hours{font-size:12px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:3px;margin-bottom:40px;position:relative;z-index:1}
+        .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+        .btn-white{background:#fff;color:var(--teal);box-shadow:0 4px 20px rgba(0,0,0,.1)}
+        .btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.15)}
+
+        /* ═══ FOOTER ═══ */
+        footer{padding:64px 0 40px;background:var(--text-dark);text-align:center;color:rgba(255,255,255,.6)}
+        .footer-logo{font-family:'DM Serif Display',serif;font-size:28px;margin-bottom:20px;color:#fff;letter-spacing:2px}
+        .footer-logo span{color:var(--warm-light)}
+        .footer-address{font-size:14px;color:rgba(255,255,255,.35);margin-bottom:16px}
+        .footer-contact{font-size:15px;margin-bottom:28px}
+        .footer-contact a{color:var(--warm-light);text-decoration:none;transition:opacity .3s}
+        .footer-contact a:hover{opacity:.7}
+        .footer-social{display:flex;justify-content:center;gap:12px;margin-bottom:28px}
+        .footer-social a{width:42px;height:42px;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.45);transition:all .3s;border-radius:50%}
+        .footer-social a:hover{background:var(--teal);border-color:var(--teal);color:#fff}
+        .footer-social svg{width:16px;height:16px;fill:currentColor}
+        .copyright{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:1.5px;text-transform:uppercase}
+
+        /* ═══ BOTTOM BAR ═══ */
+        .bottom-bar{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);padding:14px 28px;z-index:200;display:flex;justify-content:center;align-items:center;gap:28px;border-top:1px solid var(--border);box-shadow:0 -2px 16px rgba(0,0,0,.04)}
+        .bottom-bar-text{font-size:14px;color:var(--text);font-weight:400}
+        .bottom-bar-text strong{color:var(--teal)}
+        .bottom-bar .btn{padding:12px 24px;font-size:12px}
+
+        /* ═══ COOKIE ═══ */
+        .cookie-banner{position:fixed;bottom:80px;left:20px;max-width:340px;background:#fff;border-radius:16px;box-shadow:0 8px 36px rgba(0,0,0,.12);padding:22px;z-index:9999;display:none;border:1px solid var(--border)}
+        .cookie-banner.show{display:block;animation:slideIn .3s ease}
+        @keyframes slideIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+        .cookie-content p{font-size:13px;color:var(--text-muted);margin-bottom:14px;line-height:1.7}
+        .cookie-buttons{display:flex;gap:8px}
+        .cookie-btn{padding:10px 18px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;border:none}
+        .cookie-btn.accept{background:var(--teal);color:#fff}
+        .cookie-btn.more{background:var(--snow);color:var(--text-muted);text-decoration:none}
+        .cookie-icon{position:fixed;bottom:80px;left:20px;width:44px;height:44px;background:var(--teal);border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;z-index:9998;color:#fff;transition:transform .2s;box-shadow:0 4px 16px rgba(42,125,125,.25)}
+        .cookie-icon:hover{transform:scale(1.1)}
+        .cookie-icon.show{display:flex}
+
+        /* ═══ RESPONSIVE ═══ */
+        @media(max-width:1024px){
+            .features-grid{grid-template-columns:repeat(2,1fr);gap:24px}
+            .feature-card{padding:36px 28px}
+            .about-editorial-grid{grid-template-columns:1fr;gap:0}
+            .about-headline{grid-column:1;padding:0 0 24px}
+            .about-photo{grid-column:1;grid-row:2;border-radius:16px;min-height:300px}
+            .about-photo img{min-height:300px}
+            .about-body{grid-column:1;grid-row:3;margin:0;margin-top:-40px;border-radius:16px}
+            .pricing-panel-content{grid-template-columns:1fr}
+            .bento{grid-template-columns:repeat(2,1fr)}
+            .bento-item.wide{grid-column:span 2}
+            .location-overlay{grid-template-columns:1fr;margin-top:-60px}
+            .distance-strip{flex-wrap:wrap}
+            .distance-card{min-width:30%}
+            .faq-layout{grid-template-columns:1fr;gap:36px}
+            .team-member{grid-template-columns:1fr;gap:16px}
+        }
+        @media(max-width:768px){
+            .features-grid{grid-template-columns:1fr;gap:20px}
+            .features-sticky{padding:64px 0}
+            .bento{grid-template-columns:1fr}
+            .bento-item.wide{grid-column:span 1}
+            .distance-card{min-width:45%}
+            .gallery-strip img{height:220px}
+            .bottom-bar{flex-direction:column;gap:10px;padding:12px 20px}
+            body{padding-bottom:90px}
+            .location-photo{height:50vh}
+        }
+        @media(max-width:480px){body{padding-bottom:110px}}
+    </style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZT5JHWJ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<nav class="side-nav" id="sideNav">
+    <a href="#hero"><span class="label">Start</span><span class="dot"></span></a>
+    <a href="#features"><span class="label">Oferta</span><span class="dot"></span></a>
+    <a href="#about"><span class="label">O nas</span><span class="dot"></span></a>
+    <a href="#pricing"><span class="label">Cennik</span><span class="dot"></span></a>
+    <a href="#team"><span class="label">Zespół</span><span class="dot"></span></a>
+    <a href="#reviews"><span class="label">Opinie</span><span class="dot"></span></a>
+    <a href="#location"><span class="label">Lokalizacja</span><span class="dot"></span></a>
+    <a href="#contact"><span class="label">Kontakt</span><span class="dot"></span></a>
+</nav>
+
+<header class="top-bar at-top" id="topBar">
+    <div class="container top-bar-inner">
+        <a href="#hero" class="top-bar-logo"><img src="images/logo-myway.png" alt="MyWay Logo"></a>
+        <div class="top-bar-links">
+            <a href="#features">Oferta</a>
+            <a href="#about">O nas</a>
+            <a href="#pricing">Cennik</a>
+            <a href="#team">Zespół</a>
+            <a href="#reviews">Opinie</a>
+            <a href="#location">Lokalizacja</a>
+            <a href="#contact">Kontakt</a>
+        </div>
+        <div class="top-bar-right">
+            <a href="tel:+48731395295" class="top-bar-phone">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.82.31 1.63.55 2.41a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.78.24 1.59.43 2.41.55A2 2 0 0 1 22 16.92z"/></svg>
+                731 395 295
+            </a>
+            <button class="hamburger" onclick="toggleMobile()" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#hero" onclick="closeMobile()">Start</a>
+    <a href="#features" onclick="closeMobile()">Oferta</a>
+    <a href="#about" onclick="closeMobile()">O ośrodku</a>
+    <a href="#pricing" onclick="closeMobile()">Cennik</a>
+    <a href="#team" onclick="closeMobile()">Zespół</a>
+    <a href="#reviews" onclick="closeMobile()">Opinie</a>
+    <a href="#location" onclick="closeMobile()">Lokalizacja</a>
+    <a href="#contact" onclick="closeMobile()">Kontakt</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+    <div class="hero-content">
+        <span class="hero-badge">Kameralny ośrodek na Kaszubach</span>
+        <h1>Spokojne miejsce na <em>nowy początek</em></h1>
+        <p>Kameralny ośrodek w sercu kaszubskich lasów. Profesjonalny zespół, komfortowe warunki, pełna dyskrecja.</p>
+        <div class="hero-buttons">
+            <a href="tel:+48731395295" class="btn btn-primary btn-large"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.82.31 1.63.55 2.41a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.78.24 1.59.43 2.41.55A2 2 0 0 1 22 16.92z"/></svg> 731 395 295</a>
+            <a href="https://osrodek-myway.pl" target="_blank" class="btn btn-outline-light btn-large">Dowiedz się więcej</a>
+        </div>
+    </div>
+</section>
+
+<!-- STATS — inline statement -->
+<div class="stats-statement">
+    <div class="container">
+        <p>Ponad <span class="num">240</span> opinii w Google, ocena <span class="num">4.7</span>/5, kontakt <span class="num">24</span>/7 i ponad <span class="num">5</span> lat doświadczenia</p>
+    </div>
+</div>
+
+<!-- FEATURES — card grid -->
+<section class="features-sticky" id="features">
+    <div class="container">
+        <div class="features-header">
+            <span class="overline">Co oferujemy</span>
+            <h2>Dlaczego MyWay</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                <span class="overline">01 — Indywidualne podejście</span>
+                <h3>Program dopasowany do Ciebie</h3>
+                <p>Każdy podopieczny ma swój indywidualny plan. Małe grupy gwarantują, że nikt nie jest anonimowy — każdy dostaje pełną uwagę zespołu.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+                <span class="overline">02 — Komfortowe warunki</span>
+                <h3>Jak w domu, tylko lepiej</h3>
+                <p>Wygodne pokoje, pełne wyżywienie, siłownia i otoczenie kaszubskich lasów. Tu możesz się skupić wyłącznie na sobie.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                <span class="overline">03 — Wsparcie po pobycie</span>
+                <h3>Nie zostawiamy Cię samego</h3>
+                <p>Spotkania online, zjazdy absolwentów i grupy wsparcia. Proces zmiany nie kończy się w dniu wyjścia — idziemy dalej razem.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                <span class="overline">04 — Doświadczony zespół</span>
+                <h3>Ludzie, którzy rozumieją</h3>
+                <p>Specjaliści z wieloletnim doświadczeniem dostępni na co dzień. Każdy z nich wie, jak ważny jest szacunek i cierpliwość.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                <span class="overline">05 — Dyskretna lokalizacja</span>
+                <h3>Spokój w otoczeniu natury</h3>
+                <p>Kąpino na Kaszubach — z dala od miasta, wśród lasów. Pełna dyskrecja i spokój, jakiego potrzebujesz.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                <span class="overline">06 — Wsparcie dla bliskich</span>
+                <h3>Bo zmiana dotyczy wszystkich</h3>
+                <p>Konsultacje dla rodzin — online lub na miejscu. Pomagamy zrozumieć proces i wspierać bliską osobę.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT — editorial overlap -->
+<section class="about-editorial" id="about">
+    <div class="container">
+        <div class="about-editorial-grid">
+            <div class="about-headline">
+                <span class="overline">O ośrodku</span>
+                <h2>MyWay<br>Kąpino</h2>
+            </div>
+            <div class="about-photo">
+                <img src="images/budynek.jpeg" alt="Ośrodek MyWay Kąpino">
+            </div>
+            <div class="about-body">
+                <p>Powstaliśmy z przekonania, że prawdziwa zmiana wymaga spokojnego miejsca, odpowiednich ludzi i czasu wyłącznie dla siebie.</p>
+                <p>Oferujemy pobyt stacjonarny w komfortowych warunkach — z pełnym wyżywieniem, codzienną opieką zespołu specjalistów i programem rozwoju osobistego. Nasi podopieczni przyjeżdżają z całej Polski.</p>
+                <a href="https://osrodek-myway.pl" target="_blank" class="btn btn-outline">Dowiedz się więcej</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING — expandable panels -->
+<section class="pricing-section" id="pricing">
+    <div class="container">
+        <div class="section-header">
+            <span class="overline">Cennik</span>
+            <h2>Pakiety pobytowe</h2>
+            <p>Przejrzyste zasady, bez ukrytych kosztów</p>
+        </div>
+        <div class="pricing-panels">
+            <div class="pricing-panel" onclick="togglePanel(this)">
+                <div class="pricing-panel-header">
+                    <h3>Pakiet 1</h3>
+                    <span class="price-tag">10 000 zł</span>
+                    <span class="toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+                </div>
+                <div class="pricing-panel-body"><div class="pricing-panel-content">
+                    <div class="details"><p>4 tygodnie pobytu stacjonarnego w pełnym komforcie. Ideal na start procesu zmiany.</p><a href="tel:+48731395295" class="btn btn-primary">Zarezerwuj — 731 395 295</a></div>
+                    <ul class="features-list"><li>4 tygodnie pobytu</li><li>Opieka zespołu specjalistów</li><li>Pełne wyżywienie</li><li>Sesje indywidualne i grupowe</li><li>Materiały do pracy własnej</li></ul>
+                </div></div>
+            </div>
+            <div class="pricing-panel" onclick="togglePanel(this)">
+                <div class="pricing-panel-header">
+                    <h3>Pakiet 2</h3>
+                    <span class="price-tag">12 500 zł</span>
+                    <span class="toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+                </div>
+                <div class="pricing-panel-body"><div class="pricing-panel-content">
+                    <div class="details"><p>4 tygodnie pobytu + wsparcie po wyjeździe. Kontynuacja procesu zmiany z opieką online.</p><a href="tel:+48731395295" class="btn btn-primary">Zarezerwuj — 731 395 295</a></div>
+                    <ul class="features-list"><li>4 tygodnie pobytu</li><li>20 sesji indywidualnych po pobycie</li><li>Grupa wsparcia WhatsApp</li><li>Opieka zespołu specjalistów</li><li>Pełne wyżywienie</li></ul>
+                </div></div>
+            </div>
+            <div class="pricing-panel open" onclick="togglePanel(this)">
+                <div class="pricing-panel-header">
+                    <h3>Pakiet 3</h3>
+                    <span class="price-tag">12 500 zł</span>
+                    <span class="toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+                </div>
+                <div class="pricing-panel-body"><div class="pricing-panel-content">
+                    <div class="details"><span class="badge">Najpopularniejszy</span><p>5 tygodni pobytu + pełne wsparcie po wyjeździe. Dodatkowy tydzień GRATIS — najlepsza wartość.</p><a href="tel:+48731395295" class="btn btn-primary">Zarezerwuj — 731 395 295</a></div>
+                    <ul class="features-list"><li>5 tygodni pobytu (1 tydzień GRATIS!)</li><li>20 sesji indywidualnych po pobycie</li><li>Grupa wsparcia WhatsApp</li><li>Opieka zespołu specjalistów</li><li>Pełne wyżywienie</li></ul>
+                </div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- INCLUDED — bento grid -->
+<section class="included-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="overline">W cenie</span>
+            <h2>Co jest w cenie</h2>
+            <p>Każdy pakiet obejmuje pełne wsparcie na czas pobytu</p>
+        </div>
+        <div class="bento">
+            <div class="bento-item wide"><div class="icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h4>Opieka zespołu specjalistów</h4><p>Doświadczeni prowadzący dostępni na co dzień. Indywidualne podejście do każdego uczestnika.</p></div>
+            <div class="bento-item"><div class="icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h4>Sesje indywidualne i grupowe</h4><p>Według planu pobytu</p></div>
+            <div class="bento-item"><div class="icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h4>Wyżywienie i zakwaterowanie</h4><p>Komfortowe pokoje</p></div>
+            <div class="bento-item"><div class="icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><h4>Materiały i narzędzia</h4><p>Do pracy własnej i rozwoju</p></div>
+            <div class="bento-item"><div class="icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h4>Plan po wyjściu</h4><p>Indywidualny plan + kontakt kryzysowy</p></div>
+            <div class="bento-item wide"><div class="icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><h4>Wsparcie dla bliskich</h4><p>Pomoc i informacje dla rodziny uczestnika. Konsultacje online lub na miejscu — bo zmiana dotyczy całego otoczenia.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- TEAM — name list with descriptions -->
+<section class="team-section" id="team">
+    <div class="container">
+        <div class="section-header">
+            <span class="overline">Zespół</span>
+            <h2>Nasz zespół</h2>
+            <p>Za każdym programem stoją ludzie z doświadczeniem i pasją</p>
+        </div>
+        <div class="team-list">
+            <div class="team-member">
+                <div class="team-member-info">
+                    <span class="subtitle">Psychologia pozytywna</span>
+                    <h3>Krystian Nagaba</h3>
+                </div>
+                <div class="team-member-desc"><p>Dyplomowany specjalista psychologii pozytywnej i odporności psychicznej. 5+ lat doświadczenia, ponad 500 osób, którym pomógł w procesie zmiany. Autor książki „Wygraj Trzeźwe Życie". Towarzyszę w drodze do lepszego życia — bez moralizowania, z szacunkiem i zrozumieniem.</p></div>
+            </div>
+            <div class="team-member">
+                <div class="team-member-info">
+                    <span class="subtitle">Specjalistka</span>
+                    <h3>Natalia Pucz</h3>
+                </div>
+                <div class="team-member-desc"><p>Zaangażowana i empatyczna specjalistka z wieloletnim doświadczeniem. Mówią o niej, że potrafi na czynniki pierwsze rozłożyć każdy problem. W ośrodku MyWay od 2021 roku.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- REVIEWS — big quote slider -->
+<section class="reviews-section" id="reviews">
+    <div class="container">
+        <div class="reviews-header">
+            <span class="overline">Opinie</span>
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="rating">4.7 <span>/ 5</span></div>
+            <div class="sub">Na podstawie ponad 240 opinii w Google</div>
+        </div>
+        <div class="quote-slider" id="quoteSlider">
+            <div class="quote-slide active"><p class="text">Cztery tygodnie, które realnie ustawiły mi życie na nowo. Pierwszy raz od dawna poczułem, że mogę zacząć czysty rozdział.</p><div class="author">Tomek K.</div></div>
+            <div class="quote-slide"><p class="text">Minęły trzy tygodnie od zakończenia pobytu i wiem, że to była jedna z najlepszych decyzji w moim życiu.</p><div class="author">Maciej W.</div></div>
+            <div class="quote-slide"><p class="text">Świetne prowadzenie i kontakt także po wyjeździe — spotkania online i regularne zjazdy. Dużo konkretu.</p><div class="author">Jan S.</div></div>
+            <div class="quote-slide"><p class="text">Dostali mnie w najtrudniejszym momencie. Trafiłem na ludzi z pasją.</p><div class="author">Mati S.</div></div>
+            <div class="quote-slide"><p class="text">To miejsce pomogło mi wrócić do normalności i nauczyć się żyć spokojniej i sensowniej.</p><div class="author">Mateusz S.</div></div>
+            <div class="quote-slide"><p class="text">Z całego serca polecam ośrodek MyWay. Przesympatyczni specjaliści, dają 200% pomocy.</p><div class="author">Dominik L.</div></div>
+            <div class="quote-slide"><p class="text">Nie czekajcie! To najlepsze co może być. Super kadra, ogromne wsparcie.</p><div class="author">Frodo</div></div>
+            <div class="quote-slide"><p class="text">Bardzo przyjemne miejsce, ciepła atmosfera. Każdemu z całego serca polecam.</p><div class="author">Patrycja M.</div></div>
+        </div>
+        <div class="quote-nav" id="quoteNav"></div>
+        <div class="google-cta">
+            <a href="https://www.google.com/maps/place/My+Way/@54.6273455,18.2585185,17z" target="_blank">Zobacz wszystkie opinie w Google <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+        </div>
+    </div>
+</section>
+
+<!-- LOCATION — full photo + floating cards -->
+<section class="location-section" id="location">
+    <div class="location-photo"><img src="images/aerial.jpg" alt="MyWay Kąpino z lotu ptaka"></div>
+    <div class="location-overlay">
+        <div class="location-card">
+            <h3>Adres i kontakt</h3>
+            <div class="address-item"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h4>Adres</h4><p>ul. Wichrowe Wzgórza 21<br>84-200 Kąpino</p></div></div>
+            <div class="address-item"><div class="icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.82.31 1.63.55 2.41a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.78.24 1.59.43 2.41.55A2 2 0 0 1 22 16.92z"/></svg></div><div><h4>Telefon</h4><p><a href="tel:+48731395295">+48 731 395 295</a></p></div></div>
+            <div class="address-item"><div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><h4>Czynne</h4><p>Całodobowo 24/7</p></div></div>
+        </div>
+        <div class="location-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2315.8!2d18.2585185!3d54.6273455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fda17ea9a6ceed%3A0xd18689e7fe5655cf!2sMy%20Way!5e0!3m2!1spl!2spl!4v1700000000000" allowfullscreen="" loading="lazy"></iframe></div>
+    </div>
+    <div class="distance-strip">
+        <div class="distance-card"><div class="city">Gdańsk</div><div class="km">~30 km</div><div class="time">ok. 30 min</div></div>
+        <div class="distance-card"><div class="city">Gdynia</div><div class="km">~20 km</div><div class="time">ok. 25 min</div></div>
+        <div class="distance-card"><div class="city">Słupsk</div><div class="km">~120 km</div><div class="time">ok. 1,5h</div></div>
+        <div class="distance-card"><div class="city">Tczew</div><div class="km">~50 km</div><div class="time">ok. 40 min</div></div>
+        <div class="distance-card"><div class="city">Starogard Gd.</div><div class="km">~70 km</div><div class="time">ok. 1h</div></div>
+    </div>
+</section>
+
+<!-- GALLERY — auto-scrolling film strip -->
+<section class="gallery-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="overline">Galeria</span>
+            <h2>Nasz ośrodek</h2>
+        </div>
+    </div>
+    <div class="gallery-strip">
+        <img src="images/budynek.jpeg" alt="Budynek ośrodka">
+        <img src="images/sala.jpeg" alt="Sala spotkań">
+        <img src="images/aerial.jpg" alt="Widok z lotu ptaka">
+        <img src="images/budynek.jpeg" alt="Budynek ośrodka">
+        <img src="images/sala.jpeg" alt="Sala spotkań">
+        <img src="images/aerial.jpg" alt="Widok z lotu ptaka">
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+    <div class="container">
+        <div class="faq-layout">
+            <div class="faq-left">
+                <span class="overline">Pytania</span>
+                <h2>Masz pytania?</h2>
+                <p>Zebraliśmy najczęściej zadawane pytania. Jeśli nie znajdziesz odpowiedzi — zadzwoń, chętnie porozmawiamy.</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item" onclick="this.classList.toggle('open')"><h4>Co dokładnie jest w cenie pobytu?</h4><div class="answer">Opieka specjalistów, sesje indywidualne i grupowe, wyżywienie, zakwaterowanie, materiały, plan po wyjściu.</div></div>
+                <div class="faq-item" onclick="this.classList.toggle('open')"><h4>Jak szybko mogę rozpocząć pobyt?</h4><div class="answer">Najczęściej mamy 1-2 wolne miejsca. Termin ustalamy telefonicznie.</div></div>
+                <div class="faq-item" onclick="this.classList.toggle('open')"><h4>Czy mogę przedłużyć pobyt?</h4><div class="answer">Tak, długość pobytu jest elastyczna i ustalamy ją indywidualnie.</div></div>
+                <div class="faq-item" onclick="this.classList.toggle('open')"><h4>Jakie formy płatności akceptujecie?</h4><div class="answer">Przelew bankowy oraz gotówka. Waluta: PLN.</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-final" id="contact">
+    <span class="overline">Zrób pierwszy krok</span>
+    <h2>Porozmawiajmy</h2>
+    <p>Pierwszy krok to rozmowa. Bez zobowiązań.<br>Odpowiemy na Twoje pytania i pomożemy podjąć decyzję.</p>
+    <div class="phone"><a href="tel:+48731395295">+48 731 395 295</a></div>
+    <div class="hours">Czynne całodobowo</div>
+    <div class="cta-buttons">
+        <a href="tel:+48731395295" class="btn btn-white btn-large"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.82.31 1.63.55 2.41a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.78.24 1.59.43 2.41.55A2 2 0 0 1 22 16.92z"/></svg> 731 395 295</a>
+        <a href="https://osrodek-myway.pl" target="_blank" class="btn btn-outline-light btn-large">Dowiedz się więcej</a>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-logo">My<span>Way</span> Kąpino</div>
+        <div class="footer-address">ul. Wichrowe Wzgórza 21, 84-200 Kąpino</div>
+        <div class="footer-contact"><a href="tel:+48731395295">+48 731 395 295</a> &nbsp;|&nbsp; <a href="https://osrodek-myway.pl" target="_blank">osrodek-myway.pl</a></div>
+        <div class="footer-social">
+            <a href="https://www.facebook.com/osrodekleczeniauzalezniencom" target="_blank" title="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://www.youtube.com/@krystiannagaba" target="_blank" title="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+            <a href="https://www.instagram.com/krystiannagaba/" target="_blank" title="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="https://www.tiktok.com/@krystian.nagaba" target="_blank" title="TikTok"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg></a>
+        </div>
+        <p class="copyright">&copy; 2026 MyWay Kąpino. Wszystkie prawa zastrzeżone.</p>
+    </div>
+</footer>
+
+<div class="bottom-bar">
+    <span class="bottom-bar-text">Ośrodek <strong>MyWay</strong> Kąpino</span>
+    <a href="tel:+48731395295" class="btn btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.82.31 1.63.55 2.41a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.78.24 1.59.43 2.41.55A2 2 0 0 1 22 16.92z"/></svg> 731 395 295</a>
+</div>
+
+<div id="cookieBanner" class="cookie-banner"><div class="cookie-content"><p>Ta strona używa plików cookies, aby zapewnić najlepsze doświadczenia.</p><div class="cookie-buttons"><button onclick="acceptCookies()" class="cookie-btn accept">Akceptuję</button><a href="https://osrodek-myway.pl/polityka-prywatnosci" target="_blank" class="cookie-btn more">Więcej</a></div></div></div>
+<div id="cookieIcon" class="cookie-icon" onclick="showCookieBanner()"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></div>
+
+<script>
+// Top bar
+function handleScroll(){var t=document.getElementById('topBar');window.scrollY>80?(t.classList.remove('at-top'),t.classList.add('scrolled')):(t.classList.remove('scrolled'),t.classList.add('at-top'))}
+window.addEventListener('scroll',handleScroll);handleScroll();
+
+// Mobile
+function toggleMobile(){document.getElementById('mobileMenu').classList.toggle('open')}
+function closeMobile(){document.getElementById('mobileMenu').classList.remove('open')}
+
+// Side nav
+var sectionIds=['hero','features','about','pricing','team','reviews','location','contact'];
+var navDots=document.querySelectorAll('.side-nav a');
+function updateSideNav(){var s=window.scrollY+window.innerHeight/3,a='hero';for(var i=sectionIds.length-1;i>=0;i--){var el=document.getElementById(sectionIds[i]);if(el&&el.offsetTop<=s){a=sectionIds[i];break}}navDots.forEach(function(d){d.classList.toggle('active',d.getAttribute('href')==='#'+a)})}
+window.addEventListener('scroll',updateSideNav);updateSideNav();
+
+// Pricing panels
+function togglePanel(el){var wasOpen=el.classList.contains('open');document.querySelectorAll('.pricing-panel').forEach(function(p){p.classList.remove('open')});if(!wasOpen)el.classList.add('open')}
+
+// Quote slider
+var slides=document.querySelectorAll('.quote-slide');
+var navContainer=document.getElementById('quoteNav');
+var currentSlide=0;
+slides.forEach(function(_,i){var btn=document.createElement('button');if(i===0)btn.classList.add('active');btn.onclick=function(){goToSlide(i)};navContainer.appendChild(btn)});
+function goToSlide(i){slides.forEach(function(s){s.classList.remove('active')});navContainer.querySelectorAll('button').forEach(function(b){b.classList.remove('active')});slides[i].classList.add('active');navContainer.children[i].classList.add('active');currentSlide=i}
+setInterval(function(){goToSlide((currentSlide+1)%slides.length)},5000);
+
+// Cookies
+function checkCookieConsent(){if(localStorage.getItem('cookieConsent')==='accepted')document.getElementById('cookieIcon').classList.add('show');else document.getElementById('cookieBanner').classList.add('show')}
+function acceptCookies(){localStorage.setItem('cookieConsent','accepted');document.getElementById('cookieBanner').classList.remove('show');document.getElementById('cookieIcon').classList.add('show')}
+function showCookieBanner(){document.getElementById('cookieIcon').classList.remove('show');document.getElementById('cookieBanner').classList.add('show')}
+document.addEventListener('DOMContentLoaded',checkCookieConsent);
+</script>
+</body>
+</html>
