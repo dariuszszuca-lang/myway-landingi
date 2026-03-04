@@ -221,6 +221,10 @@
       "destination": "/main/opinie.html"
     },
     {
+      "source": "/v2",
+      "destination": "/main/v2-premium.html"
+    },
+    {
       "source": "/warminsko-mazurskie",
       "destination": "/warminsko-mazurskie/index.html"
     },
