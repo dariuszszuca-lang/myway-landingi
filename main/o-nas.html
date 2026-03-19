@@ -98,11 +98,12 @@
         .about-list li .check svg { width: 14px; height: 14px; stroke: var(--white); stroke-width: 3; fill: none; }
 
         /* TEAM - white cards, green top accent */
-        .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; max-width: 800px; margin: 0 auto; }
+        .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1000px; margin: 0 auto; }
         .team-card { background: var(--white); padding: 48px 36px; text-align: center; border-radius: 16px; box-shadow: 0 8px 30px rgba(14,165,233,0.08); position: relative; overflow: hidden; border: 1px solid rgba(14,165,233,0.06); transition: all 0.4s ease; }
         .team-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(16,185,129,0.12); }
         .team-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--green); }
-        .team-card .avatar { width: 100px; height: 100px; margin: 0 auto 24px; background: var(--emerald-50); display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+        .team-card .avatar { width: 120px; height: 120px; margin: 0 auto 24px; border-radius: 50%; overflow: hidden; border: 3px solid var(--green-light); }
+        .team-card .avatar img { width: 100%; height: 100%; object-fit: cover; }
         .team-card .avatar svg { width: 48px; height: 48px; stroke: var(--green); stroke-width: 1; fill: none; }
         .team-card h3 { font-size: 24px; margin-bottom: 8px; }
         .team-card .role { font-size: 13px; color: var(--green-dark); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; font-weight: 600; }
@@ -121,12 +122,13 @@
         .feature-card h3 { font-size: 20px; margin-bottom: 8px; }
         .feature-card p { font-size: 14px; color: var(--text); line-height: 1.8; }
 
-        /* GALLERY - 2 columns */
+        /* GALLERY - 3 columns */
         .gallery-section { background: var(--off-white); }
-        .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        .gallery-item { border-radius: 16px; overflow: hidden; aspect-ratio: 16/10; box-shadow: 0 4px 20px rgba(14,165,233,0.08); transition: all 0.4s ease; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .gallery-item { border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; box-shadow: 0 4px 20px rgba(14,165,233,0.08); transition: all 0.4s ease; }
         .gallery-item:hover { transform: scale(1.02); box-shadow: 0 8px 30px rgba(14,165,233,0.15); }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .gallery-item.wide { grid-column: span 2; aspect-ratio: 16/9; }
 
         /* SOCIAL - light sky-50 background */
         .social-section { background: var(--sky-50); }
@@ -186,8 +188,9 @@
         @media (max-width: 768px) {
             .page-hero h1 { font-size: 36px; }
             .section-header h2, .about-text h2 { font-size: 36px; }
-            .team-grid { grid-template-columns: 1fr; max-width: 400px; }
-            .gallery-grid { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; }
+            .gallery-item.wide { grid-column: span 2; }
             .cta-phone { font-size: 32px; }
             .cta-section h2 { font-size: 36px; }
             .cta-section { border-radius: 20px; margin: 0 16px; }
@@ -198,6 +201,8 @@
             .page-hero h1 { font-size: 28px; }
             body { padding-bottom: 120px; }
             .cta-section { margin: 0 12px; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-item.wide { grid-column: span 1; }
         }
     </style>
 </head>
@@ -265,14 +270,22 @@
             </div>
             <div class="team-grid">
                 <div class="team-card">
-                    <div class="avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
+                    <div class="avatar"><img src="/main/images/krystian.png" alt="Krystian Nagaba" loading="lazy"></div>
                     <h3>Krystian Nagaba</h3>
-                    <p>Dyplomowany specjalista psychologii pozytywnej i odporności psychicznej. 5+ lat doświadczenia, ponad 500 osób, którym pomógł w procesie zmiany. Autor książki „Wygraj Trzeźwe Życie". Towarzyszę w drodze do lepszego życia — bez moralizowania, z szacunkiem i zrozumieniem.</p>
+                    <p class="role">Założyciel · Terapeuta</p>
+                    <p>Dyplomowany specjalista psychologii pozytywnej i odporności psychicznej. 5+ lat doświadczenia, ponad 500 osób, którym pomógł w procesie zmiany. Autor książki „Wygraj Trzeźwe Życie".</p>
                 </div>
                 <div class="team-card">
-                    <div class="avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
+                    <div class="avatar"><img src="/main/images/natalia.jpg" alt="Natalia Pucz" loading="lazy"></div>
                     <h3>Natalia Pucz</h3>
+                    <p class="role">Terapeutka</p>
                     <p>Zaangażowana i empatyczna specjalistka z wieloletnim doświadczeniem. Mówią o niej, że potrafi na czynniki pierwsze rozłożyć każdy problem. W ośrodku MyWay od 2021 roku.</p>
+                </div>
+                <div class="team-card">
+                    <div class="avatar"><img src="/main/images/waldemar.png" alt="Waldemar Sikorski" loading="lazy"></div>
+                    <h3>Waldemar Sikorski</h3>
+                    <p class="role">Terapeuta</p>
+                    <p>Doświadczony terapeuta uzależnień. Spokojny, cierpliwy, zawsze gotowy do rozmowy. Buduje zaufanie i pomaga odnaleźć motywację do zmiany.</p>
                 </div>
             </div>
         </div>
@@ -340,8 +353,18 @@
                 <h2>Nasz ośrodek</h2>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="/main/images/budynek.jpeg" alt="Ośrodek MyWay - budynek"></div>
-                <div class="gallery-item"><img src="/main/images/sala.jpeg" alt="Ośrodek MyWay - sala spotkań"></div>
+                <div class="gallery-item wide"><img src="/main/images/aerial.jpg" alt="Ośrodek MyWay - widok z lotu ptaka" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/budynek.jpeg" alt="Ośrodek MyWay - budynek" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/natura.jpg" alt="Otoczenie ośrodka - las" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/living-room.jpg" alt="Salon z kominkiem" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/pokoj.jpg" alt="Pokój pacjenta" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/bedroom-1.jpg" alt="Sypialnia" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/bathroom-new-1.jpg" alt="Łazienka" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/kitchen.jpg" alt="Kuchnia" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/sala.jpeg" alt="Sala spotkań" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/gym.jpg" alt="Siłownia" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/fireplace-room.jpg" alt="Pokój z kominkiem" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/pieski.jpg" alt="Nasi czworonożni przyjaciele" loading="lazy"></div>
             </div>
         </div>
     </section>
