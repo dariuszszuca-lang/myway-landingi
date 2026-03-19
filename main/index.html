@@ -130,6 +130,38 @@
         .gallery-item:hover::after { opacity: 1; }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
         .gallery-item:hover img { transform: scale(1.08); }
+        .gallery-item.featured { grid-column: span 2; grid-row: span 2; }
+
+        /* STEPS */
+        .steps-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; text-align: center; position: relative; }
+        .step-card { position: relative; }
+        .step-number { width: 64px; height: 64px; background: var(--blue); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display', serif; font-size: 24px; margin: 0 auto 20px; }
+        .step-card h3 { font-size: 20px; margin-bottom: 12px; }
+        .step-card p { font-size: 14px; color: var(--text-light); line-height: 1.8; }
+        .step-connector { display: none; }
+        @media (min-width:769px) {
+            .step-connector { display: block; position: absolute; top: 32px; left: calc(33.33% + 32px); width: calc(33.33% - 64px); height: 2px; background: linear-gradient(90deg, var(--blue-light), var(--green-light)); }
+            .step-connector:nth-of-type(2) { left: calc(66.66% + 32px); }
+        }
+        @media (max-width:768px) { .steps-grid { grid-template-columns: 1fr; gap: 30px; } }
+
+        /* TEAM */
+        .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 30px; }
+        .team-card { text-align: center; background: var(--white); border-radius: 16px; overflow: hidden; border: 1px solid var(--slate-100); transition: all 0.4s ease; }
+        .team-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(14,165,233,0.1); }
+        .team-card-img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+        .team-card-body { padding: 24px; }
+        .team-card h3 { font-size: 20px; margin-bottom: 4px; }
+        .team-card .role { font-size: 13px; color: var(--blue); text-transform: uppercase; letter-spacing: 2px; font-weight: 500; }
+        @media (max-width:768px) { .team-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; } }
+
+        /* REVIEWS */
+        .reviews-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+        .review-card { background: var(--white); border-radius: 16px; padding: 32px; border: 1px solid var(--slate-100); }
+        .review-stars { color: #f59e0b; font-size: 18px; margin-bottom: 12px; letter-spacing: 2px; }
+        .review-text { font-size: 15px; color: var(--text); line-height: 1.8; margin-bottom: 16px; font-style: italic; }
+        .review-author { font-size: 13px; color: var(--text-light); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        @media (max-width:768px) { .reviews-grid { grid-template-columns: 1fr; } }
 
         /* CTA */
         .cta-section { background: linear-gradient(135deg, #0c4a6e 0%, #0e7490 50%, #059669 100%); text-align: center; padding: 150px 24px; position: relative; color: var(--white); }
@@ -292,30 +324,135 @@
         </div>
     </section>
 
+    <!-- 3 KROKI -->
+    <section style="background: var(--white);">
+        <div class="container">
+            <div class="section-header">
+                <span class="overline">Jak to wygląda</span>
+                <h2>3 kroki do zmiany</h2>
+                <p>Proces jest prosty. Zaczynamy od rozmowy — bez zobowiązań.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-connector"></div>
+                <div class="step-connector"></div>
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Zadzwoń do nas</h3>
+                    <p>Porozmawiaj z Krystianem. Odpowiemy na pytania, opowiemy jak wygląda pobyt. Zero presji — to tylko rozmowa.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Bezpłatna konsultacja</h3>
+                    <p>Wspólnie ustalamy plan — termin przyjazdu, czas pobytu, indywidualny program. Wszystko w 100% dyskretnie.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Rozpoczynasz pobyt</h3>
+                    <p>Przyjeżdżasz do kameralnego ośrodka w otoczeniu lasu. Reszta jest po naszej stronie — możesz się skupić na sobie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIA -->
     <section class="gallery-section">
         <div class="container">
             <div class="section-header">
                 <span class="overline">Galeria</span>
                 <h2>Nasz ośrodek</h2>
+                <p>Komfortowe warunki w otoczeniu kaszubskich lasów</p>
             </div>
-            <div class="gallery-grid" style="grid-template-columns: repeat(2,1fr);">
-                <div class="gallery-item"><img src="/main/images/budynek.jpeg" alt="Ośrodek MyWay - budynek"></div>
-                <div class="gallery-item"><img src="/main/images/sala.jpeg" alt="Ośrodek MyWay - sala spotkań"></div>
+            <div class="gallery-grid">
+                <div class="gallery-item featured"><img src="/main/images/aerial.jpg" alt="Ośrodek MyWay - widok z lotu ptaka" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/budynek.jpeg" alt="Ośrodek MyWay - budynek" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/natura.jpg" alt="Ośrodek MyWay - otoczenie" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/living-room.jpg" alt="Salon z kominkiem" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/pokoj.jpg" alt="Pokój pacjenta" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/bedroom-1.jpg" alt="Sypialnia" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/bathroom-new-1.jpg" alt="Łazienka" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/kitchen.jpg" alt="Kuchnia" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/sala.jpeg" alt="Sala spotkań" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/gym.jpg" alt="Siłownia" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/fireplace-room.jpg" alt="Pokój z kominkiem" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/pieski.jpg" alt="Nasi czworonożni przyjaciele" loading="lazy"></div>
             </div>
         </div>
     </section>
 
+    <!-- ZESPÓŁ -->
+    <section style="background: var(--white);">
+        <div class="container">
+            <div class="section-header">
+                <span class="overline">Zespół</span>
+                <h2>Ludzie, którym zależy</h2>
+                <p>Nasz zespół to osoby z wieloletnim doświadczeniem i prawdziwą pasją do pomagania</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <img class="team-card-img" src="/main/images/krystian.png" alt="Krystian Nagaba" loading="lazy">
+                    <div class="team-card-body">
+                        <h3>Krystian Nagaba</h3>
+                        <p class="role">Założyciel · Terapeuta</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <img class="team-card-img" src="/main/images/natalia.jpg" alt="Natalia Pucz" loading="lazy">
+                    <div class="team-card-body">
+                        <h3>Natalia Pucz</h3>
+                        <p class="role">Terapeutka</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <img class="team-card-img" src="/main/images/waldemar.png" alt="Waldemar Sikorski" loading="lazy">
+                    <div class="team-card-body">
+                        <h3>Waldemar Sikorski</h3>
+                        <p class="role">Terapeuta</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPINIE GOOGLE -->
+    <section style="background: var(--sky-50);">
+        <div class="container">
+            <div class="section-header">
+                <span class="overline">Opinie</span>
+                <h2>Co mówią o nas</h2>
+                <p>4.7 na Google · 240+ opinii</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">„Ośrodek, który naprawdę zmienia życie. Profesjonalna kadra, indywidualne podejście. Polecam z całego serca."</p>
+                    <div class="review-author">— Marcin K.</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">„Kameralny, ciepły, ludzki. Krystian i zespół to ludzie z prawdziwą misją. Czujesz się tu bezpiecznie od pierwszego dnia."</p>
+                    <div class="review-author">— Anna W.</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">„Najlepsza decyzja w moim życiu. Warunki jak w domu, a terapia na najwyższym poziomie. Dziękuję za nowy początek."</p>
+                    <div class="review-author">— Tomasz R.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Z KRYSTIANEM -->
     <section class="cta-section">
         <div class="container">
             <span class="overline">Zrób pierwszy krok</span>
-            <h2>Porozmawiajmy</h2>
-            <p>Pierwszy krok to rozmowa. Bez zobowiązań.<br>Odpowiemy na Twoje pytania i pomożemy podjąć decyzję.</p>
-            <div class="cta-phone"><a href="tel:+48731395295">+48 731 395 295</a></div>
-            <div class="cta-hours">Czynne całodobowo</div>
+            <h2>Porozmawiaj z Krystianem</h2>
+            <p>Pierwszy krok to rozmowa. Bez zobowiązań, bez presji.<br>Krystian odpowie na Twoje pytania i pomoże podjąć decyzję.</p>
+            <div class="cta-phone"><a href="tel:+48731395295">731 395 295</a></div>
+            <div class="cta-hours">Całodobowo · 7 dni w tygodniu</div>
             <div class="cta-buttons">
                 <a href="tel:+48731395295" class="btn btn-primary btn-large">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                    Zadzwoń teraz
+                    Zadzwoń do Krystiana
                 </a>
                 <a href="https://osrodek-myway.pl" target="_blank" class="btn btn-outline-white btn-large">Dowiedz się więcej</a>
             </div>
