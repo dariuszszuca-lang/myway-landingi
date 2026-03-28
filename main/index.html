@@ -518,15 +518,20 @@
 <div style="display:inline-block;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-radius:16px;padding:16px 24px;animation:badgePulse 3s ease-in-out infinite;box-shadow:0 8px 32px rgba(192,57,43,0.2),0 2px 8px rgba(0,0,0,0.08)">
 <p style="font-family:Georgia,serif;font-size:17px;font-weight:700;color:#0D4F4F;margin:0;line-height:1.4">Dzięki wsparciu <strong>Fundacji MyWay</strong></p>
 <p style="font-family:Georgia,serif;font-size:42px;font-weight:800;color:#c0392b;margin:4px 0;line-height:1">−50%</p>
-<p style="font-family:Georgia,serif;font-size:15px;font-weight:600;color:#555;margin:0">obniżamy cenę na start dla 10 osób</p>
-<p style="font-family:Georgia,serif;font-size:13px;font-weight:700;color:#c0392b;margin:4px 0 0">🔥 Zostało 5 miejsc</p>
+<p style="font-family:Georgia,serif;font-size:13px;font-weight:700;color:#c0392b;margin:4px 0 0">🔥 Ostatnie 5 miejsc</p>
 </div>
 </div>
 <div style="position:absolute;bottom:12px;left:0;right:0;text-align:center;z-index:10;padding:0 24px"><h2 style="font-family:Georgia,serif;font-size:30px;color:#2a2520;line-height:1.15;margin:0">Wielkanoc = <em style="color:#0D4F4F;font-style:italic">Wielka Zmiana</em></h2></div>
 </div>
 <div style="background:#fffdf8;padding:16px 28px 28px;text-align:center">
-<h3 style="font-family:Georgia,serif;font-size:20px;font-weight:700;color:#1a1a2e;margin:0 0 8px;line-height:1.4">Nowy początek jest bliżej<br>niż myślisz.</h3>
-<p style="font-size:14px;color:#666;line-height:1.7;margin:0 0 20px">Wielkanoc to czas zmian. Dzięki Fundacji MyWay obniżamy cenę o&nbsp;połowę dla&nbsp;5&nbsp;osób.<br><br>Zadzwoń, porozmawiamy. Bez zobowiązań.</p>
+<p style="font-size:12px;font-weight:600;color:#999;text-transform:uppercase;letter-spacing:3px;margin:0 0 8px">Oferta wygasa za</p>
+<div id="countdown-timer" style="display:flex;justify-content:center;gap:10px;margin-bottom:16px">
+<div style="text-align:center"><div id="cd-days" style="width:52px;height:52px;border-radius:12px;background:linear-gradient(180deg,#2a2520,#1a1612);color:#fff;font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);font-family:monospace">00</div><div style="font-size:9px;color:#999;margin-top:4px;font-weight:600;letter-spacing:1px">DNI</div></div>
+<div style="text-align:center"><div id="cd-hours" style="width:52px;height:52px;border-radius:12px;background:linear-gradient(180deg,#2a2520,#1a1612);color:#fff;font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);font-family:monospace">00</div><div style="font-size:9px;color:#999;margin-top:4px;font-weight:600;letter-spacing:1px">GODZ</div></div>
+<div style="text-align:center"><div id="cd-mins" style="width:52px;height:52px;border-radius:12px;background:linear-gradient(180deg,#2a2520,#1a1612);color:#fff;font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);font-family:monospace">00</div><div style="font-size:9px;color:#999;margin-top:4px;font-weight:600;letter-spacing:1px">MIN</div></div>
+<div style="text-align:center"><div id="cd-secs" style="width:52px;height:52px;border-radius:12px;background:linear-gradient(180deg,#2a2520,#1a1612);color:#fff;font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);font-family:monospace">00</div><div style="font-size:9px;color:#999;margin-top:4px;font-weight:600;letter-spacing:1px">SEK</div></div>
+</div>
+<p style="font-size:14px;color:#666;line-height:1.7;margin:0 0 20px">Zadzwoń po szczegóły. Bez zobowiązań.</p>
 <a href="tel:+48731395295" style="display:block;width:100%;padding:16px;border-radius:14px;background:linear-gradient(135deg,#0D4F4F,#1a7a7a);color:#fff;font-family:Georgia,serif;font-size:16px;font-weight:700;text-align:center;text-decoration:none;box-shadow:0 8px 25px rgba(13,79,79,0.25)">Zadzwoń — 731 395 295</a>
 </div>
 </div>
@@ -535,5 +540,8 @@
 @keyframes easterIn{from{opacity:0;transform:scale(.95) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
 @keyframes badgePulse{0%,100%{box-shadow:0 8px 32px rgba(192,57,43,0.2),0 2px 8px rgba(0,0,0,0.08);transform:scale(1)}50%{box-shadow:0 12px 44px rgba(192,57,43,0.35),0 4px 12px rgba(0,0,0,0.1);transform:scale(1.02)}}
 </style>
+<script>
+(function(){var deadline=new Date('2026-03-31T22:00:00+02:00').getTime();function tick(){var now=Date.now(),diff=deadline-now;if(diff<=0){document.getElementById('cd-days').textContent='00';document.getElementById('cd-hours').textContent='00';document.getElementById('cd-mins').textContent='00';document.getElementById('cd-secs').textContent='00';return}var d=Math.floor(diff/86400000),h=Math.floor((diff%86400000)/3600000),m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);document.getElementById('cd-days').textContent=String(d).padStart(2,'0');document.getElementById('cd-hours').textContent=String(h).padStart(2,'0');document.getElementById('cd-mins').textContent=String(m).padStart(2,'0');document.getElementById('cd-secs').textContent=String(s).padStart(2,'0')}tick();setInterval(tick,1000)})();
+</script>
 </body>
 </html>
