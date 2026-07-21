@@ -100,13 +100,19 @@
         .about-image img { width: 100%; height: auto; display: block; }
 
         /* PHONE CTA */
-        .phone-strip { background: var(--bg-subtle); text-align: center; padding: 80px 24px; }
-        .phone-strip .overline { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 4px; color: var(--secondary); margin-bottom: 16px; font-weight: 700; }
-        .phone-strip h2 { font-size: 42px; margin-bottom: 14px; }
-        .phone-strip p { font-size: 16px; color: var(--fg-muted); margin-bottom: 36px; }
-        .phone-big { font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 700; margin-bottom: 10px; }
-        .phone-big a { color: var(--primary); text-decoration: none; }
-        .phone-hours { font-size: 13px; color: var(--fg-muted); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 36px; }
+        .phone-strip { background: var(--bg-subtle); text-align: center; padding: 90px 24px; }
+        .phone-card { position: relative; overflow: hidden; max-width: 880px; margin: 0 auto; background: linear-gradient(135deg, hsl(160,70%,10%) 0%, hsl(158,60%,17%) 55%, hsl(155,60%,24%) 100%); border-radius: 28px; padding: 72px 40px 64px; box-shadow: 0 30px 70px hsla(160,70%,10%,0.35); }
+        .phone-card::before { content: ''; position: absolute; top: -120px; right: -120px; width: 340px; height: 340px; border-radius: 50%; background: radial-gradient(circle, hsla(155,65%,45%,0.35), transparent 70%); }
+        .phone-card::after { content: ''; position: absolute; bottom: -140px; left: -100px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, hsla(155,65%,45%,0.2), transparent 70%); }
+        .phone-card > * { position: relative; z-index: 1; }
+        .phone-card .overline { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 4px; color: var(--secondary-light); margin-bottom: 16px; font-weight: 700; }
+        .phone-card h2 { font-size: 42px; margin-bottom: 14px; color: var(--white); }
+        .phone-card p { font-size: 16px; color: hsla(0,0%,100%,0.8); margin-bottom: 40px; }
+        .phone-pill { display: inline-flex; align-items: center; gap: 18px; padding: 20px 48px; border-radius: 999px; border: 2.5px solid hsla(155,65%,70%,0.65); background: hsla(0,0%,100%,0.09); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); text-decoration: none; transition: all 0.3s ease; box-shadow: 0 14px 40px hsla(160,70%,8%,0.4); }
+        .phone-pill:hover { background: hsla(0,0%,100%,0.16); border-color: hsla(155,65%,75%,0.9); transform: translateY(-2px); }
+        .phone-pill svg { width: 34px; height: 34px; stroke: var(--secondary-light); stroke-width: 1.8; fill: none; flex-shrink: 0; }
+        .phone-pill span { font-family: 'Space Grotesk', sans-serif; font-size: 50px; font-weight: 700; color: var(--secondary-light); letter-spacing: 1px; line-height: 1; }
+        .phone-hours { font-size: 13px; color: hsla(0,0%,100%,0.55); text-transform: uppercase; letter-spacing: 3px; margin-top: 26px; }
 
         /* FOOTER */
         footer { padding: 70px 0 46px; background: hsl(220, 20%, 8%); text-align: center; color: var(--white); }
@@ -147,7 +153,8 @@
             .hero h1 { font-size: 38px; } .hero p { font-size: 16px; }
             .section-header h2 { font-size: 32px; } .about-text h2 { font-size: 30px; }
             .gallery-grid { grid-template-columns: 1fr; } .gallery-item.featured { grid-column: span 1; grid-row: span 1; }
-            .phone-big { font-size: 36px; } .phone-strip h2 { font-size: 30px; }
+            .phone-card { padding: 48px 20px 44px; border-radius: 22px; } .phone-card h2 { font-size: 30px; }
+            .phone-pill { padding: 16px 26px; gap: 12px; } .phone-pill span { font-size: 30px; } .phone-pill svg { width: 24px; height: 24px; }
             .bottom-bar { gap: 14px; } .bottom-bar-text { display: none; }
             section { padding: 70px 0; }
         }
@@ -237,15 +244,16 @@
     <!-- TELEFON CTA -->
     <section class="phone-strip">
         <div class="container">
-            <span class="overline">Zrób pierwszy krok</span>
-            <h2>Porozmawiajmy</h2>
-            <p>Pierwszy krok to rozmowa. Bez zobowiązań, bez presji.</p>
-            <div class="phone-big"><a href="tel:+48731395295">731 395 295</a></div>
-            <div class="phone-hours">Całodobowo · 7 dni w tygodniu</div>
-            <a href="tel:+48731395295" class="btn btn-primary btn-large">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                Zadzwoń teraz
-            </a>
+            <div class="phone-card">
+                <span class="overline">Zrób pierwszy krok</span>
+                <h2>Porozmawiajmy</h2>
+                <p>Pierwszy krok to rozmowa. Bez zobowiązań, bez presji.</p>
+                <a href="tel:+48731395295" class="phone-pill">
+                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>731 395 295</span>
+                </a>
+                <div class="phone-hours">Całodobowo · 7 dni w tygodniu</div>
+            </div>
         </div>
     </section>
 
