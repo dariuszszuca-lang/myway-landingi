@@ -22,6 +22,16 @@
     },
     {
       "source": "/",
+      "has": [{ "type": "host", "value": "myway-osrodek.com.pl" }],
+      "destination": "/com-pl/index.html"
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "www.myway-osrodek.com.pl" }],
+      "destination": "/com-pl/index.html"
+    },
+    {
+      "source": "/",
       "destination": "/main/index.html"
     },
     {
