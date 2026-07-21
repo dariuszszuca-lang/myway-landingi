@@ -42,8 +42,6 @@
         .btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 18px 36px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 15px; text-decoration: none; border-radius: 14px; transition: all 0.3s ease; cursor: pointer; border: none; }
         .btn-primary { background: var(--primary); color: var(--white); box-shadow: 0 10px 30px hsla(220,85%,35%,0.35); }
         .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 16px 40px hsla(220,85%,35%,0.45); }
-        .btn-green { background: var(--secondary); color: var(--white); box-shadow: 0 10px 30px hsla(155,65%,45%,0.35); }
-        .btn-green:hover { filter: brightness(0.92); transform: translateY(-2px); }
         .btn-outline-white { background: hsla(0,0%,100%,0.1); color: var(--white); border: 2px solid hsla(0,0%,100%,0.5); backdrop-filter: blur(8px); }
         .btn-outline-white:hover { background: var(--white); color: var(--primary-dark); }
         .btn-large { padding: 20px 44px; font-size: 16px; }
@@ -99,26 +97,6 @@
         .about-image { border-radius: 20px; overflow: hidden; box-shadow: 0 24px 60px hsla(220,20%,8%,0.14); }
         .about-image img { width: 100%; height: auto; display: block; }
 
-        /* FORM */
-        .form-section { background: linear-gradient(135deg, hsl(220,85%,20%) 0%, hsl(220,85%,32%) 55%, hsl(155,65%,32%) 100%); color: var(--white); }
-        .form-section .section-header h2, .form-section .section-header p { color: var(--white); }
-        .form-section .section-header p { opacity: 0.85; }
-        .form-section .section-header .overline { color: var(--secondary-light); }
-        .form-wrap { max-width: 620px; margin: 0 auto; background: var(--white); border-radius: 22px; padding: 44px 40px; box-shadow: 0 30px 80px hsla(220,85%,10%,0.35); }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--fg); margin-bottom: 8px; letter-spacing: 0.3px; }
-        .form-group input, .form-group textarea { width: 100%; padding: 15px 16px; border: 1.5px solid var(--border); border-radius: 12px; font-family: 'Inter', sans-serif; font-size: 15px; color: var(--fg); background: var(--bg-subtle); transition: border-color 0.3s ease; }
-        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); background: var(--white); }
-        .form-group textarea { min-height: 110px; resize: vertical; }
-        .form-consent { display: flex; align-items: flex-start; gap: 10px; margin: 22px 0; font-size: 12.5px; color: var(--fg-muted); line-height: 1.6; }
-        .form-consent input { margin-top: 3px; accent-color: var(--primary); width: 16px; height: 16px; flex-shrink: 0; }
-        .form-submit { width: 100%; }
-        .form-alt { text-align: center; margin-top: 24px; font-size: 14px; color: var(--fg-muted); }
-        .form-alt a { color: var(--primary); font-weight: 700; text-decoration: none; }
-        .form-status { display: none; text-align: center; padding: 14px; border-radius: 12px; margin-bottom: 20px; font-size: 14.5px; font-weight: 500; }
-        .form-status.ok { display: block; background: var(--accent); color: hsl(155,65%,22%); }
-        .form-status.err { display: block; background: hsl(0,84%,96%); color: hsl(0,70%,40%); }
-
         /* PHONE CTA */
         .phone-strip { background: var(--bg-subtle); text-align: center; padding: 80px 24px; }
         .phone-strip .overline { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 4px; color: var(--secondary); margin-bottom: 16px; font-weight: 700; }
@@ -168,7 +146,6 @@
             .section-header h2 { font-size: 32px; } .about-text h2 { font-size: 30px; }
             .gallery-grid { grid-template-columns: 1fr; } .gallery-item.featured { grid-column: span 1; grid-row: span 1; }
             .phone-big { font-size: 36px; } .phone-strip h2 { font-size: 30px; }
-            .form-wrap { padding: 32px 22px; }
             .bottom-bar { gap: 14px; } .bottom-bar-text { display: none; }
             section { padding: 70px 0; }
         }
@@ -195,11 +172,11 @@
             <div class="hero-buttons">
                 <a href="tel:+48731395295" class="btn btn-primary btn-large">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                    Zadzwoń teraz
+                    731 395 295
                 </a>
-                <a href="#kontakt" class="btn btn-outline-white btn-large">Wypełnij formularz</a>
+                <a href="https://osrodek-myway.pl" target="_blank" rel="noopener" class="btn btn-outline-white btn-large">Dowiedz się więcej</a>
             </div>
-            <div class="hero-phone-note">731 395 295 · Całodobowo, 7 dni w tygodniu</div>
+            <div class="hero-phone-note">Całodobowo, 7 dni w tygodniu</div>
         </div>
     </section>
 
@@ -255,40 +232,6 @@
         </div>
     </section>
 
-    <!-- FORMULARZ -->
-    <section id="kontakt" class="form-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="overline">Napisz do nas</span>
-                <h2>Zostaw kontakt, oddzwonimy</h2>
-                <p>Wypełnij krótki formularz. Odezwiemy się tak szybko, jak to możliwe. Rozmowa jest bezpłatna i do niczego nie zobowiązuje.</p>
-            </div>
-            <div class="form-wrap">
-                <div id="formStatus" class="form-status"></div>
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="fname">Imię</label>
-                        <input type="text" id="fname" name="fname" required autocomplete="given-name" placeholder="Twoje imię">
-                    </div>
-                    <div class="form-group">
-                        <label for="fphone">Numer telefonu</label>
-                        <input type="tel" id="fphone" name="fphone" required autocomplete="tel" placeholder="Np. 600 000 000">
-                    </div>
-                    <div class="form-group">
-                        <label for="fmsg">Wiadomość (opcjonalnie)</label>
-                        <textarea id="fmsg" name="fmsg" placeholder="Napisz w czym możemy pomóc"></textarea>
-                    </div>
-                    <label class="form-consent">
-                        <input type="checkbox" id="fconsent" required>
-                        <span>Wyrażam zgodę na kontakt telefoniczny w celu udzielenia odpowiedzi na moje zapytanie. Administratorem danych jest Ośrodek MyWay, ul. Wichrowe Wzgórza 21, 84-200 Kąpino. <a href="#" onclick="openPrivacy(event)">Polityka prywatności</a></span>
-                    </label>
-                    <button type="submit" class="btn btn-green btn-large form-submit" id="submitBtn">Wyślij i czekaj na telefon</button>
-                </form>
-                <div class="form-alt">Wolisz porozmawiać od razu? Zadzwoń: <a href="tel:+48731395295">731 395 295</a></div>
-            </div>
-        </div>
-    </section>
-
     <!-- TELEFON CTA -->
     <section class="phone-strip">
         <div class="container">
@@ -326,9 +269,8 @@
     <div id="privacyModal" class="modal-backdrop">
         <div class="modal">
             <h3>Polityka prywatności</h3>
-            <p>Administratorem danych osobowych podanych w formularzu kontaktowym jest Ośrodek MyWay, ul. Wichrowe Wzgórza 21, 84-200 Kąpino, tel. +48 731 395 295.</p>
-            <p>Dane podane w formularzu (imię, numer telefonu, treść wiadomości) przetwarzamy wyłącznie w celu kontaktu i udzielenia odpowiedzi na zapytanie, na podstawie Twojej zgody (art. 6 ust. 1 lit. a RODO). Dane nie są przekazywane innym podmiotom w celach marketingowych.</p>
-            <p>Masz prawo dostępu do swoich danych, ich sprostowania, usunięcia oraz cofnięcia zgody w dowolnym momencie. W tym celu skontaktuj się z nami telefonicznie.</p>
+            <p>Właścicielem strony jest Ośrodek MyWay, ul. Wichrowe Wzgórza 21, 84-200 Kąpino, tel. +48 731 395 295.</p>
+            <p>Strona nie zawiera formularzy i nie zbiera danych osobowych. Kontakt odbywa się wyłącznie telefonicznie, z inicjatywy osoby dzwoniącej.</p>
             <p>Strona korzysta z plików cookies w celach statystycznych i marketingowych. Możesz zarządzać cookies w ustawieniach przeglądarki.</p>
             <button class="btn btn-primary" onclick="closePrivacy()">Zamknij</button>
         </div>
@@ -355,44 +297,6 @@
         function acceptCookies(){ localStorage.setItem('cookieConsent','accepted'); document.getElementById('cookieBanner').classList.remove('show'); }
         document.addEventListener('DOMContentLoaded', checkCookieConsent);
 
-        document.getElementById('contactForm').addEventListener('submit', function(e){
-            e.preventDefault();
-            var btn = document.getElementById('submitBtn');
-            var status = document.getElementById('formStatus');
-            btn.disabled = true; btn.textContent = 'Wysyłanie...';
-            status.className = 'form-status';
-            fetch('https://api.emailjs.com/api/v1.0/email/send', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    service_id: 'service_xwxkzr4',
-                    template_id: 'template_7z80w1a',
-                    user_id: 'KpuuComBPWHCIs6ZT',
-                    template_params: {
-                        from_name: document.getElementById('fname').value,
-                        from_contact: document.getElementById('fphone').value,
-                        preferred_time: 'Nie podano',
-                        treatment_type: 'Landing myway-osrodek.com.pl',
-                        message: document.getElementById('fmsg').value || 'Brak dodatkowych informacji',
-                        to_name: 'Ośrodek MyWay',
-                        reply_to: document.getElementById('fphone').value,
-                        to_email_2: 'kontakt@osrodek-myway.pl'
-                    }
-                })
-            }).then(function(r){
-                if(r.ok){
-                    status.textContent = 'Dziękujemy! Twoja wiadomość została wysłana. Oddzwonimy tak szybko, jak to możliwe.';
-                    status.className = 'form-status ok';
-                    document.getElementById('contactForm').reset();
-                    if(window.dataLayer){ window.dataLayer.push({event:'lead_form_submitted'}); }
-                } else { throw new Error('send failed'); }
-            }).catch(function(){
-                status.textContent = 'Nie udało się wysłać wiadomości. Zadzwoń do nas: 731 395 295.';
-                status.className = 'form-status err';
-            }).finally(function(){
-                btn.disabled = false; btn.textContent = 'Wyślij i czekaj na telefon';
-            });
-        });
     </script>
 </body>
 </html>
