@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MVB9SFWW');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ośrodek MyWay Kąpino | Spokojne miejsce w sercu kaszubskich lasów</title>
+    <meta name="description" content="Kameralny ośrodek na Kaszubach. Pokoje jednoosobowe, pełne wyżywienie, opieka zespołu specjalistów i dyskretna lokalizacja w otoczeniu lasu. Zadzwoń: 731 395 295.">
+    <meta name="robots" content="index, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: hsl(220, 85%, 35%);
+            --primary-dark: hsl(220, 85%, 20%);
+            --secondary: hsl(155, 65%, 40%);
+            --secondary-light: hsl(155, 65%, 70%);
+            --btn: hsl(150, 70%, 38%);
+            --btn-dark: hsl(150, 70%, 29%);
+            --accent: hsl(155, 65%, 95%);
+            --bg: hsl(0, 0%, 100%);
+            --bg-subtle: hsl(220, 20%, 98%);
+            --bg-accent: hsl(155, 30%, 96%);
+            --fg: hsl(220, 20%, 10%);
+            --fg-secondary: hsl(220, 15%, 27%);
+            --fg-muted: hsl(220, 10%, 45%);
+            --border: hsl(220, 20%, 90%);
+            --white: #ffffff;
+            --gradient-hero: linear-gradient(160deg, hsla(160,70%,9%,0.88) 0%, hsla(158,60%,18%,0.72) 55%, hsla(155,60%,30%,0.5) 100%);
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--fg-secondary); line-height: 1.7; padding-bottom: 84px; }
+        h1,h2,h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; line-height: 1.15; color: var(--fg); }
+        img { max-width: 100%; }
+        .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 18px 36px; font-weight: 600; font-size: 15px; text-decoration: none; border-radius: 14px; transition: all 0.3s ease; cursor: pointer; border: none; }
+        .btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+        .btn-primary { background: var(--btn); color: var(--white); box-shadow: 0 10px 30px hsla(150,70%,25%,0.35); }
+        .btn-primary:hover { background: var(--btn-dark); transform: translateY(-2px); box-shadow: 0 16px 40px hsla(150,70%,25%,0.45); }
+        .btn-outline-white { background: hsla(0,0%,100%,0.1); color: var(--white); border: 2px solid hsla(0,0%,100%,0.5); backdrop-filter: blur(8px); }
+        .btn-outline-white:hover { background: var(--white); color: var(--primary-dark); }
+        .btn-outline { background: transparent; color: var(--btn-dark); border: 2px solid var(--btn); }
+        .btn-outline:hover { background: var(--btn); color: var(--white); }
+        .btn-large { padding: 20px 44px; font-size: 16px; }
+        .overline { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 4px; color: var(--secondary); margin-bottom: 16px; font-weight: 700; }
+
+        /* TOP BAR */
+        .top-bar { position: fixed; top: 0; left: 0; right: 0; z-index: 200; transition: all 0.35s ease; }
+        .top-bar.at-top { background: transparent; }
+        .top-bar.scrolled { background: hsla(0,0%,100%,0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: 0 4px 24px hsla(220,20%,8%,0.08); }
+        .top-bar-inner { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+        .top-logo img { height: 46px; width: auto; display: block; }
+        .at-top .top-logo img { filter: brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0,0,0,0.2)); }
+        .top-phone { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; font-size: 15px; padding: 12px 22px; border-radius: 12px; transition: all 0.3s ease; }
+        .top-phone svg { width: 17px; height: 17px; }
+        .at-top .top-phone { color: var(--white); background: hsla(0,0%,100%,0.14); border: 1.5px solid hsla(0,0%,100%,0.45); }
+        .at-top .top-phone:hover { background: var(--white); color: var(--primary-dark); }
+        .scrolled .top-phone { color: var(--white); background: var(--btn); }
+        .scrolled .top-phone:hover { background: var(--btn-dark); }
+
+        /* HERO */
+        .hero { position: relative; min-height: 94vh; display: flex; align-items: center; background: url('/main/images/natura.jpg') center center / cover no-repeat; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; inset: 0; background: var(--gradient-hero); }
+        .hero-content { position: relative; z-index: 2; width: 100%; padding: 130px 24px 90px; text-align: center; }
+        .hero-overline { display: inline-block; font-size: 13px; text-transform: uppercase; letter-spacing: 4px; color: var(--secondary-light); margin-bottom: 26px; font-weight: 600; }
+        .hero h1 { font-size: 58px; color: var(--white); margin-bottom: 24px; max-width: 860px; margin-left: auto; margin-right: auto; }
+        .hero p { font-size: 19px; color: hsla(0,0%,100%,0.9); max-width: 640px; margin: 0 auto 44px; line-height: 1.8; font-weight: 300; }
+        .hero-buttons { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin-bottom: 56px; }
+        .hero-badges { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 9px; padding: 10px 20px; border-radius: 999px; background: hsla(0,0%,100%,0.12); border: 1px solid hsla(0,0%,100%,0.28); backdrop-filter: blur(8px); color: var(--white); font-size: 13.5px; font-weight: 500; }
+        .hero-badge svg { width: 16px; height: 16px; stroke: var(--secondary-light); stroke-width: 2.2; fill: none; }
+
+        /* SECTIONS */
+        section { padding: 96px 0; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 44px; margin-bottom: 18px; }
+        .section-header p { font-size: 16px; color: var(--fg-muted); max-width: 620px; margin: 0 auto; }
+
+        /* ATUTY */
+        .features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+        .feature-card { background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 36px 30px; transition: all 0.3s ease; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 18px 44px hsla(220,20%,8%,0.1); border-color: hsla(155,65%,45%,0.45); }
+        .feature-icon { width: 54px; height: 54px; border-radius: 15px; background: var(--accent); display: flex; align-items: center; justify-content: center; margin-bottom: 22px; }
+        .feature-icon svg { width: 26px; height: 26px; stroke: var(--secondary); stroke-width: 1.9; fill: none; }
+        .feature-card h3 { font-size: 19px; margin-bottom: 10px; }
+        .feature-card p { font-size: 14.5px; color: var(--fg-muted); line-height: 1.75; }
+
+        /* GALLERY */
+        .gallery-section { background: var(--bg-subtle); }
+        .gallery-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+        .gallery-item { aspect-ratio: 4/3; overflow: hidden; border-radius: 16px; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .gallery-item:hover img { transform: scale(1.06); }
+        .gallery-item.featured { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
+
+        /* ABOUT */
+        .about-split { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+        .about-text h2 { font-size: 40px; margin-bottom: 22px; }
+        .about-text p { font-size: 16px; color: var(--fg-muted); line-height: 1.9; margin-bottom: 18px; }
+        .about-list { list-style: none; margin: 26px 0 6px; }
+        .about-list li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; font-size: 15px; }
+        .about-list svg { width: 22px; height: 22px; flex-shrink: 0; stroke: var(--secondary); stroke-width: 2.2; fill: none; margin-top: 2px; }
+        .about-image { border-radius: 20px; overflow: hidden; box-shadow: 0 24px 60px hsla(220,20%,8%,0.14); }
+        .about-image img { width: 100%; height: auto; display: block; }
+
+        /* KROKI */
+        .steps-section { background: var(--bg-accent); }
+        .steps-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 26px; }
+        .step-card { background: var(--bg); border-radius: 20px; padding: 40px 32px; text-align: center; position: relative; box-shadow: 0 10px 30px hsla(220,20%,8%,0.06); }
+        .step-num { width: 52px; height: 52px; border-radius: 50%; background: var(--btn); color: var(--white); font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 22px; }
+        .step-card h3 { font-size: 19px; margin-bottom: 10px; }
+        .step-card p { font-size: 14.5px; color: var(--fg-muted); }
+        .steps-cta { text-align: center; margin-top: 46px; }
+
+        /* KOMFORT */
+        .comfort-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+        .comfort-card { border-radius: 18px; overflow: hidden; background: var(--bg); border: 1px solid var(--border); transition: all 0.3s ease; }
+        .comfort-card:hover { transform: translateY(-4px); box-shadow: 0 18px 44px hsla(220,20%,8%,0.1); }
+        .comfort-card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+        .comfort-card .comfort-body { padding: 22px 24px 26px; }
+        .comfort-card h3 { font-size: 17px; margin-bottom: 6px; }
+        .comfort-card p { font-size: 14px; color: var(--fg-muted); }
+
+        /* OPINIE */
+        .reviews-section { background: var(--bg-subtle); }
+        .reviews-badge { display: inline-flex; align-items: center; gap: 12px; background: var(--bg); border: 1px solid var(--border); border-radius: 999px; padding: 12px 26px; font-weight: 600; font-size: 15px; color: var(--fg); margin-bottom: 46px; box-shadow: 0 8px 24px hsla(220,20%,8%,0.06); }
+        .reviews-badge .stars { color: hsl(42, 95%, 52%); letter-spacing: 2px; font-size: 16px; }
+        .reviews-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; max-width: 900px; margin: 0 auto; }
+        .review-card { background: var(--bg); border-radius: 20px; padding: 34px 32px; box-shadow: 0 10px 30px hsla(220,20%,8%,0.06); text-align: left; }
+        .review-card .stars { color: hsl(42, 95%, 52%); font-size: 15px; letter-spacing: 2px; margin-bottom: 16px; display: block; }
+        .review-card p { font-size: 15px; color: var(--fg-secondary); line-height: 1.8; font-style: italic; }
+
+        /* FAQ */
+        .faq-list { max-width: 780px; margin: 0 auto; }
+        .faq-item { border: 1px solid var(--border); border-radius: 16px; margin-bottom: 14px; background: var(--bg); overflow: hidden; }
+        .faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 26px; background: none; border: none; cursor: pointer; font-family: 'Space Grotesk', sans-serif; font-size: 16.5px; font-weight: 600; color: var(--fg); text-align: left; }
+        .faq-q svg { width: 20px; height: 20px; stroke: var(--secondary); stroke-width: 2.4; fill: none; flex-shrink: 0; transition: transform 0.3s ease; }
+        .faq-item.open .faq-q svg { transform: rotate(45deg); }
+        .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+        .faq-a p { padding: 0 26px 24px; font-size: 15px; color: var(--fg-muted); line-height: 1.8; }
+        .faq-item.open .faq-a { max-height: 300px; }
+
+        /* LOKALIZACJA */
+        .location-section { background: var(--bg-subtle); }
+        .location-split { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+        .location-text h2 { font-size: 40px; margin-bottom: 22px; }
+        .location-text p { font-size: 16px; color: var(--fg-muted); line-height: 1.9; margin-bottom: 18px; }
+        .location-address { display: flex; align-items: flex-start; gap: 14px; background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 22px 24px; margin: 26px 0; }
+        .location-address svg { width: 24px; height: 24px; stroke: var(--secondary); stroke-width: 2; fill: none; flex-shrink: 0; margin-top: 2px; }
+        .location-address strong { display: block; color: var(--fg); font-size: 15.5px; }
+        .location-address span { font-size: 14px; color: var(--fg-muted); }
+        .location-image { border-radius: 20px; overflow: hidden; box-shadow: 0 24px 60px hsla(220,20%,8%,0.14); }
+        .location-image img { width: 100%; height: auto; display: block; }
+
+        /* PHONE CTA */
+        .phone-strip { text-align: center; padding: 90px 24px; }
+        .phone-card { position: relative; overflow: hidden; max-width: 880px; margin: 0 auto; background: linear-gradient(135deg, hsl(160,70%,10%) 0%, hsl(158,60%,17%) 55%, hsl(155,60%,24%) 100%); border-radius: 28px; padding: 72px 40px 64px; box-shadow: 0 30px 70px hsla(160,70%,10%,0.35); }
+        .phone-card::before { content: ''; position: absolute; top: -120px; right: -120px; width: 340px; height: 340px; border-radius: 50%; background: radial-gradient(circle, hsla(155,65%,45%,0.35), transparent 70%); }
+        .phone-card::after { content: ''; position: absolute; bottom: -140px; left: -100px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, hsla(155,65%,45%,0.2), transparent 70%); }
+        .phone-card > * { position: relative; z-index: 1; }
+        .phone-card .overline { color: var(--secondary-light); }
+        .phone-card h2 { font-size: 42px; margin-bottom: 14px; color: var(--white); }
+        .phone-card p { font-size: 16px; color: hsla(0,0%,100%,0.8); margin-bottom: 40px; }
+        .phone-pill { display: inline-flex; align-items: center; gap: 18px; padding: 20px 48px; border-radius: 999px; border: 2.5px solid hsla(155,65%,70%,0.65); background: hsla(0,0%,100%,0.09); backdrop-filter: blur(8px); text-decoration: none; transition: all 0.3s ease; box-shadow: 0 14px 40px hsla(160,70%,8%,0.4); }
+        .phone-pill:hover { background: hsla(0,0%,100%,0.16); border-color: hsla(155,65%,75%,0.9); transform: translateY(-2px); }
+        .phone-pill svg { width: 34px; height: 34px; stroke: var(--secondary-light); stroke-width: 1.8; fill: none; flex-shrink: 0; }
+        .phone-pill span { font-family: 'Space Grotesk', sans-serif; font-size: 50px; font-weight: 700; color: var(--secondary-light); letter-spacing: 1px; line-height: 1; }
+        .phone-more { margin-top: 30px; }
+        .phone-more a { color: hsla(0,0%,100%,0.75); font-size: 14.5px; text-decoration: underline; }
+        .phone-more a:hover { color: var(--white); }
+
+        /* FOOTER */
+        footer { padding: 70px 0 46px; background: hsl(220, 20%, 8%); text-align: center; color: var(--white); }
+        .footer-logo { font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 700; margin-bottom: 20px; letter-spacing: 2px; }
+        .footer-logo span { color: var(--secondary-light); }
+        .footer-address { font-size: 14px; color: hsla(0,0%,100%,0.6); margin-bottom: 18px; line-height: 1.8; }
+        .footer-contact { font-size: 16px; margin-bottom: 34px; }
+        .footer-contact a { color: var(--secondary-light); text-decoration: none; font-weight: 600; }
+        .footer-links { margin-bottom: 30px; }
+        .footer-links a { color: hsla(0,0%,100%,0.5); font-size: 13px; text-decoration: underline; cursor: pointer; margin: 0 10px; }
+        .copyright { font-size: 12px; color: hsla(0,0%,100%,0.4); letter-spacing: 2px; text-transform: uppercase; }
+
+        /* BOTTOM BAR */
+        .bottom-bar { position: fixed; bottom: 0; left: 0; right: 0; background: hsl(220, 20%, 8%); padding: 14px 24px; z-index: 100; display: flex; justify-content: center; align-items: center; gap: 32px; border-top: 1px solid hsla(155,65%,45%,0.35); }
+        .bottom-bar-text { font-size: 14px; color: var(--white); }
+        .bottom-bar-text strong { color: var(--secondary-light); }
+        .bottom-bar .btn { padding: 13px 30px; font-size: 14px; }
+
+        /* MODAL + COOKIES */
+        .modal-backdrop { display: none; position: fixed; inset: 0; background: hsla(220,20%,8%,0.7); z-index: 500; align-items: center; justify-content: center; padding: 24px; }
+        .modal-backdrop.show { display: flex; }
+        .modal { background: var(--white); border-radius: 18px; max-width: 640px; max-height: 80vh; overflow-y: auto; padding: 36px; }
+        .modal h3 { margin-bottom: 16px; font-size: 22px; }
+        .modal p { font-size: 14px; margin-bottom: 12px; line-height: 1.7; }
+        .modal .btn { margin-top: 12px; }
+        .cookie-banner { position: fixed; bottom: 96px; left: 20px; max-width: 360px; background: #fff; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); padding: 20px; z-index: 400; display: none; border: 1px solid var(--border); }
+        .cookie-banner.show { display: block; }
+        .cookie-banner p { font-size: 13px; color: var(--fg-muted); margin-bottom: 14px; line-height: 1.6; }
+        .cookie-buttons { display: flex; gap: 10px; }
+        .cookie-btn { padding: 10px 20px; border-radius: 10px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; }
+        .cookie-btn.accept { background: var(--btn); color: #fff; }
+        .cookie-btn.more { background: var(--bg-subtle); color: var(--fg-muted); }
+
+        @media (max-width:1024px) {
+            .features-grid, .comfort-grid, .steps-grid { grid-template-columns: repeat(2,1fr); }
+            .about-split, .location-split { grid-template-columns: 1fr; gap: 40px; }
+            .gallery-grid { grid-template-columns: repeat(2,1fr); }
+        }
+        @media (max-width:768px) {
+            .hero h1 { font-size: 36px; } .hero p { font-size: 16px; }
+            .section-header h2 { font-size: 31px; } .about-text h2, .location-text h2 { font-size: 29px; }
+            .features-grid, .comfort-grid, .steps-grid, .gallery-grid, .reviews-grid { grid-template-columns: 1fr; }
+            .gallery-item.featured { grid-column: span 1; grid-row: span 1; aspect-ratio: 4/3; }
+            .phone-card { padding: 48px 20px 44px; border-radius: 22px; } .phone-card h2 { font-size: 30px; }
+            .phone-pill { padding: 16px 26px; gap: 12px; } .phone-pill span { font-size: 30px; } .phone-pill svg { width: 24px; height: 24px; }
+            .bottom-bar { gap: 14px; } .bottom-bar-text { display: none; }
+            section { padding: 68px 0; }
+        }
+    </style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVB9SFWW" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <nav class="top-bar at-top" id="topBar">
+        <div class="container top-bar-inner">
+            <a href="/" class="top-logo"><img src="/main/images/logo-myway.png" alt="Ośrodek MyWay Kąpino"></a>
+            <a href="tel:+48731395295" class="top-phone">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                731 395 295
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-overline">Kameralny ośrodek na Kaszubach</span>
+            <h1>Czas wyłącznie dla siebie, w sercu lasu</h1>
+            <p>Spokojne, dyskretne miejsce z dala od codziennego zgiełku. Komfortowe warunki, profesjonalny zespół i otoczenie natury, które pomaga zacząć od nowa.</p>
+            <div class="hero-buttons">
+                <a href="tel:+48731395295" class="btn btn-primary btn-large">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    Zadzwoń: 731 395 295
+                </a>
+                <a href="https://osrodek-myway.pl" target="_blank" rel="noopener" class="btn btn-outline-white btn-large">Dowiedz się więcej</a>
+            </div>
+            <div class="hero-badges">
+                <span class="hero-badge"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Dyskretna lokalizacja</span>
+                <span class="hero-badge"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Małe grupy</span>
+                <span class="hero-badge"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Otoczenie lasu</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ATUTY -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <span class="overline">Dlaczego MyWay</span>
+                <h2>Miejsce, które daje spokój</h2>
+                <p>Wszystko, czego potrzebujesz, żeby zatrzymać się i zadbać o siebie</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
+                    <h3>Indywidualne podejście</h3>
+                    <p>Małe grupy i czas na prawdziwą rozmowę. Nikt nie jest tu anonimowy, każdy ma swój plan pobytu.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+                    <h3>Pełna dyskrecja</h3>
+                    <p>Kameralny ośrodek z dala od miasta. Twoja prywatność jest u nas na pierwszym miejscu.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M17 8c0 4.5-5 8-5 8s-5-3.5-5-8a5 5 0 0 1 10 0z"></path><path d="M12 22v-6"></path></svg></div>
+                    <h3>Serce kaszubskich lasów</h3>
+                    <p>Cisza, świeże powietrze i natura za oknem. Otoczenie, które samo w sobie pomaga odpocząć.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+                    <h3>Warunki jak w domu</h3>
+                    <p>Wygodne pokoje jednoosobowe, pełne wyżywienie i przestrzenie wspólne, w których czuć dom, nie instytucję.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>
+                    <h3>Zespół, któremu zależy</h3>
+                    <p>Codzienna opieka zespołu specjalistów. Ludzie z doświadczeniem, którzy naprawdę słuchają.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+                    <h3>Wsparcie po pobycie</h3>
+                    <p>Nie kończymy współpracy w dniu wyjazdu. Możesz na nas liczyć także po powrocie do domu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="overline">Galeria</span>
+                <h2>Nasz ośrodek</h2>
+                <p>Komfortowe warunki w otoczeniu kaszubskich lasów</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item featured"><img src="/main/images/aerial.jpg" alt="Ośrodek MyWay Kąpino - widok z lotu ptaka" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/pokoj-01.jpg" alt="Pokój jednoosobowy z biurkiem i widokiem na zieleń" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/pokoj-02.jpg" alt="Pokój jednoosobowy ze strefą wypoczynkową" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/budynek.jpeg" alt="Budynek ośrodka MyWay" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/fireplace-room.jpg" alt="Salon z kominkiem" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/sala.jpeg" alt="Sala spotkań" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/gym.jpg" alt="Siłownia" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/kitchen.jpg" alt="Kuchnia" loading="lazy"></div>
+                <div class="gallery-item"><img src="/main/images/natura.jpg" alt="Las otaczający ośrodek" loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O OŚRODKU -->
+    <section>
+        <div class="container">
+            <div class="about-split">
+                <div class="about-text">
+                    <span class="overline">O ośrodku</span>
+                    <h2>MyWay Kąpino</h2>
+                    <p>Powstaliśmy z przekonania, że prawdziwa zmiana wymaga spokojnego miejsca, odpowiednich ludzi i czasu wyłącznie dla siebie.</p>
+                    <p>Oferujemy pobyt stacjonarny w komfortowych warunkach, z pełnym wyżywieniem, codzienną opieką zespołu specjalistów i programem rozwoju osobistego.</p>
+                    <ul class="about-list">
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Indywidualne podejście i małe grupy</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Wygodne pokoje, pełne wyżywienie, siłownia</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Dyskretna lokalizacja w otoczeniu natury</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Wsparcie także po zakończeniu pobytu</li>
+                    </ul>
+                    <a href="tel:+48731395295" class="btn btn-primary" style="margin-top:18px;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        Zadzwoń: 731 395 295
+                    </a>
+                </div>
+                <div class="about-image">
+                    <img src="/main/images/budynek.jpeg" alt="Ośrodek MyWay Kąpino - budynek">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3 KROKI -->
+    <section class="steps-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="overline">Jak to wygląda</span>
+                <h2>3 proste kroki</h2>
+                <p>Pierwszy krok jest najprostszy i niczego nie przesądza</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <h3>Zadzwoń</h3>
+                    <p>Porozmawiamy spokojnie i bez zobowiązań. Odpowiemy na każde pytanie.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <h3>Ustalimy szczegóły</h3>
+                    <p>Termin, warunki pobytu i wszystko, co warto wiedzieć przed przyjazdem.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <h3>Przyjeżdżasz</h3>
+                    <p>Na miejscu czeka przygotowany pokój i zespół, który zajmie się resztą.</p>
+                </div>
+            </div>
+            <div class="steps-cta">
+                <a href="tel:+48731395295" class="btn btn-primary btn-large">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    Zrób pierwszy krok: 731 395 295
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- KOMFORT POBYTU -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <span class="overline">Komfort pobytu</span>
+                <h2>Czuj się jak u siebie</h2>
+                <p>Zadbaliśmy o warunki, w których łatwiej się zatrzymać i odpocząć</p>
+            </div>
+            <div class="comfort-grid">
+                <div class="comfort-card">
+                    <img src="/main/images/pokoj-03.jpg" alt="Pokój jednoosobowy" loading="lazy">
+                    <div class="comfort-body"><h3>Pokoje jednoosobowe</h3><p>Własna przestrzeń i spokój, kiedy go potrzebujesz.</p></div>
+                </div>
+                <div class="comfort-card">
+                    <img src="/main/images/kitchen.jpg" alt="Kuchnia i wyżywienie" loading="lazy">
+                    <div class="comfort-body"><h3>Pełne wyżywienie</h3><p>Domowa kuchnia i wspólne posiłki każdego dnia.</p></div>
+                </div>
+                <div class="comfort-card">
+                    <img src="/main/images/gym.jpg" alt="Siłownia" loading="lazy">
+                    <div class="comfort-body"><h3>Siłownia</h3><p>Ruch to część dbania o siebie, na miejscu, bez wymówek.</p></div>
+                </div>
+                <div class="comfort-card">
+                    <img src="/main/images/fireplace-room.jpg" alt="Salon z kominkiem" loading="lazy">
+                    <div class="comfort-body"><h3>Salon z kominkiem</h3><p>Wspólna przestrzeń na rozmowy i wieczorny spokój.</p></div>
+                </div>
+                <div class="comfort-card">
+                    <img src="/main/images/natura.jpg" alt="Las wokół ośrodka" loading="lazy">
+                    <div class="comfort-body"><h3>Las za oknem</h3><p>Spacery i cisza w otoczeniu kaszubskiej przyrody.</p></div>
+                </div>
+                <div class="comfort-card">
+                    <img src="/main/images/pieski.jpg" alt="Psy w ośrodku" loading="lazy">
+                    <div class="comfort-body"><h3>Czworonożni przyjaciele</h3><p>Nasze psy dbają o dobry nastrój mieszkańców.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPINIE -->
+    <section class="reviews-section">
+        <div class="container" style="text-align:center;">
+            <div class="section-header" style="margin-bottom:34px;">
+                <span class="overline">Opinie</span>
+                <h2>Co mówią o nas</h2>
+            </div>
+            <div class="reviews-badge"><span class="stars">★★★★★</span> 4.7 na Google · 240+ opinii</div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <span class="stars">★★★★★</span>
+                    <p>„Ośrodek, który naprawdę zmienia życie. Profesjonalna kadra, indywidualne podejście. Polecam z całego serca."</p>
+                </div>
+                <div class="review-card">
+                    <span class="stars">★★★★★</span>
+                    <p>„Kameralny, ciepły, ludzki. Krystian i zespół to ludzie z prawdziwą misją. Czujesz się tu bezpiecznie od pierwszego dnia."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <span class="overline">FAQ</span>
+                <h2>Najczęstsze pytania</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-q">Od czego zacząć?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+                    <div class="faq-a"><p>Od jednego telefonu. Zadzwoń pod 731 395 295, porozmawiamy spokojnie i bez zobowiązań, odpowiemy na wszystkie pytania i podpowiemy, co dalej.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">Czy pobyt jest dyskretny?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+                    <div class="faq-a"><p>Tak. Ośrodek jest kameralny, położony z dala od miasta, w otoczeniu lasu. Prywatność naszych gości traktujemy jako podstawę.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">Jakie są warunki na miejscu?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+                    <div class="faq-a"><p>Wygodne pokoje jednoosobowe, pełne wyżywienie, siłownia, salon z kominkiem i przestrzenie wspólne. Warunki bliższe domowi niż instytucji.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">Gdzie dokładnie jesteście?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+                    <div class="faq-a"><p>W Kąpinie na Kaszubach: ul. Wichrowe Wzgórza 21, 84-200 Kąpino. Blisko Trójmiasta, a jednocześnie w pełnej ciszy, wśród lasów.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">Czy mogę najpierw po prostu porozmawiać?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+                    <div class="faq-a"><p>Oczywiście. Rozmowa telefoniczna do niczego nie zobowiązuje. Jeśli chcesz poznać nas bliżej, odwiedź też stronę osrodek-myway.pl.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOKALIZACJA -->
+    <section class="location-section">
+        <div class="container">
+            <div class="location-split">
+                <div class="location-text">
+                    <span class="overline">Lokalizacja</span>
+                    <h2>Kąpino, Kaszuby</h2>
+                    <p>Ośrodek leży wśród kaszubskich lasów, niedaleko Trójmiasta. Wystarczająco blisko, żeby dojazd był prosty, i wystarczająco daleko, żeby naprawdę odpocząć od codzienności.</p>
+                    <div class="location-address">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <div>
+                            <strong>Ośrodek MyWay Kąpino</strong>
+                            <span>ul. Wichrowe Wzgórza 21, 84-200 Kąpino</span>
+                        </div>
+                    </div>
+                    <a href="https://maps.google.com/?q=Wichrowe+Wzg%C3%B3rza+21+K%C4%85pino" target="_blank" rel="noopener" class="btn btn-outline">Zobacz na mapie</a>
+                </div>
+                <div class="location-image">
+                    <img src="/main/images/aerial.jpg" alt="Ośrodek MyWay Kąpino z lotu ptaka">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TELEFON CTA -->
+    <section class="phone-strip">
+        <div class="container">
+            <div class="phone-card">
+                <span class="overline">Zrób pierwszy krok</span>
+                <h2>Porozmawiajmy</h2>
+                <p>Pierwszy krok to rozmowa. Bez zobowiązań, bez presji.</p>
+                <a href="tel:+48731395295" class="phone-pill">
+                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>731 395 295</span>
+                </a>
+                <div class="phone-more"><a href="https://osrodek-myway.pl" target="_blank" rel="noopener">Dowiedz się więcej na osrodek-myway.pl</a></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">My<span>Way</span> Kąpino</div>
+            <div class="footer-address">ul. Wichrowe Wzgórza 21, 84-200 Kąpino</div>
+            <div class="footer-contact"><a href="tel:+48731395295">+48 731 395 295</a></div>
+            <div class="footer-links">
+                <a onclick="openPrivacy(event)">Polityka prywatności</a>
+                <a href="https://osrodek-myway.pl" target="_blank" rel="noopener">osrodek-myway.pl</a>
+            </div>
+            <p class="copyright">&copy; 2026 MyWay Kąpino. Wszystkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+
+    <div class="bottom-bar">
+        <span class="bottom-bar-text">Ośrodek <strong>MyWay</strong> Kąpino</span>
+        <a href="tel:+48731395295" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            Zadzwoń: 731 395 295
+        </a>
+    </div>
+
+    <!-- POLITYKA PRYWATNOŚCI -->
+    <div id="privacyModal" class="modal-backdrop">
+        <div class="modal">
+            <h3>Polityka prywatności</h3>
+            <p>Właścicielem strony jest Ośrodek MyWay, ul. Wichrowe Wzgórza 21, 84-200 Kąpino, tel. +48 731 395 295.</p>
+            <p>Strona nie zawiera formularzy i nie zbiera danych osobowych. Kontakt odbywa się wyłącznie telefonicznie, z inicjatywy osoby dzwoniącej.</p>
+            <p>Strona korzysta z plików cookies w celach statystycznych i marketingowych. Możesz zarządzać cookies w ustawieniach przeglądarki.</p>
+            <button class="btn btn-primary" onclick="closePrivacy()">Zamknij</button>
+        </div>
+    </div>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <p>Ta strona używa plików cookies, aby zapewnić najlepsze doświadczenia. Kontynuując przeglądanie, zgadzasz się na ich użycie.</p>
+        <div class="cookie-buttons">
+            <button onclick="acceptCookies()" class="cookie-btn accept">Akceptuję</button>
+            <button onclick="openPrivacy(event)" class="cookie-btn more">Więcej</button>
+        </div>
+    </div>
+
+    <script>
+        var bar = document.getElementById('topBar');
+        function onScroll(){ if(window.scrollY>60){ bar.classList.remove('at-top'); bar.classList.add('scrolled'); } else { bar.classList.remove('scrolled'); bar.classList.add('at-top'); } }
+        window.addEventListener('scroll', onScroll); onScroll();
+
+        document.querySelectorAll('.faq-q').forEach(function(btn){
+            btn.addEventListener('click', function(){
+                var item = btn.parentElement;
+                var wasOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item.open').forEach(function(i){ i.classList.remove('open'); });
+                if(!wasOpen) item.classList.add('open');
+            });
+        });
+
+        function openPrivacy(e){ if(e) e.preventDefault(); document.getElementById('privacyModal').classList.add('show'); }
+        function closePrivacy(){ document.getElementById('privacyModal').classList.remove('show'); }
+        document.getElementById('privacyModal').addEventListener('click', function(e){ if(e.target===this) closePrivacy(); });
+
+        function checkCookieConsent(){ if(localStorage.getItem('cookieConsent')!=='accepted'){ document.getElementById('cookieBanner').classList.add('show'); } }
+        function acceptCookies(){ localStorage.setItem('cookieConsent','accepted'); document.getElementById('cookieBanner').classList.remove('show'); }
+        document.addEventListener('DOMContentLoaded', checkCookieConsent);
+    </script>
+</body>
+</html>
