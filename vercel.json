@@ -49,6 +49,18 @@
       "destination": "/main/v2-premium.html"
     },
     {
+      "source": "/siec",
+      "destination": "/main/siec.html"
+    },
+    {
+      "source": "/3-osrodki",
+      "destination": "/main/siec.html"
+    },
+    {
+      "source": "/osrodki",
+      "destination": "/main/siec.html"
+    },
+    {
       "source": "/(cennik|lokalizacja|o-nas|opinie)",
       "destination": "/main/index.html"
     }

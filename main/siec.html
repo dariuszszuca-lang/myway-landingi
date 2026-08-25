@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sieć Ośrodków Terapeutycznych MyWay — 3 Lokalizacje w Polsce (Wizualizacja)</title>
+  <meta name="description" content="Prywatne ośrodki terapii uzależnień MyWay: Kąpino (Trójmiasto), Rezydencja VIP z basenem i kortem (Wielkopolska) oraz Oaza Leśna 9 ha bez barier. Zadzwoń: 731 395 295.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3, h4, .font-heading { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .tab-active { border-color: #2563eb; background-color: #ffffff; box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.15); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- TOP BAR NOTIFICATION -->
+  <div class="bg-slate-900 text-white text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center justify-center px-2 py-0.5 rounded bg-blue-600 text-white text-[10px] font-bold tracking-wider uppercase">Koncepcja Sieci</span>
+        <span class="text-slate-300">Wizualizacja rozwoju: <strong>3 Ośrodki Terapeutyczne MyWay w Polsce</strong> (Kierunek A: Zintegrowany Hub)</span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-300">
+        <span class="flex items-center gap-1"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i> Dyskrecja 100%</span>
+        <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5 text-blue-400"></i> Całodobowo 24/7</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- LOGO -->
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-black text-xl shadow-md shadow-blue-500/30">
+          M
+        </div>
+        <div>
+          <span class="font-heading font-extrabold text-xl tracking-tight text-slate-900 block leading-tight">MyWay</span>
+          <span class="text-[11px] text-slate-500 font-medium tracking-wide uppercase">Sieć Ośrodków Terapii</span>
+        </div>
+      </a>
+
+      <!-- MENU DESKTOP -->
+      <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
+        <a href="#osrodki" class="hover:text-blue-600 transition-colors">3 Ośrodki</a>
+        <a href="#doradca" class="hover:text-blue-600 transition-colors">Doradca Wyboru</a>
+        <a href="#porownanie" class="hover:text-blue-600 transition-colors">Tabela Porównawcza</a>
+        <a href="#program" class="hover:text-blue-600 transition-colors">Program Terapii</a>
+        <a href="#cennik" class="hover:text-blue-600 transition-colors">Cennik 2026</a>
+      </nav>
+
+      <!-- CTA TELEFON -->
+      <div class="flex items-center gap-3">
+        <a href="tel:731395295" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md shadow-emerald-600/20 transition-all">
+          <i data-lucide="phone-call" class="w-4 h-4 animate-bounce"></i>
+          <span>731 395 295</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 bg-gradient-to-b from-blue-50/60 via-white to-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      
+      <!-- BADGE -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100/80 border border-blue-200 text-blue-800 text-xs md:text-sm font-semibold mb-6">
+        <i data-lucide="compass" class="w-4 h-4 text-blue-600"></i>
+        <span>Ogólnopolska Sieć Ośrodków Terapeutycznych MyWay</span>
+      </div>
+
+      <!-- HEADLINE -->
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-slate-900 tracking-tight max-w-4xl mx-auto mb-6 leading-tight">
+        Jeden sprawdzony program. <br>
+        <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-emerald-600 bg-clip-text text-transparent">
+          Trzy unikalne przestrzenie zdrowienia.
+        </span>
+      </h1>
+
+      <p class="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto mb-12 leading-relaxed">
+        Wychodzenie z uzależnienia wymaga bezpiecznego miejsca. W sieci MyWay wybierasz otoczenie dopasowane do Twoich potrzeb: od <strong>kameralnego domu w lasach Pomorza</strong>, przez <strong>luksusową rezydencję wellness z krytym basenem i kortem w Wielkopolsce</strong>, po <strong>9-hektarowy park leśny bez barier architektonicznych</strong>.
+      </p>
+
+      <!-- SZYBKIE PRZEŁĄCZNIKI 3 OŚRODKÓW -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto mb-10 text-left" id="hero-selectors">
+        
+        <!-- KARTA 1: KĄPINO -->
+        <div onclick="switchCenter('kapino')" id="btn-kapino" class="center-btn cursor-pointer p-6 rounded-2xl border-2 border-blue-600 bg-white shadow-xl ring-4 ring-blue-100 transition-all transform hover:-translate-y-1">
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800 border border-blue-200">Pomorze / Trójmiasto</span>
+            <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-600"></i>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-slate-900 mb-1">1. MyWay Kąpino</h3>
+          <p class="text-xs text-slate-500 mb-4 line-clamp-2">Kameralny ośrodek w otulinie Trójmiejskiego Parku Krajobrazowego. Ciepła, bezpieczna atmosfera do 12 osób.</p>
+          <div class="text-xs font-semibold text-blue-600 flex items-center gap-1">
+            <span>Zobacz szczegóły</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </div>
+        </div>
+
+        <!-- KARTA 2: REZYDENCJA VIP -->
+        <div onclick="switchCenter('rezydencja')" id="btn-rezydencja" class="center-btn cursor-pointer p-6 rounded-2xl border-2 border-slate-200 bg-white/90 shadow-sm hover:border-emerald-300 hover:shadow-md transition-all transform hover:-translate-y-1">
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">Wielkopolska / VIP</span>
+            <i data-lucide="circle" class="w-5 h-5 text-slate-300"></i>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-slate-900 mb-1">2. MyWay Rezydencja & SPA</h3>
+          <p class="text-xs text-slate-500 mb-4 line-clamp-2">Posiadłość 4 ha ze starodrzewem, krytym basenem, sauną, kortem tenisowym i stawem (Kolno k. Konina / A2).</p>
+          <div class="text-xs font-semibold text-emerald-600 flex items-center gap-1">
+            <span>Zobacz szczegóły</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </div>
+        </div>
+
+        <!-- KARTA 3: PARK LEŚNY -->
+        <div onclick="switchCenter('park')" id="btn-park" class="center-btn cursor-pointer p-6 rounded-2xl border-2 border-slate-200 bg-white/90 shadow-sm hover:border-teal-300 hover:shadow-md transition-all transform hover:-translate-y-1">
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-teal-100 text-teal-800 border border-teal-200">Wielkopolska / Dostępność</span>
+            <i data-lucide="circle" class="w-5 h-5 text-slate-300"></i>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-slate-900 mb-1">3. MyWay Park Leśny</h3>
+          <p class="text-xs text-slate-500 mb-4 line-clamp-2">9 ha prywatnego lasu. Nowoczesny obiekt 100% bez barier dla osób o szczególnych potrzebach i seniorów.</p>
+          <div class="text-xs font-semibold text-teal-600 flex items-center gap-1">
+            <span>Zobacz szczegóły</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA BUTTONS -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="tel:731395295" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-lg shadow-emerald-600/30 transition-all text-base">
+          <i data-lucide="phone" class="w-5 h-5"></i>
+          <span>Zadzwoń i zapytaj o wolne miejsca: 731 395 295</span>
+        </a>
+        <a href="#porownanie" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 bg-white hover:bg-slate-100 text-slate-700 font-semibold rounded-xl border border-slate-300 shadow-sm transition-all text-base">
+          <i data-lucide="table" class="w-4 h-4"></i>
+          <span>Porównaj tabelę 3 ośrodków</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERAKTYWNA PREZENTACJA WYBRANEGO OŚRODKA -->
+  <section id="osrodki" class="py-16 md:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- NAGŁÓWEK OŚRODKA -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-6 border-b border-slate-200 gap-4">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <span id="center-badge" class="px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800 border border-blue-200">
+              Ośrodek Macierzysty • Pomorze
+            </span>
+            <span id="center-region" class="text-xs text-slate-500 flex items-center gap-1 font-medium">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-400"></i> Kąpino k. Wejherowa (Trójmiasto)
+            </span>
+          </div>
+          <h2 id="center-title" class="text-2xl md:text-4xl font-heading font-bold text-slate-900">
+            MyWay Kąpino (Trójmiasto / Pomorze)
+          </h2>
+          <p id="center-subtitle" class="text-sm md:text-base text-slate-600 mt-1">
+            Kameralna enklawa terapeutyczna w otulinie Trójmiejskiego Parku Krajobrazowego
+          </p>
+        </div>
+
+        <!-- PRZEŁĄCZNIK WIDOKU -->
+        <div class="inline-flex p-1 rounded-xl bg-slate-100 border border-slate-200">
+          <button onclick="switchCenter('kapino')" id="tab-kapino" class="px-4 py-2 rounded-lg text-xs md:text-sm font-bold transition-all bg-white text-blue-600 shadow-sm">1. Kąpino</button>
+          <button onclick="switchCenter('rezydencja')" id="tab-rezydencja" class="px-4 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all text-slate-600 hover:text-slate-900">2. Rezydencja VIP</button>
+          <button onclick="switchCenter('park')" id="tab-park" class="px-4 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all text-slate-600 hover:text-slate-900">3. Park Leśny</button>
+        </div>
+      </div>
+
+      <!-- GŁÓWNA SIATKA OŚRODKA -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
+        
+        <!-- LEWA KOLUMNA: GALERIA I WIDOK -->
+        <div class="lg:col-span-7 space-y-4">
+          
+          <!-- ZDJĘCIE GŁÓWNE -->
+          <div class="relative rounded-2xl overflow-hidden shadow-xl aspect-[16/10] bg-slate-900 border border-slate-200">
+            <img id="main-img" src="https://osrodek-myway.pl/assets/comfortable-living-room-B9c_xPzU.jpg" alt="Widok ośrodka MyWay" class="w-full h-full object-cover transition-all duration-500">
+            <div id="img-caption" class="absolute bottom-3 left-3 bg-black/60 backdrop-blur-md text-white text-xs px-3.5 py-1.5 rounded-lg">
+              Strefa dzienna i przestrzeń relaksu — MyWay Kąpino
+            </div>
+          </div>
+
+          <!-- MINIATURKI -->
+          <div class="grid grid-cols-3 gap-3" id="thumbnails-container">
+            <div class="rounded-xl overflow-hidden shadow-sm aspect-video bg-slate-100 border-2 border-blue-500 cursor-pointer">
+              <img id="thumb-0" src="https://osrodek-myway.pl/assets/comfortable-living-room-B9c_xPzU.jpg" class="w-full h-full object-cover" onclick="setMainImage(0)">
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-sm aspect-video bg-slate-100 border border-slate-200 cursor-pointer hover:opacity-80">
+              <img id="thumb-1" src="https://osrodek-myway.pl/assets/comfortable-space-CLoUwhgK.jpg" class="w-full h-full object-cover" onclick="setMainImage(1)">
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-sm aspect-video bg-slate-100 border border-slate-200 cursor-pointer hover:opacity-80">
+              <img id="thumb-2" src="https://osrodek-myway.pl/assets/bedroom-1-C1w35jO7.jpg" class="w-full h-full object-cover" onclick="setMainImage(2)">
+            </div>
+          </div>
+
+          <!-- DLA KOGO KARTA -->
+          <div id="ideal-card" class="p-5 rounded-2xl bg-blue-50 border border-blue-200">
+            <h4 class="font-heading font-bold text-blue-900 text-sm mb-1.5 flex items-center gap-2">
+              <i data-lucide="heart-handshake" class="w-4 h-4 text-blue-600"></i>
+              Dla kogo ten ośrodek jest najlepszym wyborem:
+            </h4>
+            <p id="ideal-text" class="text-sm text-blue-900/90 leading-relaxed">
+              Dla osób szukających ciepłej, domowej atmosfery, małej kameralnej grupy (do 12 osób) i bezpośredniego kontaktu ze społecznością absolwentów na Pomorzu.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- PRAWA KOLUMNA: DANE TECHNICZNE I ATUTY -->
+        <div class="lg:col-span-5 space-y-6">
+          
+          <!-- SPECYFIKACJA METRYCZNA -->
+          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+            <h3 class="font-heading font-bold text-slate-900 text-base mb-4 flex items-center gap-2">
+              <i data-lucide="building-2" class="w-5 h-5 text-blue-600"></i>
+              Metryka i parametry obiektu
+            </h3>
+            
+            <div class="grid grid-cols-2 gap-3 mb-4 text-xs">
+              <div class="p-3 bg-white rounded-xl border border-slate-200">
+                <span class="text-slate-500 block">Teren posiadłości</span>
+                <span id="spec-land" class="font-bold text-slate-900 text-sm">Otulina leśna TPK</span>
+              </div>
+              <div class="p-3 bg-white rounded-xl border border-slate-200">
+                <span class="text-slate-500 block">Powierzchnia</span>
+                <span id="spec-size" class="font-bold text-slate-900 text-sm">Kameralny dom rezydencyjny</span>
+              </div>
+              <div class="p-3 bg-white rounded-xl border border-slate-200 col-span-2">
+                <span class="text-slate-500 block">Pojemność / Kameralność</span>
+                <span id="spec-capacity" class="font-bold text-slate-900 text-sm">Maks. 10–12 pacjentów (pełna dyskrecja)</span>
+              </div>
+            </div>
+
+            <div class="space-y-2 pt-2 border-t border-slate-200 text-xs sm:text-sm" id="spec-details">
+              <div class="flex justify-between py-1 border-b border-slate-100">
+                <span class="text-slate-500">Standard pokoi:</span>
+                <span id="spec-rooms" class="font-semibold text-slate-800">1- i 2-osobowe z łazienkami</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-slate-100">
+                <span class="text-slate-500">Udogodnienia kluczowe:</span>
+                <span id="spec-amenities" class="font-semibold text-slate-800">Taras leśny, sala kominkowa, gabinet</span>
+              </div>
+              <div class="flex justify-between py-1">
+                <span class="text-slate-500">Dojazd:</span>
+                <span id="spec-access" class="font-semibold text-slate-800">35 min z Trójmiasta, 15 min z Wejherowa</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- KLUCZOWE WYRÓŻNIKI -->
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+            <h3 class="font-heading font-bold text-slate-900 text-base mb-4 flex items-center gap-2">
+              <i data-lucide="sparkles" class="w-5 h-5 text-emerald-600"></i>
+              Główne atuty tej lokalizacji
+            </h3>
+            <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700" id="highlights-list">
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                <span>Ciepła, bezpieczna i domowa atmosfera pełnego zrozumienia</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                <span>Kameralna grupa do 10–12 osób — maksymalna uwaga terapeutów</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                <span>Otulina Trójmiejskiego Parku Krajobrazowego — czyste leśne powietrze</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                <span>Sobotnie zjazdy absolwentów stacjonarnie na miejscu</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                <span>Detoks medyczny na miejscu pod opieką lekarską 24/7</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- PRZYCISK REZERWACJI -->
+          <a href="tel:731395295" id="center-cta" class="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-md transition-all text-sm">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            <span id="center-cta-text">Zapytaj o pobyt w MyWay Kąpino: 731 395 295</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERAKTYWNY DORADCA PACJENTA (QUIZ) -->
+  <section id="doradca" class="py-16 md:py-20 bg-slate-900 text-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-semibold mb-4 border border-blue-400/30">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+        Interaktywny Doradca
+      </span>
+
+      <h2 class="text-2xl md:text-4xl font-heading font-bold mb-4">
+        Nie wiesz, który ośrodek wybrać?
+      </h2>
+      <p class="text-slate-300 text-sm md:text-base max-w-2xl mx-auto mb-10">
+        Wskaż swój główny priorytet, a nasz system podpowie optymalne warunki dla Ciebie lub Twojego bliskiego:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-left mb-8">
+        
+        <div onclick="selectQuiz('home')" id="quiz-home" class="quiz-box cursor-pointer p-5 rounded-2xl border border-blue-500 bg-blue-950/40 ring-2 ring-blue-500 transition-all">
+          <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl mb-3">
+            🌲
+          </div>
+          <h4 class="font-heading font-bold text-white text-base mb-1">Ciepła atmosfera & Mała grupa</h4>
+          <p class="text-xs text-slate-400">Kameralny ośrodek w lesie, sprawdzona społeczność absolwentów, bezpośredni dojazd z Trójmiasta.</p>
+        </div>
+
+        <div onclick="selectQuiz('vip')" id="quiz-vip" class="quiz-box cursor-pointer p-5 rounded-2xl border border-slate-700 bg-slate-800/80 hover:border-slate-600 transition-all">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mb-3">
+            💎
+          </div>
+          <h4 class="font-heading font-bold text-white text-base mb-1">Standard VIP, Basen & Kort</h4>
+          <p class="text-xs text-slate-400">Ekskluzywna posiadłość 4 ha, basen kryty, sauna, kort tenisowy, pełna dyskrecja dla przedsiębiorców (A2).</p>
+        </div>
+
+        <div onclick="selectQuiz('care')" id="quiz-care" class="quiz-box cursor-pointer p-5 rounded-2xl border border-slate-700 bg-slate-800/80 hover:border-slate-600 transition-all">
+          <div class="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center text-xl mb-3">
+            🌿
+          </div>
+          <h4 class="font-heading font-bold text-white text-base mb-1">Dostępność bez barier & 9 ha Lasu</h4>
+          <p class="text-xs text-slate-400">Obiekt w 100% dostosowany dla osób z niepełnosprawnościami i seniorów, 90 000 m² prywatnego lasu.</p>
+        </div>
+
+      </div>
+
+      <!-- REKOMENDACJA QUIZU -->
+      <div id="quiz-result" class="p-6 rounded-2xl bg-slate-800 border border-slate-700 max-w-3xl mx-auto text-left flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <span class="text-xs text-blue-400 font-bold block mb-1 uppercase tracking-wide">Rekomendowana lokalizacja dla Ciebie:</span>
+          <h4 id="quiz-rec-title" class="text-lg font-heading font-bold text-white">
+            1. MyWay Kąpino (Trójmiasto / Pomorze)
+          </h4>
+          <p id="quiz-rec-desc" class="text-xs text-slate-300 mt-1">
+            Najlepszy wybór, jeśli szukasz kameralnego domowego klimatu, małej grupy (do 12 osób) i cotygodniowych zjazdów absolwentów.
+          </p>
+        </div>
+        <a href="tel:731395295" class="shrink-0 px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-sm rounded-xl transition-all shadow-lg">
+          Zadzwoń: 731 395 295
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TABELA PORÓWNAWCZA 3 OŚRODKÓW -->
+  <section id="porownanie" class="py-16 md:py-24 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+          Zestawienie parametrów
+        </span>
+        <h2 class="text-2xl md:text-4xl font-heading font-bold text-slate-900 mt-3 mb-4">
+          Porównaj wszystkie 3 ośrodki MyWay
+        </h2>
+        <p class="text-slate-600 text-sm md:text-base">
+          Każdy ośrodek realizuje ten sam autorski program terapeutyczny Krystiana Nagaby oraz obejmuje <strong>20 konsultacji Aftercare po wyjściu</strong>.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto bg-white rounded-2xl shadow-sm border border-slate-200">
+        <table class="w-full text-left border-collapse text-xs md:text-sm">
+          <thead>
+            <tr class="border-b border-slate-200 bg-slate-100/70">
+              <th class="p-4 md:p-5 font-bold text-slate-700 w-1/4">Parametr / Obiekt</th>
+              <th class="p-4 md:p-5 font-bold text-blue-900 w-1/4 bg-blue-50/50">
+                🌲 1. MyWay Kąpino
+                <span class="block text-xs font-normal text-slate-500">Pomorze (Trójmiasto)</span>
+              </th>
+              <th class="p-4 md:p-5 font-bold text-emerald-900 w-1/4 bg-emerald-50/50">
+                💎 2. Rezydencja & SPA
+                <span class="block text-xs font-normal text-slate-500">Wielkopolska (VIP / A2)</span>
+              </th>
+              <th class="p-4 md:p-5 font-bold text-teal-900 w-1/4 bg-teal-50/50">
+                🌿 3. Park Leśny Care
+                <span class="block text-xs font-normal text-slate-500">Wielkopolska (Dostępność)</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-slate-700">
+            <tr>
+              <td class="p-4 font-semibold text-slate-900">Działka i teren</td>
+              <td class="p-4 bg-blue-50/20">Otulina leśna Parku TPK</td>
+              <td class="p-4 bg-emerald-50/20 font-bold text-emerald-800">39 877 m² (4 ha prywatnego parku)</td>
+              <td class="p-4 bg-teal-50/20 font-bold text-teal-800">90 368 m² (9 ha prywatnego lasu)</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-slate-900">Powierzchnia użytkowa</td>
+              <td class="p-4 bg-blue-50/20">Dom rezydencjonalny</td>
+              <td class="p-4 bg-emerald-50/20">711,70 m² (+ 115 m² zaplecza)</td>
+              <td class="p-4 bg-teal-50/20">656,19 m² (+ 203 m² strefy rehab.)</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-slate-900">Basen wewnętrzny & SPA</td>
+              <td class="p-4 bg-blue-50/20 text-slate-400">—</td>
+              <td class="p-4 bg-emerald-50/20 font-bold text-emerald-700">✓ Basen kryty, sauna, jacuzzi</td>
+              <td class="p-4 bg-teal-50/20 text-slate-400">—</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-slate-900">Kort tenisowy & Staw</td>
+              <td class="p-4 bg-blue-50/20 text-slate-400">—</td>
+              <td class="p-4 bg-emerald-50/20 font-bold text-emerald-700">✓ Własny kort + zarybiony staw</td>
+              <td class="p-4 bg-teal-50/20">Polany leśne i ścieżki zdrowia</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-slate-900">Dostępność bez barier</td>
+              <td class="p-4 bg-blue-50/20">Standardowa</td>
+              <td class="p-4 bg-emerald-50/20">Standardowa</td>
+              <td class="p-4 bg-teal-50/20 font-bold text-teal-700">✓ 100% dla niepełnosprawnych & seniorów</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-slate-900">Łazienki w pokojach</td>
+              <td class="p-4 bg-blue-50/20">Wybrane pokoje</td>
+              <td class="p-4 bg-emerald-50/20 font-bold text-emerald-700">✓ W każdym pokoju (+ garderoba)</td>
+              <td class="p-4 bg-teal-50/20 font-bold text-teal-700">✓ W każdym pokoju (+ garderoba)</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-slate-900">Autorski program MyWay</td>
+              <td class="p-4 bg-blue-50/20 font-bold text-blue-700">✓ Krystian Nagaba</td>
+              <td class="p-4 bg-emerald-50/20 font-bold text-emerald-700">✓ Krystian Nagaba</td>
+              <td class="p-4 bg-teal-50/20 font-bold text-teal-700">✓ Krystian Nagaba</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-slate-900">Aftercare (20 sesji po pobycie)</td>
+              <td class="p-4 bg-blue-50/20 font-bold text-blue-700">✓ W cenie pakietu</td>
+              <td class="p-4 bg-emerald-50/20 font-bold text-emerald-700">✓ W cenie pakietu</td>
+              <td class="p-4 bg-teal-50/20 font-bold text-teal-700">✓ W cenie pakietu</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-slate-900">Zjazdy absolwentów</td>
+              <td class="p-4 bg-blue-50/20 font-semibold text-blue-900">Stacjonarnie (każda sobota)</td>
+              <td class="p-4 bg-emerald-50/20">Grupy Online + zjazdy Kąpino</td>
+              <td class="p-4 bg-teal-50/20">Grupy Online + zjazdy Kąpino</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-slate-900">Lokalizacja & Dojazd</td>
+              <td class="p-4 bg-blue-50/20">Kąpino k. Gdańska / Gdyni</td>
+              <td class="p-4 bg-emerald-50/20">Kolno k. Konina (węzeł A2, 1h z Poznania)</td>
+              <td class="p-4 bg-teal-50/20">Kolno Leśne (węzeł A2, 10 km od Konina)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CENNIK PAKIETÓW -->
+  <section id="cennik" class="py-16 md:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      
+      <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+        Aktualny cennik 2026
+      </span>
+      <h2 class="text-2xl md:text-4xl font-heading font-bold text-slate-900 mt-3 mb-4">
+        Przejrzyste pakiety terapeutyczne MyWay
+      </h2>
+      <p class="text-slate-600 text-sm md:text-base max-w-2xl mx-auto mb-12">
+        Brak ukrytych opłat. W cenie pełne wyżywienie, zakwaterowanie, intensywny program terapeutyczny oraz wsparcie aftercare.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto text-left mb-10">
+        
+        <!-- PAKIET 1 -->
+        <div class="p-6 rounded-3xl border border-slate-200 bg-slate-50 flex flex-col justify-between">
+          <div>
+            <div class="px-3 py-1 rounded-lg bg-slate-200 text-slate-700 font-bold text-xs inline-block mb-3">PAKIET 1</div>
+            <div class="text-3xl font-heading font-extrabold text-slate-900 mb-4">11 500 zł</div>
+            <ul class="space-y-2.5 text-xs sm:text-sm text-slate-600 mb-6">
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+                <span>4 tygodnie terapii stacjonarnej</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+                <span>Pełne wyżywienie i zakwaterowanie</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+                <span>Opieka medyczna i detoks</span>
+              </li>
+            </ul>
+          </div>
+          <a href="tel:731395295" class="w-full py-3 bg-white hover:bg-slate-100 text-slate-800 font-bold text-xs rounded-xl border border-slate-300 text-center transition-all">
+            Wybierz Pakiet 1
+          </a>
+        </div>
+
+        <!-- PAKIET 2 -->
+        <div class="p-6 rounded-3xl border-2 border-blue-600 bg-white shadow-xl flex flex-col justify-between relative ring-4 ring-blue-50">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+            Z Aftercare
+          </div>
+          <div>
+            <div class="px-3 py-1 rounded-lg bg-blue-100 text-blue-800 font-bold text-xs inline-block mb-3">PAKIET 2</div>
+            <div class="text-3xl font-heading font-extrabold text-blue-600 mb-4">14 000 zł</div>
+            <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 mb-6">
+              <li class="flex items-center gap-2 font-semibold">
+                <i data-lucide="check" class="w-4 h-4 text-blue-600"></i>
+                <span>4 tygodnie terapii stacjonarnej</span>
+              </li>
+              <li class="flex items-center gap-2 font-semibold text-blue-900">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i>
+                <span>20 konsultacji Aftercare po powrocie</span>
+              </li>
+              <li class="flex items-center gap-2 font-semibold text-blue-900">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-600"></i>
+                <span>Dedykowana grupa WhatsApp</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-slate-400"></i>
+                <span>Pełne wyżywienie i zakwaterowanie</span>
+              </li>
+            </ul>
+          </div>
+          <a href="tel:731395295" class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl text-center shadow-md transition-all">
+            Wybierz Pakiet 2 (Rekomendowany)
+          </a>
+        </div>
+
+        <!-- PAKIET 3 -->
+        <div class="p-6 rounded-3xl border-2 border-emerald-500 bg-emerald-50/40 flex flex-col justify-between relative">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-emerald-600 text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+            1 Tydzień Gratis
+          </div>
+          <div>
+            <div class="px-3 py-1 rounded-lg bg-emerald-100 text-emerald-800 font-bold text-xs inline-block mb-3">PAKIET 3</div>
+            <div class="text-3xl font-heading font-extrabold text-emerald-700 mb-4">14 000 zł</div>
+            <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 mb-6">
+              <li class="flex items-center gap-2 font-bold text-emerald-800">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+                <span>4 + 1 tydzień stacjonarny (5 tyg.)</span>
+              </li>
+              <li class="flex items-center gap-2 font-semibold">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+                <span>20 konsultacji Aftercare</span>
+              </li>
+              <li class="flex items-center gap-2 font-semibold">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+                <span>Grupa na WhatsApp</span>
+              </li>
+            </ul>
+          </div>
+          <a href="tel:731395295" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl text-center shadow-md transition-all">
+            Wybierz Pakiet 3
+          </a>
+        </div>
+
+      </div>
+
+      <div class="text-xs text-slate-500 flex flex-wrap justify-center gap-6">
+        <span>Pobyt 6 tygodni: <strong>16 500 zł</strong></span>
+        <span>Pobyt 8 tygodni: <strong>19 000 zł</strong></span>
+        <span>Możliwość płatności w ratach (MediRaty)</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA FOOTER BANNER -->
+  <section class="py-16 bg-gradient-to-r from-blue-700 via-indigo-700 to-emerald-700 text-white text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-4xl font-heading font-bold mb-4">
+        Porozmawiajmy. Pomożemy dobrać właściwy ośrodek.
+      </h2>
+      <p class="text-blue-100 text-sm sm:text-base mb-8 max-w-2xl mx-auto">
+        Rozmowa telefoniczna jest bezpłatna, w 100% anonimowa i do niczego Cię nie zobowiązuje.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="tel:731395295" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl shadow-xl transition-all text-base">
+          <i data-lucide="phone-call" class="w-5 h-5"></i>
+          <span>731 395 295 (Całodobowo 24/7)</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 MyWay — Prywatne Ośrodki Terapii Uzależnień. Wszelkie prawa zastrzeżone.</p>
+      <div class="flex gap-4">
+        <span>Kąpino k. Wejherowa</span>
+        <span>•</span>
+        <span>Kolno k. Konina (Wielkopolska)</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DANE I SKRYPT INTERAKCJI -->
+  <script>
+    const centers = {
+      kapino: {
+        badge: 'Ośrodek Macierzysty • Pomorze',
+        badgeColor: 'bg-blue-100 text-blue-800 border-blue-200',
+        region: 'Kąpino k. Wejherowa (Trójmiasto)',
+        title: 'MyWay Kąpino (Trójmiasto / Pomorze)',
+        subtitle: 'Kameralna enklawa terapeutyczna w otulinie Trójmiejskiego Parku Krajobrazowego',
+        images: [
+          'https://osrodek-myway.pl/assets/comfortable-living-room-B9c_xPzU.jpg',
+          'https://osrodek-myway.pl/assets/comfortable-space-CLoUwhgK.jpg',
+          'https://osrodek-myway.pl/assets/bedroom-1-C1w35jO7.jpg'
+        ],
+        captions: [
+          'Strefa dzienna i przestrzeń relaksu — MyWay Kąpino',
+          'Taras i leśny ogród w otulinie parku krajobrazowego',
+          'Komfortowe pokoje sprzyjające wyciszeniu'
+        ],
+        ideal: 'Dla osób szukających ciepłej, domowej atmosfery, małej kameralnej grupy (do 12 osób) i bezpośredniego kontaktu ze społecznością absolwentów na Pomorzu.',
+        land: 'Otulina leśna TPK',
+        size: 'Kameralny dom rezydencyjny',
+        capacity: 'Maks. 10–12 pacjentów (pełna dyskrecja)',
+        rooms: '1- i 2-osobowe z łazienkami',
+        amenities: 'Taras leśny, sala kominkowa, gabinet',
+        access: '35 min z Trójmiasta, 15 min z Wejherowa',
+        cta: 'Zapytaj o pobyt w MyWay Kąpino: 731 395 295',
+        highlights: [
+          'Ciepła, bezpieczna i domowa atmosfera pełnego zrozumienia',
+          'Kameralna grupa do 10–12 osób — maksymalna uwaga terapeutów',
+          'Otulina Trójmiejskiego Parku Krajobrazowego — czyste leśne powietrze',
+          'Sobotnie zjazdy absolwentów stacjonarnie na miejscu',
+          'Detoks medyczny na miejscu pod opieką lekarską 24/7'
+        ]
+      },
+      rezydencja: {
+        badge: 'Executive & VIP • Wellness & SPA',
+        badgeColor: 'bg-emerald-100 text-emerald-800 border-emerald-200',
+        region: 'Kolno k. Konina (węzeł A2 / Wielkopolska)',
+        title: 'MyWay Rezydencja & Wellness (Wielkopolska)',
+        subtitle: 'Luksusowa posiadłość dworkowa z krytym basenem, sauną, kortem tenisowym i stawem',
+        images: [
+          'https://ireland.apollo.olxcdn.com/v1/files/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmbiI6ImNpczdneDdjYTAxczMtQVBMIiwidyI6W3siZm4iOiJlbnZmcXFlMWF5NGsxLUFQTCIsInMiOiIxNiIsImEiOiIwIiwicCI6IjEwLC0xMCJ9XX0.t_fTvEqr218hvAA0Xxnp978SuJ_DoBcQgQlKohg0AnM/image;s=2048x1536;q=80',
+          'https://ireland.apollo.olxcdn.com/v1/files/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmbiI6ImM0ZDdhOGdydjB5MzMtQVBMIiwidyI6W3siZm4iOiJlbnZmcXFlMWF5NGsxLUFQTCIsInMiOiIxNiIsImEiOiIwIiwicCI6IjEwLC0xMCJ9XX0.4_xfBA1qjMKt9fIQ5xFAZrX0vA3QJBzcDzUMI-YJHL0/image;s=2048x1536;q=80',
+          'https://ireland.apollo.olxcdn.com/v1/files/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmbiI6ImIzMnJzZTlqdDVxeDItQVBMIiwidyI6W3siZm4iOiJlbnZmcXFlMWF5NGsxLUFQTCIsInMiOiIxNiIsImEiOiIwIiwicCI6IjEwLC0xMCJ9XX0.JZ7f5owjFGOZVMYa9QZEMCDKF2Yqdtfk8fefQbsUo0E/image;s=2048x1536;q=80'
+        ],
+        captions: [
+          'Klasyczna architektura dworkowa w 4-hektarowym parku ze starodrzewem',
+          'Kryty podgrzewany basen wewnętrzny, sauna i strefa SPA',
+          'Stylowe wnętrza rezydencji z kominkiem i wykończeniem z egzotycznego drewna'
+        ],
+        ideal: 'Dla menedżerów, przedsiębiorców i osób wymagających bezwzględnej dyskrecji, standardu 5★ oraz regeneracji fizycznej (basen, sauna, kort tenisowy, natura).',
+        land: '39 877 m² (4 ha prywatnego parku Natura 2000)',
+        size: '711,70 m² rezydencji + 115 m² zaplecza',
+        capacity: 'Elitarna, nieliczna grupa pacjentów VIP',
+        rooms: 'Sypialnie z prywatnymi łazienkami i garderobami',
+        amenities: 'Basen kryty, sauna, jacuzzi, kort tenisowy, staw',
+        access: 'Szybki dojazd A2 (1h z Poznania, 2h z Warszawy/Łodzi)',
+        cta: 'Zapytaj o pobyt VIP w MyWay Rezydencja: 731 395 295',
+        highlights: [
+          'Kryty podgrzewany basen, sauna i strefa odnowy biologicznej',
+          'Pełnowymiarowy prywatny kort tenisowy i zarybiony staw w parku',
+          '4 ha ogrodzonego terenu w otulinie Natura 2000 ze starodrzewem',
+          'Pokoje z prywatnymi łazienkami, garderobami i kominkiem',
+          '100% dyskrecji i najwyższy standard hotelowy 5★'
+        ]
+      },
+      park: {
+        badge: 'Care & Dostępność • 90 000 m² Lasu',
+        badgeColor: 'bg-teal-100 text-teal-800 border-teal-200',
+        region: 'Kolno Leśne k. Konina (węzeł A2 / Wielkopolska)',
+        title: 'MyWay Park & Dostępność (Wielkopolska)',
+        subtitle: 'Nowoczesny kompleks bez barier architektonicznych w sercu 9-hektarowego prywatnego lasu',
+        images: [
+          'https://ireland.apollo.olxcdn.com/v1/files/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmbiI6Im0yYnQzaXpzY3p2ai1BUEwiLCJ3IjpbeyJmbiI6ImVudmZxcWUxYXk0azEtQVBMIiwicyI6IjE2IiwiYSI6IjAiLCJwIjoiMTAsLTEwIn1dfQ.xVS-cRtDcM_RNcAZzHyLcn7_3QtDTWmqj9qv1Idg9Jw/image;s=2048x1536;q=80',
+          'https://ireland.apollo.olxcdn.com/v1/files/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmbiI6Iml1MThvY3Axemk0aTEtQVBMIiwidyI6W3siZm4iOiJlbnZmcXFlMWF5NGsxLUFQTCIsInMiOiIxNiIsImEiOiIwIiwicCI6IjEwLC0xMCJ9XX0.1tpBjNrBV4qvQRjtSb4jRuwMgPdPqyLVi1t6JtdR6w0/image;s=2048x1536;q=80',
+          'https://ireland.apollo.olxcdn.com/v1/files/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmbiI6Im9hcGRmdThteGMwazItQVBMIiwidyI6W3siZm4iOiJlbnZmcXFlMWF5NGsxLUFQTCIsInMiOiIxNiIsImEiOiIwIiwicCI6IjEwLC0xMCJ9XX0.y74HXW1ThBoLtQW3PboU2sP1zUVIVlQdibqnVf0F8Ms/image;s=2048x1536;q=80'
+        ],
+        captions: [
+          'Nowoczesny kompleks (2013 r.) otoczony 9 hektarami prywatnego lasu',
+          'Pokoje z niezależnymi łazienkami przystosowanymi bez barier',
+          'Przestronne korytarze, jadalnia i strefa personelu opiekuńczego 24/7'
+        ],
+        ideal: 'Dla osób o szczególnych potrzebach ruchowych, seniorów, pacjentów po trudnych ciągach wymagających spokojnej rekonwalescencji oraz całkowitego odcięcia w leśnej oazie.',
+        land: '90 368 m² (9 ha prywatnego lasu i polan)',
+        size: '656,19 m² + 203 m² strefy techniczno-rehabilitacyjnej',
+        capacity: '8 przestronnych apartamentów z łazienkami',
+        rooms: 'Każdy pokój z niezależną łazienką i garderobą',
+        amenities: 'Pełne dostosowanie bez barier, winda/podjazdy, rekuperacja',
+        access: '10 km od Konina, bezpośredni zjazd z autostrady A2',
+        cta: 'Zapytaj o pobyt w MyWay Park Leśny: 731 395 295',
+        highlights: [
+          '100% dostosowania dla osób z niepełnosprawnościami i seniorów',
+          '9 ha prywatnego lasu zapewniającego absolutną ciszę i izolację',
+          'Każdy pokój z prywatną łazienką, garderobą i klimatyzacją',
+          'Oddzielne skrzydło personelu i opiekunów medycznych 24/7',
+          'Ekologiczne ogrzewanie pompą ciepła, podłogówka, nowoczesne wnętrza (2013 r.)'
+        ]
+      }
+    };
+
+    let currentCenterKey = 'kapino';
+
+    function switchCenter(key) {
+      currentCenterKey = key;
+      const data = centers[key];
+      
+      // Update Texts
+      document.getElementById('center-badge').className = `px-3 py-1 rounded-full text-xs font-bold ${data.badgeColor}`;
+      document.getElementById('center-badge').innerText = data.badge;
+      document.getElementById('center-region').innerHTML = `<i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-400"></i> ${data.region}`;
+      document.getElementById('center-title').innerText = data.title;
+      document.getElementById('center-subtitle').innerText = data.subtitle;
+      document.getElementById('ideal-text').innerText = data.ideal;
+      
+      document.getElementById('spec-land').innerText = data.land;
+      document.getElementById('spec-size').innerText = data.size;
+      document.getElementById('spec-capacity').innerText = data.capacity;
+      document.getElementById('spec-rooms').innerText = data.rooms;
+      document.getElementById('spec-amenities').innerText = data.amenities;
+      document.getElementById('spec-access').innerText = data.access;
+      
+      document.getElementById('center-cta-text').innerText = data.cta;
+
+      // Update Highlights
+      const hlContainer = document.getElementById('highlights-list');
+      hlContainer.innerHTML = data.highlights.map(h => `
+        <li class="flex items-start gap-2.5">
+          <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+          <span>${h}</span>
+        </li>
+      `).join('');
+
+      // Update Images
+      document.getElementById('main-img').src = data.images[0];
+      document.getElementById('img-caption').innerText = data.captions[0];
+      document.getElementById('thumb-0').src = data.images[0];
+      document.getElementById('thumb-1').src = data.images[1];
+      document.getElementById('thumb-2').src = data.images[2];
+
+      // Update Tab Styles
+      ['kapino', 'rezydencja', 'park'].forEach(k => {
+        const tab = document.getElementById(`tab-${k}`);
+        const btn = document.getElementById(`btn-${k}`);
+        if (k === key) {
+          tab.className = 'px-4 py-2 rounded-lg text-xs md:text-sm font-bold transition-all bg-white text-blue-600 shadow-sm';
+          if (btn) {
+            btn.className = 'center-btn cursor-pointer p-6 rounded-2xl border-2 border-blue-600 bg-white shadow-xl ring-4 ring-blue-100 transition-all transform hover:-translate-y-1';
+          }
+        } else {
+          tab.className = 'px-4 py-2 rounded-lg text-xs md:text-sm font-semibold transition-all text-slate-600 hover:text-slate-900';
+          if (btn) {
+            btn.className = 'center-btn cursor-pointer p-6 rounded-2xl border-2 border-slate-200 bg-white/90 shadow-sm hover:border-slate-300 hover:shadow-md transition-all transform hover:-translate-y-1';
+          }
+        }
+      });
+
+      lucide.createIcons();
+    }
+
+    function setMainImage(idx) {
+      const data = centers[currentCenterKey];
+      document.getElementById('main-img').src = data.images[idx];
+      document.getElementById('img-caption').innerText = data.captions[idx];
+    }
+
+    function selectQuiz(type) {
+      ['home', 'vip', 'care'].forEach(t => {
+        const el = document.getElementById(`quiz-${t}`);
+        if (t === type) {
+          el.className = 'quiz-box cursor-pointer p-5 rounded-2xl border border-blue-500 bg-blue-950/40 ring-2 ring-blue-500 transition-all';
+        } else {
+          el.className = 'quiz-box cursor-pointer p-5 rounded-2xl border border-slate-700 bg-slate-800/80 hover:border-slate-600 transition-all';
+        }
+      });
+
+      if (type === 'home') {
+        switchCenter('kapino');
+        document.getElementById('quiz-rec-title').innerText = '1. MyWay Kąpino (Trójmiasto / Pomorze)';
+        document.getElementById('quiz-rec-desc').innerText = 'Najlepszy wybór, jeśli szukasz kameralnego domowego klimatu, małej grupy (do 12 osób) i cotygodniowych zjazdów absolwentów.';
+      } else if (type === 'vip') {
+        switchCenter('rezydencja');
+        document.getElementById('quiz-rec-title').innerText = '2. MyWay Rezydencja & Wellness (Wielkopolska / A2)';
+        document.getElementById('quiz-rec-desc').innerText = 'Najlepszy wybór dla osób szukających najwyższej dyskrecji, standardu VIP 5★, krytego basenu, sauny i prywatnego kortu tenisowego.';
+      } else if (type === 'care') {
+        switchCenter('park');
+        document.getElementById('quiz-rec-title').innerText = '3. MyWay Park & Dostępność (Wielkopolska / A2)';
+        document.getElementById('quiz-rec-desc').innerText = 'Najlepszy wybór dla osób o szczególnych potrzebach ruchowych, seniorów oraz osób poszukujących absolutnej ciszy w 9-hektarowym lesie.';
+      }
+    }
+
+    // Inicjalizacja ikon
+    lucide.createIcons();
+  </script>
+</body>
+</html>
